@@ -21,15 +21,48 @@ import { CookiesPage } from './pages/CookiesPage';
 import { AccessibilityPage } from './pages/AccessibilityPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 
+// Helper to determine GitHub Pages repository subfolder prefix (e.g. /MadaniCommunityCenter)
+const getRepoBase = (): string => {
+  const path = window.location.pathname || '/';
+  if (path.toLowerCase().startsWith('/madanicommunitycenter')) {
+    return path.substring(0, '/madanicommunitycenter'.length);
+  }
+  return '';
+};
+
+// Normalize browser pathname into internal app route (e.g. /MadaniCommunityCenter/about -> /about)
+const normalizeAppPath = (pathname: string): string => {
+  const base = getRepoBase();
+  let p = pathname || '/';
+  if (base && p.toLowerCase().startsWith(base.toLowerCase())) {
+    p = p.substring(base.length);
+  }
+  if (!p.startsWith('/')) {
+    p = '/' + p;
+  }
+  if (p.length > 1 && p.endsWith('/')) {
+    p = p.slice(0, -1);
+  }
+  return p || '/';
+};
+
+// Convert internal app route into full browser URL maintaining GitHub Pages subfolder
+const toBrowserPath = (appPath: string): string => {
+  const base = getRepoBase();
+  if (!base) return appPath;
+  if (appPath === '/') return `${base}/`;
+  return `${base}${appPath.startsWith('/') ? '' : '/'}${appPath}`;
+};
+
 export default function App() {
   const [currentPath, setCurrentPath] = useState<string>(() => {
-    return window.location.pathname || '/';
+    return normalizeAppPath(window.location.pathname);
   });
 
   const [activeEventSlug, setActiveEventSlug] = useState<string | null>(() => {
-    const path = window.location.pathname;
-    if (path.startsWith('/events/') && path.length > 8) {
-      return path.replace('/events/', '');
+    const appPath = normalizeAppPath(window.location.pathname);
+    if (appPath.startsWith('/events/') && appPath.length > 8) {
+      return appPath.replace('/events/', '');
     }
     return null;
   });
@@ -37,10 +70,10 @@ export default function App() {
   // Synchronise with browser forward/back buttons
   useEffect(() => {
     const handlePopState = () => {
-      const path = window.location.pathname || '/';
-      setCurrentPath(path);
-      if (path.startsWith('/events/') && path.length > 8) {
-        setActiveEventSlug(path.replace('/events/', ''));
+      const appPath = normalizeAppPath(window.location.pathname);
+      setCurrentPath(appPath);
+      if (appPath.startsWith('/events/') && appPath.length > 8) {
+        setActiveEventSlug(appPath.replace('/events/', ''));
       } else {
         setActiveEventSlug(null);
       }
@@ -52,16 +85,17 @@ export default function App() {
 
   const navigateTo = (path: string) => {
     // Strip hash if navigating to a page with hash
-    const cleanPath = path.split('#')[0] || '/';
+    const cleanAppPath = path.split('#')[0] || '/';
     const hash = path.includes('#') ? path.substring(path.indexOf('#')) : '';
+    const fullBrowserPath = toBrowserPath(cleanAppPath) + hash;
 
-    if (window.location.pathname !== cleanPath) {
-      window.history.pushState({}, '', path);
+    if (window.location.pathname + window.location.hash !== fullBrowserPath) {
+      window.history.pushState({}, '', fullBrowserPath);
     }
-    setCurrentPath(cleanPath);
+    setCurrentPath(cleanAppPath);
 
-    if (cleanPath.startsWith('/events/') && cleanPath.length > 8) {
-      setActiveEventSlug(cleanPath.replace('/events/', ''));
+    if (cleanAppPath.startsWith('/events/') && cleanAppPath.length > 8) {
+      setActiveEventSlug(cleanAppPath.replace('/events/', ''));
     } else {
       setActiveEventSlug(null);
     }
@@ -81,9 +115,10 @@ export default function App() {
 
   const handleSelectEvent = (slug: string) => {
     setActiveEventSlug(slug);
-    const targetPath = `/events/${slug}`;
-    window.history.pushState({}, '', targetPath);
-    setCurrentPath(targetPath);
+    const targetAppPath = `/events/${slug}`;
+    const fullBrowserPath = toBrowserPath(targetAppPath);
+    window.history.pushState({}, '', fullBrowserPath);
+    setCurrentPath(targetAppPath);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
