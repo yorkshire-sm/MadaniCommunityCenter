@@ -1,0 +1,7 @@
+{
+  "name": "Madani Community Centre – Dawat-e-Islami Sheffield",
+  "description": "A welcoming centre for primary education (Darul Madinah), youth engagement, sisters' programmes, community events, and venue hire in Sheffield, UK.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
