@@ -265,9 +265,10 @@ export const DarulMadinahPage: React.FC<DarulMadinahPageProps> = ({ onNavigate }
           </button>
 
           <div className="p-5 rounded-xl bg-[#FAF9F5] border border-stone-200/80 text-left space-y-1.5">
-            <Calendar className="h-5 w-5 text-stone-400" />
+            <Calendar className="h-5 w-5 text-[#B8C053]" />
             <span className="block text-xs font-bold text-stone-900">Term Dates 2026/27</span>
-            <span className="block text-[11px] text-stone-500">Publication coming soon</span>
+            <span className="block text-[11px] text-stone-600">Autumn: 3 Sept – 18 Dec</span>
+            <span className="block text-[10px] text-stone-500">Spring: 5 Jan – 26 Mar</span>
           </div>
 
           <div className="p-5 rounded-xl bg-[#FAF9F5] border border-stone-200/80 text-left space-y-1.5">

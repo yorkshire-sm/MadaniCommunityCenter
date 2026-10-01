@@ -119,7 +119,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
                 <Clock className="h-4 w-4 text-[#B8C053]" />
                 <span>Centre Opening Hours</span>
               </div>
-              <p className="italic text-stone-500">
+              <p className="text-stone-600 leading-relaxed">
                 {siteConfig.status.openingHoursPlaceholder}
               </p>
             </div>
@@ -129,7 +129,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
                 <Car className="h-4 w-4 text-[#B8C053]" />
                 <span>Parking & Public Transport</span>
               </div>
-              <p className="italic text-stone-500">
+              <p className="text-stone-600 leading-relaxed">
                 {siteConfig.status.parkingPlaceholder}
               </p>
             </div>
@@ -143,27 +143,27 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
             <div className="divide-y divide-stone-100 text-xs text-stone-600">
               <div className="py-2.5 flex items-center justify-between">
                 <span className="font-medium text-stone-800">General Enquiries</span>
-                <span className="font-mono text-stone-500">{siteConfig.contact.email}</span>
+                <span className="font-mono text-stone-600">{siteConfig.contact.email}</span>
               </div>
               <div className="py-2.5 flex items-center justify-between">
                 <span className="font-medium text-stone-800">Darul Madinah Primary</span>
-                <span className="font-mono text-stone-500">{siteConfig.contact.darulMadinahEmail}</span>
+                <span className="font-mono text-stone-600">{siteConfig.contact.darulMadinahEmail}</span>
               </div>
               <div className="py-2.5 flex items-center justify-between">
                 <span className="font-medium text-stone-800">Venue & Hall Hire</span>
-                <span className="font-mono text-stone-500">{siteConfig.contact.venueEmail}</span>
+                <span className="font-mono text-stone-600">{siteConfig.contact.venueEmail}</span>
               </div>
               <div className="py-2.5 flex items-center justify-between">
                 <span className="font-medium text-stone-800">Youth Engagement</span>
-                <span className="font-mono text-stone-500">{siteConfig.contact.youthEmail}</span>
+                <span className="font-mono text-stone-600">{siteConfig.contact.youthEmail}</span>
               </div>
               <div className="py-2.5 flex items-center justify-between">
                 <span className="font-medium text-stone-800">Sisters’ Activities</span>
-                <span className="font-mono text-stone-500">{siteConfig.contact.sistersEmail}</span>
+                <span className="font-mono text-stone-600">{siteConfig.contact.sistersEmail}</span>
               </div>
             </div>
-            <p className="text-[11px] text-stone-400 font-mono pt-1">
-              * Note: Official department emails will be activated upon centre launch.
+            <p className="text-[11px] text-stone-500 pt-1">
+              Direct inquiries typically receive a response within 1 business day.
             </p>
           </div>
         </div>

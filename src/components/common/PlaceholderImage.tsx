@@ -14,96 +14,96 @@ export type PlaceholderKey =
   | 'volunteers'
   | 'building-facilities';
 
-export interface PlaceholderConfig {
+export interface ImageConfig {
   label: string;
   brief: string;
-  suggestedFilename: string;
+  imageUrl: string;
   dominantColor: string;
   accentColor: string;
 }
 
-export const placeholderCatalog: Record<PlaceholderKey, PlaceholderConfig> = {
+export const imageCatalog: Record<PlaceholderKey, ImageConfig> = {
   'centre-exterior': {
-    label: 'Main Centre Exterior',
-    brief: 'Dignified exterior elevation of the new Sheffield centre building on Tinsley Park Road showing contemporary entrance and signage.',
-    suggestedFilename: '/images/placeholders/centre-exterior.jpg',
+    label: 'Madani Community Centre Building',
+    brief: 'Main entrance and exterior elevation of the centre building on Tinsley Park Road in Sheffield.',
+    imageUrl: 'https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?auto=format&fit=crop&w=1200&q=80',
     dominantColor: '#16281F',
-    accentColor: '#C59B27',
+    accentColor: '#B8C053',
   },
   'darul-madinah-classroom': {
-    label: 'Darul Madinah Classroom',
-    brief: 'Bright, orderly primary school classroom with pupils’ desks, literacy displays, and Islamic values curriculum resources.',
-    suggestedFilename: '/images/placeholders/darul-madinah-classroom.jpg',
+    label: 'Darul Madinah Primary Classroom',
+    brief: 'Bright primary school classroom environment with student desks, books, and Islamic curriculum resources.',
+    imageUrl: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1200&q=80',
     dominantColor: '#1A3326',
-    accentColor: '#68B388',
+    accentColor: '#B8C053',
   },
   'children-learning': {
-    label: 'Children Learning',
-    brief: 'Children engaged attentively in structured group learning, reading, or calligraphy activity.',
-    suggestedFilename: '/images/placeholders/children-learning.jpg',
+    label: 'Primary Pupils Engaged in Learning',
+    brief: 'Children engaged attentively in structured group reading, phonics, and writing activities.',
+    imageUrl: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=80',
     dominantColor: '#203A2E',
     accentColor: '#93C5AA',
   },
   'youth-activity': {
-    label: 'Youth Activities',
-    brief: 'Young people in Sheffield engaging in sports, teamwork challenges, and informal social mentoring.',
-    suggestedFilename: '/images/placeholders/youth-activity.jpg',
+    label: 'Youth Sports & Recreation',
+    brief: 'Young people in Sheffield participating in active sports, fitness challenges, and outdoor team recreation.',
+    imageUrl: 'https://images.unsplash.com/photo-1526976668912-1a811878dd37?auto=format&fit=crop&w=1200&q=80',
     dominantColor: '#182736',
-    accentColor: '#60A5FA',
+    accentColor: '#B8C053',
   },
   'youth-workshop': {
     label: 'Youth Workshop & Mentoring',
-    brief: 'Interactive seminar setup with presentation screen, notebooks, and young attendees participating in discussion.',
-    suggestedFilename: '/images/placeholders/youth-workshop.jpg',
+    brief: 'Interactive seminar and study circle with young students collaborating on laptops and project discussions.',
+    imageUrl: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80',
     dominantColor: '#1E2C3D',
     accentColor: '#93C5FD',
   },
   'sisters-event': {
     label: "Sisters' Gathering & Activity",
-    brief: "Dignified, welcoming atmosphere for sisters' educational workshop, community coffee morning, or family lecture.",
-    suggestedFilename: '/images/placeholders/sisters-event.jpg',
+    brief: "Welcoming and dignified atmosphere for sisters' educational workshops, coffee mornings, and family seminars.",
+    imageUrl: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1200&q=80',
     dominantColor: '#2B2329',
     accentColor: '#D8B4E2',
   },
   'venue-hall': {
-    label: 'Main Event Hall',
-    brief: 'Spacious hall with polished wood flooring, arranged seating rows, warm ambient lighting, and presentation dais.',
-    suggestedFilename: '/images/placeholders/venue-hall.jpg',
+    label: 'Main Multi-Purpose Event Hall',
+    brief: 'Spacious hall with warm ambient lighting, conference rows, and audio-visual stage setup.',
+    imageUrl: 'https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=1200&q=80',
     dominantColor: '#222320',
-    accentColor: '#D4AF37',
+    accentColor: '#B8C053',
   },
   'venue-hire-setup': {
-    label: 'Venue Hire Setup',
-    brief: 'Banquet dining or conference workshop tables configured for private community celebrations or corporate training.',
-    suggestedFilename: '/images/placeholders/venue-hire-setup.jpg',
+    label: 'Venue Hire Dining & Banquet Setup',
+    brief: 'Banquet and conference tables arranged for private community celebrations and corporate training.',
+    imageUrl: 'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1200&q=80',
     dominantColor: '#252523',
-    accentColor: '#E2C26D',
+    accentColor: '#B8C053',
   },
   'community-event': {
-    label: 'Community Gathering',
-    brief: 'Multi-generational Sheffield community members and families attending an open exhibition, tea, or local forum.',
-    suggestedFilename: '/images/placeholders/community-event.jpg',
+    label: 'Sheffield Community Gathering',
+    brief: 'Multi-generational Sheffield community members and families attending an open forum and community tea.',
+    imageUrl: 'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80',
     dominantColor: '#192C23',
-    accentColor: '#A7D7BD',
+    accentColor: '#B8C053',
   },
   'islamic-educational-event': {
     label: 'Islamic Educational Seminar',
-    brief: 'Focused educational lecture or Qur’an study circle with students and community attendees.',
-    suggestedFilename: '/images/placeholders/islamic-educational-event.jpg',
+    brief: 'Focused educational lecture and Qur’an study circle with students and community attendees.',
+    imageUrl: 'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=1200&q=80',
     dominantColor: '#15241D',
-    accentColor: '#D4AF37',
+    accentColor: '#B8C053',
   },
   'volunteers': {
-    label: 'Community Volunteers',
+    label: 'Community Volunteers in Action',
     brief: 'Local volunteers preparing the centre, organising community aid boxes, and welcoming guests.',
-    suggestedFilename: '/images/placeholders/volunteers.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=1200&q=80',
     dominantColor: '#1F2922',
-    accentColor: '#86EFAC',
+    accentColor: '#B8C053',
   },
   'building-facilities': {
-    label: 'Building Facilities & Suites',
-    brief: 'Clean corridors, modern meeting suites, prayer and ablution areas, and secure visitor entrance.',
-    suggestedFilename: '/images/placeholders/building-facilities.jpg',
+    label: 'Reception & Meeting Suites',
+    brief: 'Clean corridors, modern meeting suites, prayer areas, and welcoming reception at Madani Centre.',
+    imageUrl: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80',
     dominantColor: '#1F2224',
     accentColor: '#CBD5E1',
   },
@@ -129,15 +129,18 @@ export const PlaceholderImage: React.FC<PlaceholderImageProps> = ({
   priority = false,
 }) => {
   const [imgError, setImgError] = useState(false);
+  const [imgLoaded, setImgLoaded] = useState(false);
 
-  const config: PlaceholderConfig =
-    placeholderCatalog[placeholderKey as PlaceholderKey] || {
+  const config: ImageConfig =
+    imageCatalog[placeholderKey as PlaceholderKey] || {
       label: placeholderKey.replace(/-/g, ' ').toUpperCase(),
       brief: customBrief || 'Editorial photograph representing centre activity and facilities.',
-      suggestedFilename: `/images/placeholders/${placeholderKey}.jpg`,
+      imageUrl: 'https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?auto=format&fit=crop&w=1200&q=80',
       dominantColor: '#16281F',
-      accentColor: '#C59B27',
+      accentColor: '#B8C053',
     };
+
+  const imageToUse = src || config.imageUrl;
 
   const ratioClass = {
     '16:9': 'aspect-[16/9]',
@@ -146,86 +149,60 @@ export const PlaceholderImage: React.FC<PlaceholderImageProps> = ({
     '1:1': 'aspect-square',
   }[aspectRatio];
 
-  const dimensionsLabel = {
-    '16:9': '1600 × 900',
-    '4:3': '800 × 600',
-    '3:2': '1200 × 800',
-    '1:1': '800 × 800',
-  }[aspectRatio];
-
-  // If a real image path is passed and has not errored, render real image with fallback
-  if (src && !imgError) {
+  if (!imgError && imageToUse) {
     return (
-      <div className={`relative overflow-hidden bg-stone-100 ${ratioClass} ${className}`}>
+      <div
+        className={`group relative overflow-hidden rounded-xl border border-stone-200/90 bg-stone-900 shadow-xs ${ratioClass} ${className}`}
+      >
+        {/* Placeholder skeleton while loading */}
+        {!imgLoaded && (
+          <div
+            className="absolute inset-0 animate-pulse"
+            style={{ backgroundColor: config.dominantColor }}
+          />
+        )}
+
         <img
-          src={src}
+          src={imageToUse}
           alt={alt}
+          referrerPolicy="no-referrer"
           loading={priority ? 'eager' : 'lazy'}
           decoding="async"
+          onLoad={() => setImgLoaded(true)}
           onError={() => setImgError(true)}
-          className="h-full w-full object-cover transition-opacity duration-300"
+          className={`h-full w-full object-cover transition-all duration-500 group-hover:scale-[1.03] ${
+            imgLoaded ? 'opacity-100' : 'opacity-0'
+          }`}
         />
+
+        {/* Subtle dark gradient scrim at bottom to ensure photo feel & caption readability if text overlays */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent opacity-60 pointer-events-none" />
+
+        {/* Minimal dignified photo credit / category caption badge */}
+        <div className="absolute bottom-2.5 left-2.5 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+          <span className="px-2.5 py-1 rounded-full text-[10px] font-medium tracking-wide bg-black/60 text-white backdrop-blur-xs">
+            {config.label}
+          </span>
+        </div>
       </div>
     );
   }
 
+  // Graceful visual fallback if network ever fails
   return (
     <figure
-      className={`group relative overflow-hidden rounded-lg border border-stone-200/80 bg-stone-900 text-stone-100 shadow-xs select-none ${ratioClass} ${className}`}
+      className={`group relative overflow-hidden rounded-xl border border-stone-200/90 bg-stone-900 text-stone-100 shadow-xs select-none ${ratioClass} ${className}`}
       style={{
         background: `radial-gradient(ellipse at 70% 30%, ${config.dominantColor}EE 0%, ${config.dominantColor} 60%, #0F1713 100%)`,
       }}
-      aria-label={`Photo placeholder: ${alt}`}
+      aria-label={alt}
     >
-      {/* Subtle architectural hairline grid & light motif */}
-      <svg
-        className="pointer-events-none absolute inset-0 h-full w-full opacity-15"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-      >
-        <defs>
-          <pattern id={`grid-${placeholderKey}`} width="40" height="40" patternUnits="userSpaceOnUse">
-            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" strokeWidth="0.75" />
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill={`url(#grid-${placeholderKey})`} />
-      </svg>
-
-      {/* Soft warm aperture highlight in corner */}
       <div
-        className="pointer-events-none absolute -top-16 -right-16 h-48 w-48 rounded-full blur-2xl opacity-20"
+        className="pointer-events-none absolute -top-16 -right-16 h-48 w-48 rounded-full blur-2xl opacity-25"
         style={{ backgroundColor: config.accentColor }}
       />
-
-      {/* Content overlay */}
-      <div className="relative z-10 flex h-full w-full flex-col justify-between p-4 sm:p-6 text-left">
-        {/* Top Header: Unboxed metadata */}
-        <div className="flex items-center justify-between gap-2 text-xs font-medium text-stone-300">
-          <span className="flex items-center gap-1.5 tracking-wider uppercase text-[11px] text-stone-400">
-            <svg
-              className="h-3.5 w-3.5 text-stone-400"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth="1.75"
-              aria-hidden="true"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z"
-              />
-              <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zM18.75 10.5h.008v.008h-.008V10.5z" />
-            </svg>
-            Photo Placeholder
-          </span>
-          <span className="text-[11px] text-stone-400 tracking-wider">
-            {aspectRatio} · {dimensionsLabel}
-          </span>
-        </div>
-
-        {/* Center/Bottom: Descriptive Brief */}
-        <div className="mt-auto space-y-1.5 pt-4">
+      <div className="relative z-10 flex h-full w-full flex-col justify-end p-4 text-left">
+        <div className="space-y-1">
           <div className="text-sm font-semibold tracking-tight text-white flex items-center gap-2">
             <span
               className="inline-block h-2 w-2 rounded-full"
@@ -234,12 +211,9 @@ export const PlaceholderImage: React.FC<PlaceholderImageProps> = ({
             />
             {config.label}
           </div>
-          <p className="line-clamp-2 text-xs leading-relaxed text-stone-300/90 font-normal">
+          <p className="line-clamp-2 text-xs leading-relaxed text-stone-300 font-normal">
             {customBrief || config.brief}
           </p>
-          <div className="pt-1 text-[11px] text-stone-400 font-mono">
-            Target file: <code className="text-stone-300">{config.suggestedFilename}</code>
-          </div>
         </div>
       </div>
     </figure>

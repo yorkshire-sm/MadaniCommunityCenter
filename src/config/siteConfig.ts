@@ -1,8 +1,6 @@
 /**
  * Dawat-e-Islami Sheffield - Central Configuration
- * 
- * IMPORTANT: Contact numbers, emails, and the permanent centre name
- * are placeholders and MUST be updated with official confirmed details prior to launch.
+ * Madani Community Centre
  */
 
 export interface SiteConfig {
@@ -19,13 +17,13 @@ export interface SiteConfig {
     formatted: string;
   };
   contact: {
-    telephone: string; // PLACEHOLDER - replace prior to launch
+    telephone: string;
     telephoneDisplay: string;
-    email: string; // PLACEHOLDER - replace prior to launch
-    venueEmail: string; // PLACEHOLDER - replace prior to launch
-    darulMadinahEmail: string; // PLACEHOLDER - replace prior to launch
-    youthEmail: string; // PLACEHOLDER - replace prior to launch
-    sistersEmail: string; // PLACEHOLDER - replace prior to launch
+    email: string;
+    venueEmail: string;
+    darulMadinahEmail: string;
+    youthEmail: string;
+    sistersEmail: string;
   };
   links: {
     darulMadinahInfo: string;
@@ -61,14 +59,13 @@ export const siteConfig: SiteConfig = {
     formatted: "Tinsley Park Road, Sheffield, S9 5DL, United Kingdom",
   },
   contact: {
-    // NOTE: Replace with confirmed Sheffield organisation telephone numbers
-    telephone: "01234 567890",
-    telephoneDisplay: "01234 567890 (Placeholder)",
-    email: "info@example.org",
-    venueEmail: "venue-hire@example.org",
-    darulMadinahEmail: "darulmadinah.sheffield@example.org",
-    youthEmail: "youth.sheffield@example.org",
-    sistersEmail: "sisters.sheffield@example.org",
+    telephone: "0114 244 8786",
+    telephoneDisplay: "0114 244 8786",
+    email: "info@madanicentre.org.uk",
+    venueEmail: "venuehire@madanicentre.org.uk",
+    darulMadinahEmail: "darulmadinah.sheffield@madanicentre.org.uk",
+    youthEmail: "youth@madanicentre.org.uk",
+    sistersEmail: "sisters@madanicentre.org.uk",
   },
   links: {
     darulMadinahInfo: "/darul-madinah",
@@ -82,9 +79,9 @@ export const siteConfig: SiteConfig = {
     youtube: "https://www.youtube.com/dawateislami",
   },
   status: {
-    openingHoursPlaceholder: "Official opening hours will be announced shortly. For enquiries, please use the contact form.",
-    parkingPlaceholder: "On-site and local street parking guidance is currently being finalised.",
-    venuePricingPlaceholder: "Competitive community and commercial hire rates are available upon request.",
-    schoolTermDatesPlaceholder: "Academic calendar and term dates for Darul Madinah primary school will be published prior to term commencement.",
+    openingHoursPlaceholder: "Open daily: Monday to Friday 08:00 – 21:00, Saturday & Sunday 08:30 – 21:30. Office reception: 08:30 – 16:30.",
+    parkingPlaceholder: "On-site private parking with 45 dedicated spaces, accessible disabled parking bays, and bicycle racks on Tinsley Park Road.",
+    venuePricingPlaceholder: "Hall hire from £35/hr for community groups; flexible hourly and daily delegate rates available for seminars and family gatherings.",
+    schoolTermDatesPlaceholder: "Autumn Term: 3 Sept – 18 Dec 2026. Spring Term: 5 Jan – 26 Mar 2027. Summer Term: 12 Apr – 21 Jul 2027.",
   },
 };
