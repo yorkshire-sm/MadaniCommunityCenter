@@ -1,0 +1,49 @@
+<svg viewBox="0 0 500 500" width="500" height="500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="madaniGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#DFBD5E" />
+      <stop offset="45%" stopColor="#C59B27" />
+      <stop offset="100%" stopColor="#9C7718" />
+    </linearGradient>
+    <linearGradient id="madaniEmerald" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stopColor="#145A40" />
+      <stop offset="60%" stopColor="#0B422E" />
+      <stop offset="100%" stopColor="#072F21" />
+    </linearGradient>
+    <linearGradient id="madaniOlive" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#6AA355" />
+      <stop offset="100%" stopColor="#457A32" />
+    </linearGradient>
+  </defs>
+
+  <!-- Crescent Moon -->
+  <path d="M268 52 C268 67 256 79 240 79 C236.5 79 233.2 78.3 230 77.1 C241.5 73.2 249.5 62.5 249.5 50 C249.5 44 247.3 38.5 243.6 34.2 C257.6 36.5 268 43 268 52 Z" fill="url(#madaniGold)" />
+
+  <!-- Dome / Arch -->
+  <path d="M250 82 C253 92, 276 114, 308 138 C340 162, 344 195, 344 250 L326 250 C326 200, 321 174, 294 152 C270 132, 253 112, 250 98 C247 112, 230 132, 206 152 C179 174, 174 200, 174 250 L156 250 C156 195, 160 162, 192 138 C224 114, 247 92, 250 82 Z" fill="url(#madaniEmerald)" />
+
+  <!-- Central Figure -->
+  <circle cx="250" cy="172" r="18" fill="url(#madaniEmerald)" />
+  <path d="M250 270 C247 245, 238 215, 210 182 C226 198, 238 214, 243 232 C245 220, 248 205, 250 196 C252 205, 255 220, 257 232 C262 214, 274 198, 290 182 C262 215, 253 245, 250 270 Z" fill="url(#madaniEmerald)" />
+
+  <!-- Left Figure -->
+  <circle cx="198" cy="192" r="14" fill="url(#madaniOlive)" />
+  <path d="M242 272 C232 260, 215 240, 175 204 C173 218, 185 244, 212 254 C224 259, 235 266, 242 272 Z" fill="url(#madaniOlive)" />
+
+  <!-- Right Figure -->
+  <circle cx="302" cy="192" r="14" fill="url(#madaniOlive)" />
+  <path d="M258 272 C268 260, 285 240, 325 204 C327 218, 315 244, 288 254 C276 259, 265 266, 258 272 Z" fill="url(#madaniOlive)" />
+
+  <!-- Open Book (Golden Pages) -->
+  <path d="M250 273 C265 264, 305 250, 348 262 C332 276, 295 288, 258 296 C253 297, 247 297, 242 296 C205 288, 168 276, 152 262 C195 250, 235 264, 250 273 Z" fill="url(#madaniGold)" />
+
+  <!-- Open Book (Emerald Base Pages) -->
+  <path d="M250 293 C270 282, 320 270, 362 284 C340 302, 295 316, 250 322 C205 316, 160 302, 138 284 C180 270, 230 282, 250 293 Z" fill="url(#madaniEmerald)" />
+
+  <!-- Typography -->
+  <text x="250" y="390" text-anchor="middle" font-family="'Playfair Display', Georgia, serif" font-size="46" font-weight="bold" letter-spacing="6" fill="#0B422E">MADANI</text>
+  <text x="250" y="426" text-anchor="middle" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="18" font-weight="700" letter-spacing="5" fill="#0B422E">COMMUNITY CENTRE</text>
+  <line x1="55" y1="450" x2="160" y2="450" stroke="#C59B27" stroke-width="1.5" />
+  <text x="250" y="454" text-anchor="middle" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" font-weight="600" letter-spacing="3" fill="#0B422E">LEARN | CONNECT | BELONG</text>
+  <line x1="340" y1="450" x2="445" y2="450" stroke="#C59B27" stroke-width="1.5" />
+</svg>

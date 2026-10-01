@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown, ArrowRight } from 'lucide-react';
 import { siteConfig } from '../../config/siteConfig';
+import { MadaniLogo } from './MadaniLogo';
 
 interface HeaderProps {
   currentPath: string;
@@ -64,15 +65,21 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, onNavigate }) => {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between gap-4">
-            {/* Wordmark Logo */}
+            {/* Wordmark & Official Emblem Logo */}
             <a
               href="/"
               onClick={(e) => {
                 e.preventDefault();
                 handleNavClick('/');
               }}
-              className="flex items-center gap-2 text-left group focus-visible:outline-none"
+              className="flex items-center gap-2.5 sm:gap-3 text-left group focus-visible:outline-none"
+              aria-label="Madani Community Centre Home"
             >
+              {/* Logo Emblem badge on the left side - Enlarged and prominently featured */}
+              <div className="h-13 w-13 sm:h-16 sm:w-16 rounded-2xl bg-white p-1.5 sm:p-2 shadow-lg border border-white/30 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform duration-200">
+                <MadaniLogo className="w-full h-full" variant="emblem" />
+              </div>
+
               <div className="flex flex-col">
                 <div className="flex items-center tracking-tight text-lg sm:text-xl font-bold font-sans">
                   <span className="text-white tracking-wide">MADANI</span>
@@ -203,14 +210,19 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, onNavigate }) => {
           >
             <div>
               <div className="flex items-center justify-between pb-4 border-b border-[#233827]">
-                <div className="flex flex-col">
-                  <div className="flex items-center text-sm font-bold">
-                    <span className="text-white">MADANI</span>
-                    <span className="text-[#B8C053] ml-1">CENTRE</span>
+                <div className="flex items-center gap-3">
+                  <div className="h-12 w-12 rounded-xl bg-white p-1.5 shadow-md flex items-center justify-center shrink-0">
+                    <MadaniLogo className="w-full h-full" variant="emblem" />
                   </div>
-                  <span className="text-[10px] text-stone-400">
-                    {siteConfig.regionalSubtitle}
-                  </span>
+                  <div className="flex flex-col">
+                    <div className="flex items-center text-sm font-bold">
+                      <span className="text-white">MADANI</span>
+                      <span className="text-[#B8C053] ml-1">CENTRE</span>
+                    </div>
+                    <span className="text-[10px] text-stone-400">
+                      {siteConfig.regionalSubtitle}
+                    </span>
+                  </div>
                 </div>
                 <button
                   type="button"

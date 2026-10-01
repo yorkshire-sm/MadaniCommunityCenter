@@ -1,6 +1,7 @@
 import React from 'react';
 import { MapPin, Phone, Mail, ArrowUpRight } from 'lucide-react';
 import { siteConfig } from '../../config/siteConfig';
+import { MadaniLogo } from './MadaniLogo';
 
 interface FooterProps {
   onNavigate: (path: string) => void;
@@ -21,16 +22,21 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10">
           {/* Column 1: Logo & Overview (4 cols) */}
           <div className="lg:col-span-4 space-y-4">
-            <div className="flex flex-col">
-              <div className="flex items-center text-lg sm:text-xl font-bold font-sans">
-                <span className="text-white tracking-wide">MADANI</span>
-                <span className="text-[#B8C053] ml-1.5 font-extrabold tracking-wider">
-                  COMMUNITY CENTRE
+            <div className="flex items-center gap-3.5">
+              <div className="h-14 w-14 sm:h-16 sm:w-16 rounded-2xl bg-white p-2 shadow-lg border border-white/20 flex items-center justify-center shrink-0">
+                <MadaniLogo className="w-full h-full" variant="emblem" />
+              </div>
+              <div className="flex flex-col">
+                <div className="flex items-center text-lg sm:text-xl font-bold font-sans">
+                  <span className="text-white tracking-wide">MADANI</span>
+                  <span className="text-[#B8C053] ml-1.5 font-extrabold tracking-wider">
+                    COMMUNITY CENTRE
+                  </span>
+                </div>
+                <span className="text-[11px] text-stone-400 uppercase tracking-widest mt-0.5">
+                  {siteConfig.regionalSubtitle}
                 </span>
               </div>
-              <span className="text-[11px] text-stone-400 uppercase tracking-widest mt-0.5">
-                {siteConfig.regionalSubtitle}
-              </span>
             </div>
 
             <p className="text-sm text-stone-400 leading-relaxed max-w-sm">
