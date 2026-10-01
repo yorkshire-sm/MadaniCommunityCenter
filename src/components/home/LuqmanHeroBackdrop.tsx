@@ -4,25 +4,22 @@ import heroLuqmanImage from '../../assets/images/hero-luqman.jpg';
 export const LuqmanHeroBackdrop: React.FC = () => {
   return (
     <div className="absolute inset-0 overflow-hidden select-none pointer-events-none">
-      {/* Base deep atmospheric dark forest background */}
-      <div className="absolute inset-0 bg-[#121E14]" />
+      {/* Base background */}
+      <div className="absolute inset-0 bg-[#142016]" />
 
-      {/* The actual Luqman Academy hero photograph with reduced opacity as requested */}
+      {/* The actual Luqman Academy hero photograph - vivid, clear, and visible */}
       <img
         src={heroLuqmanImage}
         alt="Students and community in assembly hall"
-        className="absolute inset-0 w-full h-full object-cover object-center opacity-30 sm:opacity-35 mix-blend-luminosity filter contrast-125"
+        className="absolute inset-0 w-full h-full object-cover object-center opacity-75 sm:opacity-85 filter brightness-100 contrast-105"
         referrerPolicy="no-referrer"
       />
 
-      {/* Subtle warm amber and gold radial lighting */}
-      <div className="absolute inset-0 bg-radial from-[#C59B27]/25 via-transparent to-black/60 pointer-events-none" />
+      {/* Soft directional scrim: light on the left (so you can clearly see the gathering and hall), gently deepening on the right just behind the text */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-black/50 to-[#0A140D]/85" />
 
-      {/* Primary directional readability gradient overlay (darker towards right where text sits) */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0C150E]/85 via-[#121E14]/70 to-[#0C150E]/95" />
-
-      {/* Vertical vignette gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0C150E]/98 via-transparent to-[#0A120B]/80" />
+      {/* Subtle vertical blend at bottom scoop and top navigation */}
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0E1A11] via-transparent to-black/40" />
     </div>
   );
 };
