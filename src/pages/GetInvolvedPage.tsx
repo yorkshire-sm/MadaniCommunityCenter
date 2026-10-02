@@ -33,7 +33,7 @@ export const GetInvolvedPage: React.FC<GetInvolvedPageProps> = ({ onNavigate }) 
       desc: 'Join our friendly team of local volunteers who help steward events, mentor youth, assist in the office, or prepare halls.',
     },
     {
-      title: 'Support Centre Development',
+      title: 'Support Center Development',
       icon: <Gift className="h-5 w-5 text-[#0E4D34]" />,
       desc: 'Contribute towards the acquisition and ongoing renovation of the Sheffield building. Every contribution helps build a lasting community legacy.',
     },
@@ -67,7 +67,7 @@ export const GetInvolvedPage: React.FC<GetInvolvedPageProps> = ({ onNavigate }) 
             </h1>
 
             <p className="text-base sm:text-lg text-stone-600 leading-relaxed font-normal">
-              A thriving community centre relies on dedicated volunteers, skilled supporters, and local families working hand-in-hand. Find out how you can contribute.
+              A thriving community center relies on dedicated volunteers, skilled supporters, and local families working hand-in-hand. Find out how you can contribute.
             </p>
 
             <div className="flex flex-wrap items-center gap-3 pt-2">
@@ -88,7 +88,7 @@ export const GetInvolvedPage: React.FC<GetInvolvedPageProps> = ({ onNavigate }) 
             <PlaceholderImage
               placeholderKey="volunteers"
               aspectRatio="16:9"
-              alt="Community volunteers collaborating on Sheffield centre projects"
+              alt="Community volunteers collaborating on Sheffield center projects"
             />
           </div>
         </div>

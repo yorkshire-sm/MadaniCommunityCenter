@@ -19,7 +19,7 @@ export const MadaniLogo: React.FC<MadaniLogoProps> = ({
       height={size}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      aria-label="Madani Community Centre Logo"
+      aria-label="Madani Community Center Logo"
     >
       <defs>
         {/* Rich Metallic Gold Gradient for Crescent & Book Pages */}

@@ -76,7 +76,7 @@ export const VolunteerForm: React.FC = () => {
           Volunteer Interest Received
         </h4>
         <p className="text-xs text-stone-600 max-w-sm mx-auto leading-relaxed">
-          Thank you for offering your time and skills to support the Sheffield community centre. A volunteer team lead will contact you with induction details.
+          Thank you for offering your time and skills to support the Sheffield community center. A volunteer team lead will contact you with induction details.
         </p>
         <button
           type="button"

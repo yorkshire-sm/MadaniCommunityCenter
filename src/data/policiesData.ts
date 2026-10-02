@@ -17,7 +17,7 @@ export interface PolicyDocument {
   documentType: 'PDF Document';
 }
 
-export const schoolAndCentrePolicies: PolicyDocument[] = [
+export const schoolAndCenterPolicies: PolicyDocument[] = [
   {
     id: 'pol-safeguarding-child-protection',
     title: 'Safeguarding & Child Protection Policy',

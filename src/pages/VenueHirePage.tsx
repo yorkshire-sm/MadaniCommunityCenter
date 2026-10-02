@@ -40,7 +40,7 @@ export const VenueHirePage: React.FC<VenueHirePageProps> = ({ onNavigate }) => {
             </span>
 
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif-brand font-bold tracking-tight text-[#182B1C] leading-tight">
-              Venue Hire at Madani Centre
+              Venue Hire at Madani Center
             </h1>
 
             <p className="text-base sm:text-lg text-stone-600 leading-relaxed font-normal">
@@ -69,7 +69,7 @@ export const VenueHirePage: React.FC<VenueHirePageProps> = ({ onNavigate }) => {
             <PlaceholderImage
               placeholderKey="venue-hall"
               aspectRatio="16:9"
-              alt="Main Event Hall ready for conference or banquet at Madani Community Centre"
+              alt="Main Event Hall ready for conference or banquet at Madani Community Center"
             />
           </div>
         </div>
@@ -160,10 +160,10 @@ export const VenueHirePage: React.FC<VenueHirePageProps> = ({ onNavigate }) => {
             Booking Guidelines
           </span>
           <h2 className="text-2xl sm:text-3xl font-serif-brand font-bold text-[#182B1C] mt-1">
-            Suitable Events & Centre Ethos
+            Suitable Events & Center Ethos
           </h2>
           <p className="text-sm text-stone-600 mt-1 max-w-2xl">
-            As a family-oriented Islamic community centre, we welcome respectful events that align with our core values.
+            As a family-oriented Islamic community center, we welcome respectful events that align with our core values.
           </p>
         </div>
 
@@ -186,7 +186,7 @@ export const VenueHirePage: React.FC<VenueHirePageProps> = ({ onNavigate }) => {
           <div className="p-6 rounded-xl bg-white border border-stone-200 space-y-3">
             <h4 className="text-base font-serif-brand font-bold text-stone-900 flex items-center gap-2">
               <ShieldCheck className="h-4 w-4 text-[#B8C053]" />
-              Centre Ethos & Conditions
+              Center Ethos & Conditions
             </h4>
             <ul className="text-xs text-stone-600 space-y-2">
               <li className="flex items-start gap-2">
@@ -224,7 +224,7 @@ export const VenueHirePage: React.FC<VenueHirePageProps> = ({ onNavigate }) => {
           <PlaceholderImage
             placeholderKey="venue-hire-setup"
             aspectRatio="4:3"
-            alt="Venue Hire Dining Setup at Madani Community Centre"
+            alt="Venue Hire Dining Setup at Madani Community Center"
           />
           <PlaceholderImage
             placeholderKey="venue-hall"
@@ -234,7 +234,7 @@ export const VenueHirePage: React.FC<VenueHirePageProps> = ({ onNavigate }) => {
           <PlaceholderImage
             placeholderKey="building-facilities"
             aspectRatio="4:3"
-            alt="Meeting Suite & Reception at Madani Community Centre"
+            alt="Meeting Suite & Reception at Madani Community Center"
           />
         </div>
       </section>

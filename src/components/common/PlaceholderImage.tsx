@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 export type PlaceholderKey =
-  | 'centre-exterior'
+  | 'center-exterior'
   | 'darul-madinah-classroom'
   | 'children-learning'
   | 'youth-activity'
@@ -23,9 +23,9 @@ export interface ImageConfig {
 }
 
 export const imageCatalog: Record<PlaceholderKey, ImageConfig> = {
-  'centre-exterior': {
-    label: 'Madani Community Centre Building',
-    brief: 'Main entrance and exterior elevation of the centre building on Tinsley Park Road in Sheffield.',
+  'center-exterior': {
+    label: 'Madani Community Center Building',
+    brief: 'Main entrance and exterior elevation of the center building on Tinsley Park Road in Sheffield.',
     imageUrl: 'https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?auto=format&fit=crop&w=1200&q=80',
     dominantColor: '#16281F',
     accentColor: '#B8C053',
@@ -95,14 +95,14 @@ export const imageCatalog: Record<PlaceholderKey, ImageConfig> = {
   },
   'volunteers': {
     label: 'Community Volunteers in Action',
-    brief: 'Local volunteers preparing the centre, organising community aid boxes, and welcoming guests.',
+    brief: 'Local volunteers preparing the center, organising community aid boxes, and welcoming guests.',
     imageUrl: 'https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=1200&q=80',
     dominantColor: '#1F2922',
     accentColor: '#B8C053',
   },
   'building-facilities': {
     label: 'Reception & Meeting Suites',
-    brief: 'Clean corridors, modern meeting suites, prayer areas, and welcoming reception at Madani Centre.',
+    brief: 'Clean corridors, modern meeting suites, prayer areas, and welcoming reception at Madani Center.',
     imageUrl: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80',
     dominantColor: '#1F2224',
     accentColor: '#CBD5E1',
@@ -134,7 +134,7 @@ export const PlaceholderImage: React.FC<PlaceholderImageProps> = ({
   const config: ImageConfig =
     imageCatalog[placeholderKey as PlaceholderKey] || {
       label: placeholderKey.replace(/-/g, ' ').toUpperCase(),
-      brief: customBrief || 'Editorial photograph representing centre activity and facilities.',
+      brief: customBrief || 'Editorial photograph representing center activity and facilities.',
       imageUrl: 'https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?auto=format&fit=crop&w=1200&q=80',
       dominantColor: '#16281F',
       accentColor: '#B8C053',

@@ -29,7 +29,7 @@ export const PrivacyPage: React.FC<PrivacyPageProps> = ({ onNavigate }) => {
         <section className="space-y-2">
           <h2 className="text-lg font-bold text-stone-900">1. Who We Are</h2>
           <p>
-            Dawat-e-Islami Sheffield operates the community and education centre located at Tinsley Park Road, Sheffield, S9 5DL, United Kingdom. We act as the Data Controller under the UK Data Protection Act 2018 and the UK General Data Protection Regulation (UK GDPR).
+            Dawat-e-Islami Sheffield operates the community and education center located at Tinsley Park Road, Sheffield, S9 5DL, United Kingdom. We act as the Data Controller under the UK Data Protection Act 2018 and the UK General Data Protection Regulation (UK GDPR).
           </p>
         </section>
 

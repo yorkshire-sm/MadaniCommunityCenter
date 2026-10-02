@@ -237,7 +237,7 @@ export const YouthEnquiryForm: React.FC = () => {
           rows={2}
           value={formData.message}
           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-          placeholder="Tell us what you'd like to see at the centre..."
+          placeholder="Tell us what you'd like to see at the center..."
           className="w-full rounded-md border border-stone-300 px-3 py-2 text-sm text-stone-900 bg-white focus:outline-none focus:ring-1 focus:ring-[#0E4D34]"
         />
       </div>

@@ -24,8 +24,12 @@ import { NotFoundPage } from './pages/NotFoundPage';
 // Helper to determine GitHub Pages repository subfolder prefix (e.g. /MadaniCommunityCenter)
 const getRepoBase = (): string => {
   const path = window.location.pathname || '/';
-  if (path.toLowerCase().startsWith('/madanicommunitycenter')) {
+  const lower = path.toLowerCase();
+  if (lower.startsWith('/madanicommunitycenter')) {
     return path.substring(0, '/madanicommunitycenter'.length);
+  }
+  if (lower.startsWith('/madanicommunitycentre')) {
+    return path.substring(0, '/madanicommunitycentre'.length);
   }
   return '';
 };

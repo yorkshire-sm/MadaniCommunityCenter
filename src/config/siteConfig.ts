@@ -1,10 +1,10 @@
 /**
  * Dawat-e-Islami Sheffield - Central Configuration
- * Madani Community Centre
+ * Madani Community Center
  */
 
 export interface SiteConfig {
-  centreName: string;
+  centerName: string;
   organisationName: string;
   regionalSubtitle: string;
   motto: string;
@@ -45,8 +45,8 @@ export interface SiteConfig {
 }
 
 export const siteConfig: SiteConfig = {
-  // Official Centre Name
-  centreName: "Madani Community Centre",
+  // Official Center Name
+  centerName: "Madani Community Center",
   organisationName: "Dawat-e-Islami",
   regionalSubtitle: "Dawat-e-Islami Sheffield",
   motto: "Integrating academic excellence with Islamic teachings and community life",
@@ -61,19 +61,19 @@ export const siteConfig: SiteConfig = {
   contact: {
     telephone: "0114 244 8786",
     telephoneDisplay: "0114 244 8786",
-    email: "info@madanicentre.org.uk",
-    venueEmail: "venuehire@madanicentre.org.uk",
-    darulMadinahEmail: "darulmadinah.sheffield@madanicentre.org.uk",
-    youthEmail: "youth@madanicentre.org.uk",
-    sistersEmail: "sisters@madanicentre.org.uk",
+    email: "info@madanicenter.org.uk",
+    venueEmail: "venuehire@madanicenter.org.uk",
+    darulMadinahEmail: "darulmadinah.sheffield@madanicenter.org.uk",
+    youthEmail: "youth@madanicenter.org.uk",
+    sistersEmail: "sisters@madanicenter.org.uk",
   },
   links: {
     darulMadinahInfo: "/darul-madinah",
     venueEnquiry: "/venue-hire",
     donate: "#support",
     googleMapsDirections: "https://www.google.com/maps/dir/?api=1&destination=53.3974483,-1.418529",
-    googleMapsPlace: "https://www.google.com/maps/place/Madani+Community+Centre/@53.3974483,-1.418529,17z/data=!3m1!4b1!4m6!3m5!1s0x487977f260864137:0xa8da2b647132fa87!8m2!3d53.3974483!4d-1.418529!16s%2Fg%2F11kmrw06cb",
-    googleMapsEmbed: "https://maps.google.com/maps?q=53.3974483,-1.418529+(Madani+Community+Centre)&t=&z=17&ie=UTF8&iwloc=B&output=embed",
+    googleMapsPlace: "https://www.google.com/maps/place/Madani+Community+Center/@53.3974483,-1.418529,17z/data=!3m1!4b1!4m6!3m5!1s0x487977f260864137:0xa8da2b647132fa87!8m2!3d53.3974483!4d-1.418529!16s%2Fg%2F11kmrw06cb",
+    googleMapsEmbed: "https://maps.google.com/maps?q=53.3974483,-1.418529+(Madani+Community+Center)&t=&z=17&ie=UTF8&iwloc=B&output=embed",
     facebook: "https://www.facebook.com/dawateislami",
     instagram: "https://www.instagram.com/dawateislami",
     youtube: "https://www.youtube.com/dawateislami",

@@ -45,7 +45,7 @@ export const DarulMadinahPage: React.FC<DarulMadinahPageProps> = ({ onNavigate }
     {
       title: 'Safe & Supportive Environment',
       icon: <Shield className="h-5 w-5 text-[#182B1C]" />,
-      desc: 'Rigorous child protection safeguarding policies, dedicated pastoral care, and secure premises at Madani Community Centre.',
+      desc: 'Rigorous child protection safeguarding policies, dedicated pastoral care, and secure premises at Madani Community Center.',
     },
   ];
 
@@ -80,7 +80,7 @@ export const DarulMadinahPage: React.FC<DarulMadinahPageProps> = ({ onNavigate }
             </h1>
 
             <p className="text-base sm:text-lg text-stone-600 leading-relaxed font-normal">
-              Based at Madani Community Centre on Tinsley Park Road: providing children with a strong academic foundation alongside Islamic values, character development, and a nurturing learning environment.
+              Based at Madani Community Center on Tinsley Park Road: providing children with a strong academic foundation alongside Islamic values, character development, and a nurturing learning environment.
             </p>
 
             <div className="flex flex-wrap items-center gap-3 pt-2">
@@ -102,7 +102,7 @@ export const DarulMadinahPage: React.FC<DarulMadinahPageProps> = ({ onNavigate }
             <PlaceholderImage
               placeholderKey="darul-madinah-classroom"
               aspectRatio="16:9"
-              alt="Darul Madinah Primary Classroom Environment at Madani Community Centre"
+              alt="Darul Madinah Primary Classroom Environment at Madani Community Center"
             />
           </div>
         </div>
@@ -117,7 +117,7 @@ export const DarulMadinahPage: React.FC<DarulMadinahPageProps> = ({ onNavigate }
           Welcome to Darul Madinah Sheffield
         </h2>
         <p className="text-sm sm:text-base text-stone-600 leading-relaxed">
-          Welcome to Darul Madinah Sheffield, proudly established at Madani Community Centre on Tinsley Park Road. Our school aims to offer children an inspiring educational journey where academic ambition is paired with timeless moral character.
+          Welcome to Darul Madinah Sheffield, proudly established at Madani Community Center on Tinsley Park Road. Our school aims to offer children an inspiring educational journey where academic ambition is paired with timeless moral character.
         </p>
         <p className="text-sm sm:text-base text-stone-600 leading-relaxed">
           As part of the international Darul Madinah educational system, our Sheffield campus is committed to high standards of pedagogy, safe learning environments, and close partnership with parents. We nurture confident, curious learners who take pride in their Islamic identity while flourishing in modern British society.
@@ -295,7 +295,7 @@ export const DarulMadinahPage: React.FC<DarulMadinahPageProps> = ({ onNavigate }
             <div className="p-4 rounded-xl bg-[#F0F4E8] border border-[#D5DEC4] text-xs text-[#182B1C] space-y-1">
               <p className="font-bold">Next Open Morning</p>
               <p>Saturday, 7 November 2026 (10:00 – 12:30)</p>
-              <p className="text-[11px] text-[#182B1C]/80">Tour classrooms & meet the headteacher at Madani Centre</p>
+              <p className="text-[11px] text-[#182B1C]/80">Tour classrooms & meet the headteacher at Madani Center</p>
             </div>
           </div>
 

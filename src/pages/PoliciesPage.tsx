@@ -7,7 +7,7 @@ import {
   Search,
   CheckCircle,
 } from 'lucide-react';
-import { schoolAndCentrePolicies, PolicyDocument } from '../data/policiesData';
+import { schoolAndCenterPolicies, PolicyDocument } from '../data/policiesData';
 import { siteConfig } from '../config/siteConfig';
 import { Button } from '../components/common/Button';
 import { SectionHeading } from '../components/common/SectionHeading';
@@ -29,7 +29,7 @@ export const PoliciesPage: React.FC<PoliciesPageProps> = ({ onNavigate }) => {
     'Data & Privacy',
   ];
 
-  const filtered = schoolAndCentrePolicies.filter(
+  const filtered = schoolAndCenterPolicies.filter(
     (p) => filterCategory === 'All' || p.category === filterCategory
   );
 
@@ -56,10 +56,10 @@ export const PoliciesPage: React.FC<PoliciesPageProps> = ({ onNavigate }) => {
           <span>Governance & Statutory Compliance</span>
         </div>
         <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-stone-900 leading-tight">
-          School & Centre Policies
+          School & Center Policies
         </h1>
         <p className="text-base text-stone-600 leading-relaxed font-normal">
-          Statutory policies, codes of practice, and procedural guidance for Darul Madinah Primary School and the Dawat-e-Islami Sheffield community centre.
+          Statutory policies, codes of practice, and procedural guidance for Darul Madinah Primary School and the Dawat-e-Islami Sheffield community center.
         </p>
       </section>
 

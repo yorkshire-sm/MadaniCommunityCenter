@@ -14,7 +14,7 @@ import {
 } from 'lucide-react';
 import { siteConfig } from '../config/siteConfig';
 import { sampleEvents } from '../data/eventsData';
-import { centreFacilities } from '../data/facilitiesData';
+import { centerFacilities } from '../data/facilitiesData';
 import { Button } from '../components/common/Button';
 import { PlaceholderImage } from '../components/common/PlaceholderImage';
 import { EventCard } from '../components/events/EventCard';
@@ -57,7 +57,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectEvent })
               {/* Kicker in Olive-Chartreuse */}
               <div className="inline-block">
                 <span className="text-sm sm:text-base font-semibold text-[#B8C053] tracking-wide block">
-                  Madani Community Centre is an education & community hub in Sheffield
+                  Madani Community Center is an education & community hub in Sheffield
                 </span>
               </div>
 
@@ -68,7 +68,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectEvent })
 
               {/* Supporting Subtitle */}
               <p className="text-base sm:text-lg text-stone-200/90 leading-relaxed font-normal max-w-2xl">
-                Our centre fosters a nurturing, inclusive, and respectful atmosphere where students, youth, sisters, and families are encouraged to develop their character, confidence, and leadership skills.
+                Our center fosters a nurturing, inclusive, and respectful atmosphere where students, youth, sisters, and families are encouraged to develop their character, confidence, and leadership skills.
               </p>
 
               {/* Action Buttons (Pill styling matching Luqman Academy) */}
@@ -92,7 +92,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectEvent })
                   }}
                   icon={<ArrowRight className="h-4 w-4" />}
                 >
-                  Explore the Centre
+                  Explore the Center
                 </Button>
               </div>
 
@@ -117,7 +117,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectEvent })
       </section>
 
       {/* =========================================================================
-          SECTION: "WELCOME TO MADANI COMMUNITY CENTRE"
+          SECTION: "WELCOME TO MADANI COMMUNITY CENTER"
           ========================================================================= */}
       <section id="welcome" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
         <div className="text-center max-w-3xl mx-auto space-y-4">
@@ -125,11 +125,11 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectEvent })
             Dawat-e-Islami Sheffield
           </p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif-brand font-bold text-[#182B1C] tracking-tight">
-            Welcome To Madani Community Centre
+            Welcome To Madani Community Center
           </h2>
           <div className="w-16 h-1 bg-[#B8C053] mx-auto rounded-full" />
           <p className="text-base sm:text-lg text-stone-600 leading-relaxed font-normal pt-2">
-            Established on Tinsley Park Road in Sheffield, Madani Community Centre brings together high-standard primary education, youth engagement, sisters' programmes, and multi-purpose community facilities under one roof. Working under the guidance of Dawat-e-Islami, our centre provides an inspiring environment that pairs academic ambition with authentic Islamic values.
+            Established on Tinsley Park Road in Sheffield, Madani Community Center brings together high-standard primary education, youth engagement, sisters' programmes, and multi-purpose community facilities under one roof. Working under the guidance of Dawat-e-Islami, our center provides an inspiring environment that pairs academic ambition with authentic Islamic values.
           </p>
         </div>
 
@@ -232,7 +232,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectEvent })
               <PlaceholderImage
                 placeholderKey="darul-madinah-classroom"
                 aspectRatio="16:9"
-                alt="Darul Madinah Primary School Classroom at Madani Community Centre"
+                alt="Darul Madinah Primary School Classroom at Madani Community Center"
                 className="h-full w-full object-cover"
               />
             </div>
@@ -301,7 +301,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectEvent })
               What's On
             </span>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif-brand font-bold text-[#182B1C] mt-1">
-              Events at Madani Centre
+              Events at Madani Center
             </h2>
             <p className="text-sm text-stone-600 mt-1 max-w-xl">
               Join upcoming seminars, youth gatherings, open mornings, and community programmes on Tinsley Park Road.
@@ -369,7 +369,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectEvent })
               <PlaceholderImage
                 placeholderKey="youth-workshop"
                 aspectRatio="16:9"
-                alt="Youth workshop and mentoring circle at Madani Community Centre"
+                alt="Youth workshop and mentoring circle at Madani Community Center"
               />
             </div>
           </div>
@@ -466,7 +466,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectEvent })
               <PlaceholderImage
                 placeholderKey="venue-hall"
                 aspectRatio="16:9"
-                alt="Main Event Hall at Madani Community Centre"
+                alt="Main Event Hall at Madani Community Center"
               />
             </div>
           </div>
@@ -482,7 +482,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectEvent })
             Building Facilities
           </span>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif-brand font-bold text-[#182B1C] mt-1">
-            Our Centre Facilities
+            Our Center Facilities
           </h2>
           <p className="text-sm text-stone-600 mt-1">
             Overview of key spaces and amenities within the Tinsley Park Road building.
@@ -490,7 +490,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectEvent })
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
-          {centreFacilities.map((fac) => (
+          {centerFacilities.map((fac) => (
             <div
               key={fac.id}
               className="p-5 rounded-2xl border border-stone-200/90 bg-white shadow-xs space-y-2.5 hover:border-[#B8C053] transition-colors"
@@ -524,7 +524,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectEvent })
               Get Involved
             </span>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif-brand font-bold text-white leading-tight">
-              Be Part of Madani Community Centre
+              Be Part of Madani Community Center
             </h2>
             <p className="text-sm sm:text-base text-stone-200 leading-relaxed font-normal">
               Whether by attending upcoming activities, volunteering your skills, helping organise local initiatives, or enrolling children at Darul Madinah, there are many ways to get involved in Sheffield.

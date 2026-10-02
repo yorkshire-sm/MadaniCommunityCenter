@@ -19,7 +19,7 @@ interface ContactPageProps {
 }
 
 export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
-  const mapPlaceUrl = "https://www.google.com/maps/place/Madani+Community+Centre/@53.3974483,-1.418529,17z/data=!3m1!4b1!4m6!3m5!1s0x487977f260864137:0xa8da2b647132fa87!8m2!3d53.3974483!4d-1.418529!16s%2Fg%2F11kmrw06cb";
+  const mapPlaceUrl = "https://www.google.com/maps/place/Madani+Community+Center/@53.3974483,-1.418529,17z/data=!3m1!4b1!4m6!3m5!1s0x487977f260864137:0xa8da2b647132fa87!8m2!3d53.3974483!4d-1.418529!16s%2Fg%2F11kmrw06cb";
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-10 sm:space-y-12">
@@ -36,7 +36,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
           Get in Touch
         </span>
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif-brand font-bold text-[#182B1C] tracking-tight">
-          Contact Madani Community Centre
+          Contact Madani Community Center
         </h1>
         <p className="text-base text-stone-600 leading-relaxed font-normal">
           We are here to assist with school admissions, youth activities, sisters’ gatherings, venue hire, or general community queries in Sheffield.
@@ -77,10 +77,10 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
           <div className="rounded-2xl border border-stone-200 bg-white p-6 sm:p-8 shadow-xs space-y-5">
             <div>
               <span className="text-xs font-bold uppercase tracking-wider text-[#B8C053] block mb-1">
-                Centre Address
+                Center Address
               </span>
               <h3 className="text-xl font-serif-brand font-bold text-stone-900">
-                {siteConfig.centreName}
+                {siteConfig.centerName}
               </h3>
               <p className="text-xs text-stone-500">{siteConfig.regionalSubtitle}</p>
             </div>
@@ -117,7 +117,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
             <div className="space-y-1">
               <div className="flex items-center gap-2 font-semibold text-stone-800">
                 <Clock className="h-4 w-4 text-[#B8C053]" />
-                <span>Centre Opening Hours</span>
+                <span>Center Opening Hours</span>
               </div>
               <p className="text-stone-600 leading-relaxed">
                 {siteConfig.status.openingHoursPlaceholder}
@@ -176,7 +176,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
                 Send Us a Message
               </h3>
               <p className="text-xs sm:text-sm text-stone-600 mt-1">
-                Fill in the form below and select the appropriate enquiry type to reach the right coordinator at Madani Community Centre.
+                Fill in the form below and select the appropriate enquiry type to reach the right coordinator at Madani Community Center.
               </p>
             </div>
 

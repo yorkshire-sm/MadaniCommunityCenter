@@ -17,7 +17,7 @@ export const TransitionBanner: React.FC<TransitionBannerProps> = ({ onLearnMore 
         <div className="flex items-center gap-2 truncate">
           <Info className="h-3.5 w-3.5 text-[#B8C053] shrink-0" aria-hidden="true" />
           <span className="truncate">
-            <strong className="text-[#B8C053] font-semibold">Madani Community Centre:</strong> The building on Tinsley Park Road (formerly Luqman Academy) is now a multi-purpose Dawat-e-Islami education & community centre.
+            <strong className="text-[#B8C053] font-semibold">Madani Community Center:</strong> The building on Tinsley Park Road (formerly Luqman Academy) is now a multi-purpose Dawat-e-Islami education & community center.
           </span>
         </div>
 

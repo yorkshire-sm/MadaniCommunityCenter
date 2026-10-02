@@ -30,7 +30,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, onNavigate }) => {
       path: '/about',
       hasDropdown: true,
       subItems: [
-        { label: 'About the Centre', path: '/about' },
+        { label: 'About the Center', path: '/about' },
         { label: 'Our Purpose & Values', path: '/about#values' },
         { label: 'Facilities Overview', path: '/about#facilities' },
         { label: 'Safeguarding', path: '/safeguarding' },
@@ -72,29 +72,29 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, onNavigate }) => {
                 e.preventDefault();
                 handleNavClick('/');
               }}
-              className="flex items-center gap-2.5 sm:gap-3 text-left group focus-visible:outline-none"
-              aria-label="Madani Community Centre Home"
+              className="flex items-center gap-2.5 sm:gap-3 text-left group focus-visible:outline-none shrink-0"
+              aria-label="Madani Community Center Home"
             >
-              {/* Logo Emblem badge on the left side - Enlarged and prominently featured */}
-              <div className="h-13 w-13 sm:h-16 sm:w-16 rounded-2xl bg-white p-1.5 sm:p-2 shadow-lg border border-white/30 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform duration-200">
+              {/* Logo Emblem badge on the left side */}
+              <div className="h-10 w-10 sm:h-11 sm:w-11 md:h-12 md:w-12 rounded-xl bg-white p-1 sm:p-1.5 shadow-md border border-white/25 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform duration-200">
                 <MadaniLogo className="w-full h-full" variant="emblem" />
               </div>
 
-              <div className="flex flex-col">
-                <div className="flex items-center tracking-tight text-lg sm:text-xl font-bold font-sans">
-                  <span className="text-white tracking-wide">MADANI</span>
-                  <span className="text-[#B8C053] ml-1.5 font-extrabold tracking-wider">
-                    COMMUNITY CENTRE
+              <div className="flex flex-col shrink-0">
+                <div className="flex items-center whitespace-nowrap tracking-tight text-base sm:text-lg md:text-xl font-bold font-sans">
+                  <span className="text-white tracking-wide whitespace-nowrap">MADANI</span>
+                  <span className="text-[#B8C053] ml-1.5 font-extrabold tracking-wider whitespace-nowrap">
+                    COMMUNITY CENTER
                   </span>
                 </div>
-                <span className="text-[10px] tracking-widest uppercase text-stone-300/80 font-medium">
+                <span className="text-[10px] sm:text-[11px] tracking-widest uppercase text-stone-300/80 font-medium whitespace-nowrap">
                   {siteConfig.regionalSubtitle}
                 </span>
               </div>
             </a>
 
             {/* Navigation Links */}
-            <nav className="hidden lg:flex items-center gap-6 text-sm font-medium" aria-label="Main Navigation">
+            <nav className="hidden lg:flex items-center gap-3.5 xl:gap-5 2xl:gap-6 text-xs xl:text-sm font-medium shrink min-w-0" aria-label="Main Navigation">
               {navItems.map((item) => {
                 const isActive = currentPath === item.path;
 
@@ -214,12 +214,12 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, onNavigate }) => {
                   <div className="h-12 w-12 rounded-xl bg-white p-1.5 shadow-md flex items-center justify-center shrink-0">
                     <MadaniLogo className="w-full h-full" variant="emblem" />
                   </div>
-                  <div className="flex flex-col">
-                    <div className="flex items-center text-sm font-bold">
+                  <div className="flex flex-col shrink-0">
+                    <div className="flex items-center text-sm font-bold whitespace-nowrap">
                       <span className="text-white">MADANI</span>
-                      <span className="text-[#B8C053] ml-1">CENTRE</span>
+                      <span className="text-[#B8C053] ml-1">COMMUNITY CENTER</span>
                     </div>
-                    <span className="text-[10px] text-stone-400">
+                    <span className="text-[10px] text-stone-400 whitespace-nowrap">
                       {siteConfig.regionalSubtitle}
                     </span>
                   </div>

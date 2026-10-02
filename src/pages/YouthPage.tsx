@@ -73,7 +73,7 @@ export const YouthPage: React.FC<YouthPageProps> = ({ onNavigate, onSelectEvent 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-7 space-y-5">
             <span className="text-xs font-bold uppercase tracking-wider text-[#B8C053]">
-              Youth at Madani Community Centre
+              Youth at Madani Community Center
             </span>
 
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif-brand font-bold tracking-tight text-[#182B1C] leading-tight">
@@ -114,7 +114,7 @@ export const YouthPage: React.FC<YouthPageProps> = ({ onNavigate, onSelectEvent 
             <PlaceholderImage
               placeholderKey="youth-activity"
               aspectRatio="16:9"
-              alt="Youth participating in active recreational activity at Madani Community Centre"
+              alt="Youth participating in active recreational activity at Madani Community Center"
             />
           </div>
         </div>

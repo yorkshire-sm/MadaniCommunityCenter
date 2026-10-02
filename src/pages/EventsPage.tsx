@@ -49,8 +49,8 @@ export const EventsPage: React.FC<EventsPageProps> = ({ onNavigate, onSelectEven
       {/* Header */}
       <section className="space-y-4 max-w-2xl">
         <SectionHeading
-          kicker="Centre Calendar"
-          title="What’s On at the Sheffield Centre"
+          kicker="Center Calendar"
+          title="What’s On at the Sheffield Center"
           description="Browse scheduled workshops, youth circles, sisters’ gatherings, open mornings, and community assemblies. All entries below represent sample development fixtures."
         />
       </section>

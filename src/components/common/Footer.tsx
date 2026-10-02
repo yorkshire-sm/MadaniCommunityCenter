@@ -30,7 +30,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 <div className="flex items-center text-lg sm:text-xl font-bold font-sans">
                   <span className="text-white tracking-wide">MADANI</span>
                   <span className="text-[#B8C053] ml-1.5 font-extrabold tracking-wider">
-                    COMMUNITY CENTRE
+                    COMMUNITY CENTER
                   </span>
                 </div>
                 <span className="text-[11px] text-stone-400 uppercase tracking-widest mt-0.5">
@@ -203,7 +203,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               <div className="flex items-start gap-2.5">
                 <MapPin className="h-4 w-4 text-[#B8C053] shrink-0 mt-0.5" aria-hidden="true" />
                 <div>
-                  <p className="text-stone-200 font-medium">Madani Community Centre</p>
+                  <p className="text-stone-200 font-medium">Madani Community Center</p>
                   <p>{siteConfig.address.line1}</p>
                   <p>{siteConfig.address.city}</p>
                   <p className="font-mono text-xs">{siteConfig.address.postcode}</p>
@@ -242,7 +242,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
         {/* Bottom Bar: Legal & Accessibility */}
         <div className="mt-12 pt-8 border-t border-[#1C2C1F] flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-stone-500">
-          <p>© {currentYear} {siteConfig.centreName} · {siteConfig.organisationName}. All rights reserved.</p>
+          <p>© {currentYear} {siteConfig.centerName} · {siteConfig.organisationName}. All rights reserved.</p>
           <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
             <button
               onClick={() => handleLink('/privacy')}

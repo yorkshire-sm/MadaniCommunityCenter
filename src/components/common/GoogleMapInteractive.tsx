@@ -15,10 +15,10 @@ export const GoogleMapInteractive: React.FC<GoogleMapInteractiveProps> = ({
   const [copied, setCopied] = useState(false);
 
   // Exact Google Maps place link provided by the user
-  const mapPlaceUrl = "https://www.google.com/maps/place/Madani+Community+Centre/@53.3974483,-1.418529,17z/data=!3m1!4b1!4m6!3m5!1s0x487977f260864137:0xa8da2b647132fa87!8m2!3d53.3974483!4d-1.418529!16s%2Fg%2F11kmrw06cb";
+  const mapPlaceUrl = "https://www.google.com/maps/place/Madani+Community+Center/@53.3974483,-1.418529,17z/data=!3m1!4b1!4m6!3m5!1s0x487977f260864137:0xa8da2b647132fa87!8m2!3d53.3974483!4d-1.418529!16s%2Fg%2F11kmrw06cb";
   const directionsUrl = "https://www.google.com/maps/dir/?api=1&destination=53.3974483,-1.418529";
-  // Interactive embed URL targeting exact coordinates with centre label
-  const embedUrl = "https://maps.google.com/maps?q=53.3974483,-1.418529+(Madani+Community+Centre)&t=&z=17&ie=UTF8&iwloc=B&output=embed";
+  // Interactive embed URL targeting exact coordinates with center label
+  const embedUrl = "https://maps.google.com/maps?q=53.3974483,-1.418529+(Madani+Community+Center)&t=&z=17&ie=UTF8&iwloc=B&output=embed";
 
   const handleShare = () => {
     if (navigator.clipboard) {
@@ -38,7 +38,7 @@ export const GoogleMapInteractive: React.FC<GoogleMapInteractiveProps> = ({
             </div>
             <div>
               <h4 className="text-base font-bold text-[#182B1C] font-serif-brand">
-                Madani Community Centre
+                Madani Community Center
               </h4>
               <p className="text-xs text-stone-600">
                 Tinsley Park Road, Sheffield, S9 5DL · South Yorkshire
@@ -81,7 +81,7 @@ export const GoogleMapInteractive: React.FC<GoogleMapInteractiveProps> = ({
       {/* Interactive Google Map iframe */}
       <div className={`relative w-full ${heightClass} bg-stone-100`}>
         <iframe
-          title="Madani Community Centre Interactive Google Map"
+          title="Madani Community Center Interactive Google Map"
           src={embedUrl}
           className="absolute inset-0 w-full h-full border-0"
           loading="lazy"

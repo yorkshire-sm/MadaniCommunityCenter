@@ -72,7 +72,7 @@ export const SistersPage: React.FC<SistersPageProps> = ({ onNavigate, onSelectEv
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-7 space-y-5">
             <span className="text-xs font-bold uppercase tracking-wider text-[#B8C053]">
-              Sisters at Madani Community Centre
+              Sisters at Madani Community Center
             </span>
 
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif-brand font-bold tracking-tight text-[#182B1C] leading-tight">
@@ -113,7 +113,7 @@ export const SistersPage: React.FC<SistersPageProps> = ({ onNavigate, onSelectEv
             <PlaceholderImage
               placeholderKey="sisters-event"
               aspectRatio="16:9"
-              alt="Dignified sisters community gathering and lecture setup at Madani Community Centre"
+              alt="Dignified sisters community gathering and lecture setup at Madani Community Center"
             />
           </div>
         </div>
@@ -190,7 +190,7 @@ export const SistersPage: React.FC<SistersPageProps> = ({ onNavigate, onSelectEv
               Join Our Sisters’ Updates
             </h2>
             <p className="text-sm text-stone-600 leading-relaxed">
-              Be the first to hear about upcoming workshops, morning teas, sister halaqahs, and family seminars hosted at Madani Community Centre.
+              Be the first to hear about upcoming workshops, morning teas, sister halaqahs, and family seminars hosted at Madani Community Center.
             </p>
             <div className="p-4 rounded-xl bg-[#FAF9F5] border border-stone-200 text-xs text-stone-600 space-y-2">
               <p className="font-semibold text-stone-800">Crèche & Family Amenities</p>

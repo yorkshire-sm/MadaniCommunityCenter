@@ -1,5 +1,5 @@
 /**
- * Centre Facilities Overview
+ * Center Facilities Overview
  * Clean line icon categories and confirmed / pending statuses.
  */
 
@@ -12,7 +12,7 @@ export interface FacilityItem {
   iconName: 'Building' | 'BookOpen' | 'Users' | 'GraduationCap' | 'HeartHandshake' | 'Calendar' | 'Compass' | 'Shield';
 }
 
-export const centreFacilities: FacilityItem[] = [
+export const centerFacilities: FacilityItem[] = [
   {
     id: 'fac-main-hall',
     name: 'Main Assembly Hall',
