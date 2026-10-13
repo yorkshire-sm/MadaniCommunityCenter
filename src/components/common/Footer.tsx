@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Phone, Mail, ArrowUpRight } from 'lucide-react';
+import { MapPin, Phone, Mail, Lock, Calendar, ShieldCheck } from 'lucide-react';
 import { siteConfig } from '../../config/siteConfig';
 import { MadaniLogo } from './MadaniLogo';
 
@@ -20,33 +20,33 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
       {/* Main Footer Columns */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10">
-          {/* Column 1: Logo & Overview (4 cols) */}
-          <div className="lg:col-span-4 space-y-4">
-            <div className="flex items-center gap-3.5">
-              <div className="h-14 w-14 sm:h-16 sm:w-16 rounded-2xl bg-white p-2 shadow-lg border border-white/20 flex items-center justify-center shrink-0">
+          {/* Column 1: Logo & Overview (5 cols) */}
+          <div className="lg:col-span-5 space-y-4">
+            <div className="flex items-center gap-3">
+              <div className="h-11 w-11 rounded-xl bg-white p-1 shadow-md border border-white/20 flex items-center justify-center shrink-0">
                 <MadaniLogo className="w-full h-full" variant="emblem" />
               </div>
-              <div className="flex flex-col">
-                <div className="flex items-center text-lg sm:text-xl font-bold font-sans">
+              <div className="flex flex-col shrink-0">
+                <div className="flex items-center text-lg sm:text-xl font-bold font-sans whitespace-nowrap">
                   <span className="text-white tracking-wide">MADANI</span>
                   <span className="text-[#B8C053] ml-1.5 font-extrabold tracking-wider">
                     COMMUNITY CENTER
                   </span>
                 </div>
-                <span className="text-[11px] text-stone-400 uppercase tracking-widest mt-0.5">
+                <span className="text-[11px] text-stone-400 uppercase tracking-widest mt-0.5 whitespace-nowrap">
                   {siteConfig.regionalSubtitle}
                 </span>
               </div>
             </div>
 
             <p className="text-sm text-stone-400 leading-relaxed max-w-sm">
-              Integrating academic excellence with Islamic teachings and community life on Tinsley Park Road in Sheffield.
+              Sheffield’s dedicated community centre booking platform on Tinsley Park Road. Providing transparent availability and easy online reservations for event halls, training suites, and classrooms.
             </p>
 
             {/* Social Links */}
             <div className="pt-2">
               <span className="text-xs uppercase tracking-wider text-stone-400 font-semibold block mb-2.5">
-                Connect With Us
+                Connect With Dawat-e-Islami Sheffield
               </span>
               <div className="flex items-center gap-3">
                 <a
@@ -54,7 +54,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex h-9 w-9 items-center justify-center rounded-full bg-[#18261A] text-stone-300 hover:text-[#18260D] hover:bg-[#B8C053] transition-colors"
-                  aria-label="Dawat-e-Islami Facebook"
+                  aria-label="Facebook"
                 >
                   <span className="text-xs font-bold">FB</span>
                 </a>
@@ -63,7 +63,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex h-9 w-9 items-center justify-center rounded-full bg-[#18261A] text-stone-300 hover:text-[#18260D] hover:bg-[#B8C053] transition-colors"
-                  aria-label="Dawat-e-Islami Instagram"
+                  aria-label="Instagram"
                 >
                   <span className="text-xs font-bold">IG</span>
                 </a>
@@ -72,7 +72,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex h-9 w-9 items-center justify-center rounded-full bg-[#18261A] text-stone-300 hover:text-[#18260D] hover:bg-[#B8C053] transition-colors"
-                  aria-label="Dawat-e-Islami YouTube"
+                  aria-label="YouTube"
                 >
                   <span className="text-xs font-bold">YT</span>
                 </a>
@@ -80,12 +80,12 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             </div>
           </div>
 
-          {/* Column 2: Explore (2.5 cols) */}
-          <div className="lg:col-span-2 space-y-3">
+          {/* Column 2: Booking Navigation (3 cols) */}
+          <div className="lg:col-span-3 space-y-3">
             <h3 className="text-xs font-semibold text-white uppercase tracking-wider">
-              Explore
+              Booking Platform
             </h3>
-            <ul className="space-y-2 text-sm">
+            <ul className="space-y-2.5 text-sm">
               <li>
                 <button
                   onClick={() => handleLink('/')}
@@ -96,183 +96,94 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               </li>
               <li>
                 <button
-                  onClick={() => handleLink('/about')}
+                  onClick={() => handleLink('/facilities')}
                   className="text-stone-400 hover:text-[#B8C053] transition-colors cursor-pointer"
                 >
-                  About
+                  Facilities & Pricing
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => handleLink('/events')}
-                  className="text-stone-400 hover:text-[#B8C053] transition-colors cursor-pointer"
+                  onClick={() => handleLink('/booking')}
+                  className="text-stone-400 hover:text-[#B8C053] transition-colors cursor-pointer flex items-center gap-1.5"
                 >
-                  Events
+                  <span>Availability & Booking</span>
+                  <span className="px-1.5 py-0.5 rounded text-[10px] bg-[#B8C053]/20 text-[#B8C053] font-semibold">Live</span>
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => handleLink('/youth')}
+                  onClick={() => handleLink('/contact')}
                   className="text-stone-400 hover:text-[#B8C053] transition-colors cursor-pointer"
                 >
-                  Youth
+                  Contact & Location
                 </button>
               </li>
-              <li>
+              <li className="pt-2 border-t border-[#1C2C1F]">
                 <button
-                  onClick={() => handleLink('/sisters')}
-                  className="text-stone-400 hover:text-[#B8C053] transition-colors cursor-pointer"
+                  onClick={() => handleLink('/admin')}
+                  className="text-stone-400 hover:text-white transition-colors cursor-pointer flex items-center gap-1.5 text-xs"
                 >
-                  Sisters
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => handleLink('/venue-hire')}
-                  className="text-stone-400 hover:text-[#B8C053] transition-colors cursor-pointer"
-                >
-                  Venue Hire
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => handleLink('/get-involved')}
-                  className="text-stone-400 hover:text-[#B8C053] transition-colors cursor-pointer"
-                >
-                  Volunteering
+                  <Lock className="w-3.5 h-3.5 text-[#B8C053]" />
+                  <span>Admin Dashboard Portal</span>
                 </button>
               </li>
             </ul>
           </div>
 
-          {/* Column 3: Education & Governance (2.5 cols) */}
-          <div className="lg:col-span-3 space-y-3">
+          {/* Column 3: Contact & Ethos (4 cols) */}
+          <div className="lg:col-span-4 space-y-3">
             <h3 className="text-xs font-semibold text-white uppercase tracking-wider">
-              Education
+              Venue Location & Hours
             </h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <button
-                  onClick={() => handleLink('/darul-madinah')}
-                  className="text-stone-400 hover:text-[#B8C053] transition-colors cursor-pointer"
-                >
-                  Darul Madinah Primary
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => handleLink('/darul-madinah#admissions')}
-                  className="text-stone-400 hover:text-[#B8C053] transition-colors cursor-pointer"
-                >
-                  Admissions Enquiry
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => handleLink('/policies')}
-                  className="text-stone-400 hover:text-[#B8C053] transition-colors cursor-pointer"
-                >
-                  School Policies
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => handleLink('/safeguarding')}
-                  className="text-stone-400 hover:text-[#B8C053] transition-colors cursor-pointer"
-                >
-                  Safeguarding Commitment
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => handleLink('/darul-madinah#curriculum')}
-                  className="text-stone-400 hover:text-[#B8C053] transition-colors cursor-pointer"
-                >
-                  Curriculum Framework
-                </button>
-              </li>
-            </ul>
-          </div>
-
-          {/* Column 4: Contact & Location (3 cols) */}
-          <div className="lg:col-span-3 space-y-3">
-            <h3 className="text-xs font-semibold text-white uppercase tracking-wider">
-              Contact Us
-            </h3>
-            <div className="space-y-2.5 text-sm text-stone-400">
+            <div className="space-y-2.5 text-xs text-stone-400 leading-relaxed">
               <div className="flex items-start gap-2.5">
-                <MapPin className="h-4 w-4 text-[#B8C053] shrink-0 mt-0.5" aria-hidden="true" />
-                <div>
-                  <p className="text-stone-200 font-medium">Madani Community Center</p>
-                  <p>{siteConfig.address.line1}</p>
-                  <p>{siteConfig.address.city}</p>
-                  <p className="font-mono text-xs">{siteConfig.address.postcode}</p>
-                  <p className="text-xs text-stone-500">{siteConfig.address.country}</p>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-2.5 pt-1">
-                <Phone className="h-4 w-4 text-[#B8C053] shrink-0" aria-hidden="true" />
-                <span className="font-mono text-xs text-stone-300">
-                  {siteConfig.contact.telephoneDisplay}
+                <MapPin className="h-4 w-4 text-[#B8C053] shrink-0 mt-0.5" />
+                <span>
+                  {siteConfig.address.line1}, {siteConfig.address.city}, {siteConfig.address.postcode}
                 </span>
               </div>
-
               <div className="flex items-center gap-2.5">
-                <Mail className="h-4 w-4 text-[#B8C053] shrink-0" aria-hidden="true" />
-                <span className="text-xs text-stone-300">
-                  {siteConfig.contact.email}
-                </span>
-              </div>
-
-              <div className="pt-2">
-                <a
-                  href={siteConfig.links.googleMapsPlace}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-xs font-semibold text-[#B8C053] hover:text-white transition-colors"
-                >
-                  <span>Google Maps Profile</span>
-                  <ArrowUpRight className="h-3.5 w-3.5 text-[#B8C053]" />
+                <Phone className="h-4 w-4 text-[#B8C053] shrink-0" />
+                <a href={`tel:${siteConfig.contact.telephone}`} className="hover:text-white transition-colors">
+                  {siteConfig.contact.telephoneDisplay}
                 </a>
+              </div>
+              <div className="flex items-center gap-2.5">
+                <Mail className="h-4 w-4 text-[#B8C053] shrink-0" />
+                <a href={`mailto:${siteConfig.contact.venueEmail}`} className="hover:text-white transition-colors">
+                  {siteConfig.contact.venueEmail}
+                </a>
+              </div>
+            </div>
+
+            <div className="pt-3">
+              <div className="p-3 rounded-xl bg-[#162419] border border-[#233827] text-[11px] text-stone-300 flex items-start gap-2">
+                <ShieldCheck className="w-4 h-4 text-[#B8C053] shrink-0 mt-0.5" />
+                <span>Alcohol-free community facility. Bookings subject to administrative approval.</span>
               </div>
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Bottom Bar: Legal & Accessibility */}
-        <div className="mt-12 pt-8 border-t border-[#1C2C1F] flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-stone-500">
+      {/* Bottom Sub-Footer Bar */}
+      <div className="border-t border-[#1C2C1F] bg-[#0C150E] text-stone-400 text-xs py-5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p>© {currentYear} {siteConfig.centerName} · {siteConfig.organisationName}. All rights reserved.</p>
-          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
+          <div className="flex items-center gap-4 text-[11px]">
             <button
-              onClick={() => handleLink('/privacy')}
-              className="hover:text-stone-300 transition-colors cursor-pointer"
+              onClick={() => handleLink('/contact')}
+              className="hover:text-[#B8C053] transition-colors cursor-pointer"
             >
-              Privacy Policy
+              Enquiries
             </button>
+            <span className="text-stone-600">·</span>
             <button
-              onClick={() => handleLink('/cookies')}
-              className="hover:text-stone-300 transition-colors cursor-pointer"
+              onClick={() => handleLink('/admin')}
+              className="hover:text-[#B8C053] transition-colors cursor-pointer"
             >
-              Cookie Policy
-            </button>
-            <button
-              onClick={() => handleLink('/policies')}
-              className="hover:text-stone-300 transition-colors cursor-pointer"
-            >
-              Terms & Conditions
-            </button>
-            <button
-              onClick={() => handleLink('/safeguarding')}
-              className="hover:text-stone-300 transition-colors cursor-pointer"
-            >
-              Safeguarding
-            </button>
-            <button
-              onClick={() => handleLink('/accessibility')}
-              className="hover:text-stone-300 transition-colors cursor-pointer"
-            >
-              Accessibility
+              Staff Login
             </button>
           </div>
         </div>

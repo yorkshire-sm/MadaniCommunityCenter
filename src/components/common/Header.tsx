@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ChevronDown, ArrowRight } from 'lucide-react';
+import { Menu, X, ArrowRight, Lock, Calendar } from 'lucide-react';
 import { siteConfig } from '../../config/siteConfig';
 import { MadaniLogo } from './MadaniLogo';
 
@@ -11,7 +11,6 @@ interface HeaderProps {
 export const Header: React.FC<HeaderProps> = ({ currentPath, onNavigate }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
 
   const isHomepage = currentPath === '/';
 
@@ -25,30 +24,14 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, onNavigate }) => {
 
   const navItems = [
     { label: 'Home', path: '/' },
-    {
-      label: 'About',
-      path: '/about',
-      hasDropdown: true,
-      subItems: [
-        { label: 'About the Center', path: '/about' },
-        { label: 'Our Purpose & Values', path: '/about#values' },
-        { label: 'Facilities Overview', path: '/about#facilities' },
-        { label: 'Safeguarding', path: '/safeguarding' },
-        { label: 'Governance & Policies', path: '/policies' },
-      ],
-    },
-    { label: 'Darul Madinah', path: '/darul-madinah' },
-    { label: 'Youth', path: '/youth' },
-    { label: 'Sisters', path: '/sisters' },
-    { label: 'Events', path: '/events' },
-    { label: 'Venue Hire', path: '/venue-hire' },
-    { label: 'Contact', path: '/contact' },
+    { label: 'Facilities & Pricing', path: '/facilities' },
+    { label: 'Availability & Booking', path: '/booking' },
+    { label: 'Contact & Location', path: '/contact' },
   ];
 
   const handleNavClick = (path: string) => {
     onNavigate(path);
     setMobileMenuOpen(false);
-    setAboutDropdownOpen(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -59,7 +42,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, onNavigate }) => {
           isScrolled
             ? 'bg-[#121E14]/95 backdrop-blur-md shadow-md py-3 border-b border-[#233827]'
             : isHomepage
-            ? 'bg-[#121E14]/70 backdrop-blur-xs py-4 border-b border-white/10'
+            ? 'bg-[#121E14]/85 backdrop-blur-xs py-4 border-b border-white/10'
             : 'bg-[#142217] py-4 border-b border-[#233827]'
         }`}
       >
@@ -93,53 +76,10 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, onNavigate }) => {
               </div>
             </a>
 
-            {/* Navigation Links */}
-            <nav className="hidden lg:flex items-center gap-3.5 xl:gap-5 2xl:gap-6 text-xs xl:text-sm font-medium shrink min-w-0" aria-label="Main Navigation">
+            {/* Navigation Links (Streamlined 4 Core Sections) */}
+            <nav className="hidden lg:flex items-center gap-5 xl:gap-8 text-sm font-medium shrink min-w-0" aria-label="Main Navigation">
               {navItems.map((item) => {
                 const isActive = currentPath === item.path;
-
-                if (item.hasDropdown) {
-                  return (
-                    <div
-                      key={item.label}
-                      className="relative"
-                      onMouseEnter={() => setAboutDropdownOpen(true)}
-                      onMouseLeave={() => setAboutDropdownOpen(false)}
-                    >
-                      <button
-                        onClick={() => handleNavClick(item.path)}
-                        className={`flex items-center gap-1 py-1 transition-colors cursor-pointer ${
-                          isActive
-                            ? 'text-[#B8C053] font-semibold'
-                            : 'text-stone-200 hover:text-white'
-                        }`}
-                      >
-                        <span>{item.label}</span>
-                        <ChevronDown className="h-3.5 w-3.5 text-stone-400 group-hover:text-white" />
-                      </button>
-
-                      {/* Dropdown Menu */}
-                      {aboutDropdownOpen && (
-                        <div className="absolute top-full left-0 mt-1 w-52 rounded-xl bg-[#152418] border border-[#273E2C] shadow-xl py-2 z-50">
-                          {item.subItems?.map((sub) => (
-                            <a
-                              key={sub.label}
-                              href={sub.path}
-                              onClick={(e) => {
-                                e.preventDefault();
-                                handleNavClick(sub.path);
-                              }}
-                              className="block px-4 py-2 text-xs text-stone-200 hover:text-white hover:bg-[#1D3222] transition-colors"
-                            >
-                              {sub.label}
-                            </a>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  );
-                }
-
                 return (
                   <a
                     key={item.path}
@@ -150,33 +90,40 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, onNavigate }) => {
                     }}
                     className={`transition-colors whitespace-nowrap py-1 relative ${
                       isActive
-                        ? 'text-[#B8C053] font-semibold'
+                        ? 'text-[#B8C053] font-bold'
                         : 'text-stone-200 hover:text-white'
                     }`}
                   >
                     {item.label}
                     {isActive && (
-                      <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#B8C053] rounded-full" />
+                      <span className="absolute -bottom-1.5 left-0 right-0 h-0.5 bg-[#B8C053] rounded-full" />
                     )}
                   </a>
                 );
               })}
             </nav>
 
-            {/* Actions: "Find Us" Outline Pill Button & "Venue Hire" Accent Button */}
+            {/* Actions: Admin Portal Link + Prominent "Book Now" CTA */}
             <div className="flex items-center gap-3">
               <button
-                onClick={() => handleNavClick('/contact')}
-                className="hidden sm:inline-flex items-center gap-1.5 px-5 py-1.5 text-xs font-semibold text-white hover:bg-white/10 border border-white/60 rounded-full transition-all duration-200 shadow-xs whitespace-nowrap cursor-pointer"
+                onClick={() => handleNavClick('/admin')}
+                className={`hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-full border transition-colors cursor-pointer ${
+                  currentPath === '/admin'
+                    ? 'bg-[#B8C053] text-[#14220C] border-[#B8C053]'
+                    : 'text-stone-300 hover:text-white border-white/20 hover:bg-white/10'
+                }`}
+                title="Admin Dashboard Gateway"
               >
-                <span>Find Us</span>
+                <Lock className="w-3.5 h-3.5" />
+                <span>Admin</span>
               </button>
 
               <button
-                onClick={() => handleNavClick('/venue-hire')}
-                className="hidden xl:inline-flex items-center gap-1.5 px-4 py-1.5 text-xs font-semibold text-[#18260D] bg-[#B8C053] hover:bg-[#A5AD3F] rounded-full transition-all duration-200 shadow-xs whitespace-nowrap cursor-pointer"
+                onClick={() => handleNavClick('/booking')}
+                className="inline-flex items-center gap-1.5 px-4 sm:px-5 py-2 text-xs font-bold text-[#14220C] bg-[#B8C053] hover:bg-[#c5cd62] rounded-full transition-all shadow-sm cursor-pointer active:scale-98"
               >
-                <span>Venue Hire</span>
+                <Calendar className="w-3.5 h-3.5" />
+                <span>Book Now</span>
               </button>
 
               {/* Mobile hamburger */}
@@ -210,8 +157,8 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, onNavigate }) => {
           >
             <div>
               <div className="flex items-center justify-between pb-4 border-b border-[#233827]">
-                <div className="flex items-center gap-3">
-                  <div className="h-12 w-12 rounded-xl bg-white p-1.5 shadow-md flex items-center justify-center shrink-0">
+                <div className="flex items-center gap-2.5">
+                  <div className="h-10 w-10 rounded-xl bg-white p-1 shadow-sm flex items-center justify-center shrink-0">
                     <MadaniLogo className="w-full h-full" variant="emblem" />
                   </div>
                   <div className="flex flex-col shrink-0">
@@ -234,20 +181,20 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, onNavigate }) => {
                 </button>
               </div>
 
-              <nav className="mt-4 flex flex-col space-y-1">
+              <nav className="mt-5 flex flex-col space-y-1.5">
                 {navItems.map((item) => {
                   const isActive = currentPath === item.path;
                   return (
                     <a
-                      key={item.label}
+                      key={item.path}
                       href={item.path}
                       onClick={(e) => {
                         e.preventDefault();
                         handleNavClick(item.path);
                       }}
-                      className={`px-3.5 py-2.5 rounded-lg text-sm font-medium transition-colors ${
+                      className={`px-3.5 py-3 rounded-xl text-sm font-medium transition-colors ${
                         isActive
-                          ? 'bg-[#B8C053] text-[#16220B] font-semibold'
+                          ? 'bg-[#B8C053] text-[#16220B] font-bold'
                           : 'text-stone-300 hover:bg-white/10 hover:text-white'
                       }`}
                     >
@@ -257,27 +204,28 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, onNavigate }) => {
                 })}
               </nav>
 
-              <div className="mt-5 pt-4 border-t border-[#233827] space-y-2">
+              <div className="mt-6 pt-5 border-t border-[#233827] space-y-2.5">
                 <button
-                  onClick={() => handleNavClick('/venue-hire')}
-                  className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-full text-xs font-semibold text-[#18260D] bg-[#B8C053] hover:bg-[#A5AD3F] transition-colors cursor-pointer"
+                  onClick={() => handleNavClick('/booking')}
+                  className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-full text-xs font-bold text-[#18260D] bg-[#B8C053] hover:bg-[#A5AD3F] transition-colors cursor-pointer shadow-sm"
                 >
-                  <span>Venue Hire Enquiry</span>
-                  <ArrowRight className="h-4 w-4" />
+                  <Calendar className="w-4 h-4" />
+                  <span>Check Availability & Book</span>
                 </button>
                 <button
-                  onClick={() => handleNavClick('/contact')}
-                  className="w-full flex items-center justify-center gap-2 py-2 px-4 rounded-full text-xs font-medium text-white border border-white/40 hover:bg-white/10 transition-colors cursor-pointer"
+                  onClick={() => handleNavClick('/admin')}
+                  className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-full text-xs font-semibold text-stone-300 border border-white/20 hover:bg-white/10 transition-colors cursor-pointer"
                 >
-                  <span>Find Us & Contact</span>
+                  <Lock className="w-3.5 h-3.5 text-[#B8C053]" />
+                  <span>Admin Dashboard</span>
                 </button>
               </div>
             </div>
 
-            <div className="mt-8 pt-4 border-t border-[#233827] text-xs text-stone-400 space-y-1">
-              <p className="font-semibold text-stone-200">Tinsley Park Road, Sheffield</p>
-              <p>Postcode: S9 5DL</p>
-              <p className="text-[11px] text-stone-400">Tel: {siteConfig.contact.telephoneDisplay}</p>
+            <div className="pt-6 border-t border-[#233827] text-xs text-stone-400 space-y-1">
+              <p className="font-semibold text-stone-300">{siteConfig.centerName}</p>
+              <p>{siteConfig.address.line1}, Sheffield, S9 5DL</p>
+              <p className="text-[11px] text-stone-500 pt-1">Alcohol-Free Community Booking Platform</p>
             </div>
           </div>
         </div>

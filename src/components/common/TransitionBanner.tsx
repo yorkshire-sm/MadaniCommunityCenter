@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Info, X, ArrowRight } from 'lucide-react';
-import { siteConfig } from '../../config/siteConfig';
+import { Calendar, X, ArrowRight } from 'lucide-react';
 
 interface TransitionBannerProps {
   onLearnMore?: () => void;
@@ -15,9 +14,9 @@ export const TransitionBanner: React.FC<TransitionBannerProps> = ({ onLearnMore 
     <div className="bg-[#0E1810] text-stone-200 border-b border-[#213525] py-2 px-4 sm:px-6 text-xs z-50 relative">
       <div className="max-w-7xl mx-auto flex items-center justify-between gap-3">
         <div className="flex items-center gap-2 truncate">
-          <Info className="h-3.5 w-3.5 text-[#B8C053] shrink-0" aria-hidden="true" />
+          <Calendar className="h-3.5 w-3.5 text-[#B8C053] shrink-0" aria-hidden="true" />
           <span className="truncate">
-            <strong className="text-[#B8C053] font-semibold">Madani Community Center:</strong> The building on Tinsley Park Road (formerly Luqman Academy) is now a multi-purpose Dawat-e-Islami education & community center.
+            <strong className="text-[#B8C053] font-semibold">Madani Community Center:</strong> Online room & hall bookings are now open on Tinsley Park Road in Sheffield.
           </span>
         </div>
 
@@ -27,7 +26,7 @@ export const TransitionBanner: React.FC<TransitionBannerProps> = ({ onLearnMore 
               onClick={onLearnMore}
               className="text-[#B8C053] hover:text-white font-medium flex items-center gap-1 transition-colors underline-offset-2 hover:underline cursor-pointer"
             >
-              <span>Learn more</span>
+              <span>Check Availability</span>
               <ArrowRight className="h-3 w-3" />
             </button>
           )}

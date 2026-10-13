@@ -3,22 +3,12 @@ import { Header } from './components/common/Header';
 import { Footer } from './components/common/Footer';
 import { TransitionBanner } from './components/common/TransitionBanner';
 
-// Pages
+// 4 Core Pages + Admin Dashboard
 import { HomePage } from './pages/HomePage';
-import { AboutPage } from './pages/AboutPage';
-import { DarulMadinahPage } from './pages/DarulMadinahPage';
-import { YouthPage } from './pages/YouthPage';
-import { SistersPage } from './pages/SistersPage';
-import { EventsPage } from './pages/EventsPage';
-import { EventDetailPage } from './pages/EventDetailPage';
-import { VenueHirePage } from './pages/VenueHirePage';
-import { GetInvolvedPage } from './pages/GetInvolvedPage';
-import { PoliciesPage } from './pages/PoliciesPage';
-import { SafeguardingPage } from './pages/SafeguardingPage';
+import { FacilitiesPage } from './pages/FacilitiesPage';
+import { BookingPage } from './pages/BookingPage';
 import { ContactPage } from './pages/ContactPage';
-import { PrivacyPage } from './pages/PrivacyPage';
-import { CookiesPage } from './pages/CookiesPage';
-import { AccessibilityPage } from './pages/AccessibilityPage';
+import { AdminDashboardPage } from './pages/AdminDashboardPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 
 // Helper to determine GitHub Pages repository subfolder prefix (e.g. /MadaniCommunityCenter)
@@ -34,7 +24,7 @@ const getRepoBase = (): string => {
   return '';
 };
 
-// Normalize browser pathname into internal app route (e.g. /MadaniCommunityCenter/about -> /about)
+// Normalize browser pathname into internal app route (e.g. /MadaniCommunityCenter/booking -> /booking)
 const normalizeAppPath = (pathname: string): string => {
   const base = getRepoBase();
   let p = pathname || '/';
@@ -63,24 +53,13 @@ export default function App() {
     return normalizeAppPath(window.location.pathname);
   });
 
-  const [activeEventSlug, setActiveEventSlug] = useState<string | null>(() => {
-    const appPath = normalizeAppPath(window.location.pathname);
-    if (appPath.startsWith('/events/') && appPath.length > 8) {
-      return appPath.replace('/events/', '');
-    }
-    return null;
-  });
+  const [preselectedFacilityId, setPreselectedFacilityId] = useState<string>('fac-main-hall');
 
   // Synchronise with browser forward/back buttons
   useEffect(() => {
     const handlePopState = () => {
       const appPath = normalizeAppPath(window.location.pathname);
       setCurrentPath(appPath);
-      if (appPath.startsWith('/events/') && appPath.length > 8) {
-        setActiveEventSlug(appPath.replace('/events/', ''));
-      } else {
-        setActiveEventSlug(null);
-      }
     };
 
     window.addEventListener('popstate', handlePopState);
@@ -88,7 +67,6 @@ export default function App() {
   }, []);
 
   const navigateTo = (path: string) => {
-    // Strip hash if navigating to a page with hash
     const cleanAppPath = path.split('#')[0] || '/';
     const hash = path.includes('#') ? path.substring(path.indexOf('#')) : '';
     const fullBrowserPath = toBrowserPath(cleanAppPath) + hash;
@@ -97,12 +75,6 @@ export default function App() {
       window.history.pushState({}, '', fullBrowserPath);
     }
     setCurrentPath(cleanAppPath);
-
-    if (cleanAppPath.startsWith('/events/') && cleanAppPath.length > 8) {
-      setActiveEventSlug(cleanAppPath.replace('/events/', ''));
-    } else {
-      setActiveEventSlug(null);
-    }
 
     if (hash) {
       setTimeout(() => {
@@ -117,81 +89,49 @@ export default function App() {
     }
   };
 
-  const handleSelectEvent = (slug: string) => {
-    setActiveEventSlug(slug);
-    const targetAppPath = `/events/${slug}`;
-    const fullBrowserPath = toBrowserPath(targetAppPath);
-    window.history.pushState({}, '', fullBrowserPath);
-    setCurrentPath(targetAppPath);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  const handleSelectFacilityForBooking = (facilityId: string) => {
+    setPreselectedFacilityId(facilityId);
+    navigateTo('/booking');
   };
 
   const renderContent = () => {
-    // Check for individual event route
-    if (activeEventSlug || (currentPath.startsWith('/events/') && currentPath.length > 8)) {
-      const slug = activeEventSlug || currentPath.replace('/events/', '');
-      return (
-        <EventDetailPage
-          slug={slug}
-          onNavigate={navigateTo}
-          onSelectEvent={handleSelectEvent}
-        />
-      );
-    }
-
     switch (currentPath) {
       case '/':
         return (
           <HomePage
             onNavigate={navigateTo}
-            onSelectEvent={handleSelectEvent}
+            onSelectFacilityForBooking={handleSelectFacilityForBooking}
           />
         );
-      case '/about':
-        return <AboutPage onNavigate={navigateTo} />;
-      case '/darul-madinah':
-        return <DarulMadinahPage onNavigate={navigateTo} />;
-      case '/youth':
+      case '/facilities':
+      case '/pricing':
+      case '/venue-hire': // legacy redirect support
         return (
-          <YouthPage
+          <FacilitiesPage
             onNavigate={navigateTo}
-            onSelectEvent={handleSelectEvent}
+            onSelectFacilityForBooking={handleSelectFacilityForBooking}
           />
         );
-      case '/sisters':
+      case '/booking':
+      case '/availability':
         return (
-          <SistersPage
+          <BookingPage
             onNavigate={navigateTo}
-            onSelectEvent={handleSelectEvent}
+            preselectedFacilityId={preselectedFacilityId}
           />
         );
-      case '/events':
-        return (
-          <EventsPage
-            onNavigate={navigateTo}
-            onSelectEvent={handleSelectEvent}
-          />
-        );
-      case '/venue-hire':
-        return <VenueHirePage onNavigate={navigateTo} />;
-      case '/get-involved':
-        return <GetInvolvedPage onNavigate={navigateTo} />;
-      case '/policies':
-        return <PoliciesPage onNavigate={navigateTo} />;
-      case '/safeguarding':
-        return <SafeguardingPage onNavigate={navigateTo} />;
       case '/contact':
+      case '/location':
         return <ContactPage onNavigate={navigateTo} />;
-      case '/privacy':
-        return <PrivacyPage onNavigate={navigateTo} />;
-      case '/cookies':
-        return <CookiesPage onNavigate={navigateTo} />;
-      case '/accessibility':
-        return <AccessibilityPage onNavigate={navigateTo} />;
+      case '/admin':
+      case '/dashboard':
+        return <AdminDashboardPage onNavigate={navigateTo} />;
       default:
         return <NotFoundPage onNavigate={navigateTo} />;
     }
   };
+
+  const isAdminPage = currentPath === '/admin' || currentPath === '/dashboard';
 
   return (
     <div className="min-h-screen flex flex-col bg-[#FAF9F5] text-stone-900 font-sans selection:bg-[#B8C053]/30 selection:text-[#18260D]">
@@ -203,19 +143,21 @@ export default function App() {
         Skip to main content
       </a>
 
-      {/* Building transition informative banner */}
-      <TransitionBanner onLearnMore={() => navigateTo('/about')} />
+      {/* Building transition / booking announcement informative banner */}
+      {!isAdminPage && (
+        <TransitionBanner onLearnMore={() => navigateTo('/booking')} />
+      )}
 
       {/* Sticky Navigation Header */}
       <Header currentPath={currentPath} onNavigate={navigateTo} />
 
       {/* Main Page Area */}
-      <main id="main-content" className="flex-1 pb-16 outline-none">
+      <main id="main-content" className="flex-1 pb-12 outline-none">
         {renderContent()}
       </main>
 
-      {/* Substantial, Uncluttered Footer */}
-      <Footer onNavigate={navigateTo} />
+      {/* Substantial Footer */}
+      {!isAdminPage && <Footer onNavigate={navigateTo} />}
     </div>
   );
 }

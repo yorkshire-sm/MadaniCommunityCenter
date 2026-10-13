@@ -1,0 +1,48 @@
+# ==============================================================================
+# Madani Community Center - Apache & IONOS Security Configuration (.htaccess)
+# ==============================================================================
+
+# 1. Disable Directory Indexing / Browsing
+Options -Indexes
+
+# 2. Block direct HTTP access to sensitive files and configuration directories
+<FilesMatch "\.(sql|env|json|lock|git|md|yml|yaml|log)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Prevent access to config directory scripts directly
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Force HTTPS on IONOS / Production Hosting
+    RewriteCond %{HTTPS} off
+    RewriteCond %{HTTP_HOST} !^localhost [NC]
+    RewriteCond %{HTTP_HOST} !^127\.0\.0\.1 [NC]
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # Block direct access to config/ database credentials
+    RewriteRule ^config/ - [F,L]
+</IfModule>
+
+# 3. Security HTTP Response Headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    Header unset X-Powered-By
+</IfModule>
+
+# 4. Default Charset
+AddDefaultCharset UTF-8
+
+# 5. PHP Execution Directives (when PHP runs via mod_php)
+<IfModule mod_php.c>
+    php_flag display_errors Off
+    php_flag log_errors On
+    php_value error_log error_log
+    php_value session.cookie_httponly 1
+    php_value session.use_only_cookies 1
+</IfModule>

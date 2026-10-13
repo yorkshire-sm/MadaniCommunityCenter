@@ -1,114 +1,113 @@
 import React from 'react';
 import {
-  ArrowRight,
-  GraduationCap,
-  Users,
-  Building,
-  HeartHandshake,
-  CheckCircle,
-  ExternalLink,
-  Shield,
-  Compass,
-  BookOpen,
   Calendar,
+  CheckCircle2,
+  Users,
+  ShieldCheck,
+  ArrowRight,
+  Clock,
+  Sparkles,
+  MapPin,
+  Coffee,
+  Check,
+  PhoneCall,
 } from 'lucide-react';
-import { siteConfig } from '../config/siteConfig';
-import { sampleEvents } from '../data/eventsData';
-import { centerFacilities } from '../data/facilitiesData';
-import { Button } from '../components/common/Button';
+import { bookingStore, Facility } from '../data/bookingStore';
 import { PlaceholderImage } from '../components/common/PlaceholderImage';
-import { EventCard } from '../components/events/EventCard';
-import { LuqmanHeroBackdrop } from '../components/home/LuqmanHeroBackdrop';
-import { GoogleMapInteractive } from '../components/common/GoogleMapInteractive';
 
 interface HomePageProps {
   onNavigate: (path: string) => void;
-  onSelectEvent: (slug: string) => void;
+  onSelectFacilityForBooking?: (facilityId: string) => void;
 }
 
-export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectEvent }) => {
-  const upcomingEvents = sampleEvents.slice(0, 3);
+export const HomePage: React.FC<HomePageProps> = ({
+  onNavigate,
+  onSelectFacilityForBooking,
+}) => {
+  const facilities = bookingStore.getFacilities();
 
-  const facilityIcons: Record<string, React.ReactNode> = {
-    Building: <Building className="h-5 w-5 text-[#182B1C]" />,
-    GraduationCap: <GraduationCap className="h-5 w-5 text-[#182B1C]" />,
-    Users: <Users className="h-5 w-5 text-[#182B1C]" />,
-    HeartHandshake: <HeartHandshake className="h-5 w-5 text-[#182B1C]" />,
-    Calendar: <Calendar className="h-5 w-5 text-[#182B1C]" />,
-    Compass: <Compass className="h-5 w-5 text-[#182B1C]" />,
-    Shield: <Shield className="h-5 w-5 text-[#182B1C]" />,
-    BookOpen: <BookOpen className="h-5 w-5 text-[#182B1C]" />,
+  const handleBookFacility = (facilityId: string) => {
+    if (onSelectFacilityForBooking) {
+      onSelectFacilityForBooking(facilityId);
+    }
+    onNavigate('/booking');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
-    <div className="space-y-16 sm:space-y-24">
-      {/* =========================================================================
-          HERO SECTION (LUQMAN ACADEMY STYLE)
-          ========================================================================= */}
-      <section className="relative -mt-4 bg-[#142016] text-white">
-        {/* Curved Container with signature Luqman Academy bottom-right scoop */}
-        <div className="relative min-h-[580px] sm:min-h-[640px] lg:min-h-[700px] flex items-center overflow-hidden hero-scoop shadow-2xl">
-          {/* Atmospheric photo background in warm amber / forest tones */}
-          <LuqmanHeroBackdrop />
-
-          {/* Hero Content */}
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-32 w-full">
-            <div className="max-w-3xl ml-auto text-left space-y-6 lg:pr-8">
-              {/* Kicker in Olive-Chartreuse */}
-              <div className="inline-block">
-                <span className="text-sm sm:text-base font-semibold text-[#B8C053] tracking-wide block">
-                  Madani Community Center is an education & community hub in Sheffield
-                </span>
+    <div className="space-y-16 sm:space-y-24 pb-12">
+      {/* 1. HERO SECTION */}
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#121E14] via-[#142318] to-[#0D160E] text-white pt-12 pb-20 sm:pt-20 sm:pb-28">
+        <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#B8C053_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            {/* Hero Text */}
+            <div className="lg:col-span-7 space-y-6">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-[#B8C053]/15 text-[#B8C053] border border-[#B8C053]/30 backdrop-blur-xs">
+                <Sparkles className="w-3.5 h-3.5" />
+                <span>Sheffield’s Premier Community & Event Spaces</span>
               </div>
 
-              {/* Bold Editorial Serif Display Title */}
-              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif-brand font-bold tracking-tight text-white leading-[1.12]">
-                Integrating academic excellence with Islamic teachings
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif-brand font-bold tracking-tight text-white leading-[1.15]">
+                Book Flexible Spaces for Community, Education & Private Events
               </h1>
 
-              {/* Supporting Subtitle */}
-              <p className="text-base sm:text-lg text-stone-200/90 leading-relaxed font-normal max-w-2xl">
-                Our center fosters a nurturing, inclusive, and respectful atmosphere where students, youth, sisters, and families are encouraged to develop their character, confidence, and leadership skills.
+              <p className="text-base sm:text-lg text-stone-300 leading-relaxed max-w-2xl font-normal">
+                Welcome to <strong className="text-white font-semibold">Madani Community Center</strong> on Tinsley Park Road in Sheffield. We offer high-spec event halls, modern meeting rooms, and classroom spaces with transparent hire prices and rapid online availability confirmation.
               </p>
 
-              {/* Action Buttons (Pill styling matching Luqman Academy) */}
-              <div className="flex flex-wrap items-center gap-4 pt-3">
-                <Button
-                  variant="primary"
-                  size="lg"
-                  roundedPill={true}
-                  onClick={() => onNavigate('/darul-madinah')}
+              {/* Prominent Call to Action Buttons */}
+              <div className="flex flex-wrap items-center gap-3.5 pt-2">
+                <button
+                  onClick={() => onNavigate('/booking')}
+                  className="inline-flex items-center gap-2.5 px-7 py-4 rounded-full text-sm font-bold bg-[#B8C053] text-[#14220C] hover:bg-[#c5cd62] transition-all shadow-md active:scale-98 cursor-pointer"
                 >
-                  Apply Now
-                </Button>
+                  <Calendar className="w-4 h-4" />
+                  <span>Check Availability & Book</span>
+                </button>
 
-                <Button
-                  variant="outline-white"
-                  size="lg"
-                  roundedPill={true}
-                  onClick={() => {
-                    const el = document.getElementById('welcome');
-                    el?.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  icon={<ArrowRight className="h-4 w-4" />}
+                <button
+                  onClick={() => onNavigate('/facilities')}
+                  className="inline-flex items-center gap-2 px-6 py-4 rounded-full text-sm font-semibold text-white border border-white/25 hover:bg-white/10 transition-colors cursor-pointer"
                 >
-                  Explore the Center
-                </Button>
+                  <span>Explore Rooms & Rates</span>
+                  <ArrowRight className="w-4 h-4" />
+                </button>
               </div>
 
-              {/* Quick Trust Highlights */}
-              <div className="pt-6 border-t border-white/15 grid grid-cols-2 sm:grid-cols-3 gap-4 text-xs text-stone-300">
-                <div className="flex items-center gap-2">
-                  <span className="h-2 w-2 rounded-full bg-[#B8C053]" />
-                  <span>Darul Madinah Primary</span>
+              {/* Quick Trust Badges */}
+              <div className="pt-4 grid grid-cols-3 gap-3 border-t border-white/10 text-xs text-stone-300">
+                <div className="flex items-center gap-1.5">
+                  <CheckCircle2 className="w-4 h-4 text-[#B8C053] shrink-0" />
+                  <span>Step-Free Access</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <span className="h-2 w-2 rounded-full bg-[#B8C053]" />
-                  <span>Youth & Sisters Hub</span>
+                <div className="flex items-center gap-1.5">
+                  <CheckCircle2 className="w-4 h-4 text-[#B8C053] shrink-0" />
+                  <span>From £20/Hour</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <span className="h-2 w-2 rounded-full bg-[#B8C053]" />
-                  <span>Halls & Event Spaces</span>
+                <div className="flex items-center gap-1.5">
+                  <CheckCircle2 className="w-4 h-4 text-[#B8C053] shrink-0" />
+                  <span>Free On-Site Parking</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Hero Main Photography */}
+            <div className="lg:col-span-5 relative">
+              <div className="relative rounded-3xl overflow-hidden border border-white/15 shadow-2xl bg-stone-900 group">
+                <PlaceholderImage
+                  placeholderKey="center-exterior"
+                  aspectRatio="4:3"
+                  alt="Madani Community Center Building Exterior on Tinsley Park Road Sheffield"
+                  className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute bottom-4 left-4 right-4 text-white text-xs space-y-1">
+                  <span className="font-semibold text-sm block">Madani Community Center</span>
+                  <span className="text-stone-300 flex items-center gap-1 text-[11px]">
+                    <MapPin className="w-3.5 h-3.5 text-[#B8C053]" />
+                    Tinsley Park Road, Sheffield, S9 5DL
+                  </span>
                 </div>
               </div>
             </div>
@@ -116,476 +115,172 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectEvent })
         </div>
       </section>
 
-      {/* =========================================================================
-          SECTION: "WELCOME TO MADANI COMMUNITY CENTER"
-          ========================================================================= */}
-      <section id="welcome" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
-        <div className="text-center max-w-3xl mx-auto space-y-4">
-          <p className="text-xs font-bold uppercase tracking-widest text-[#B8C053]">
-            Dawat-e-Islami Sheffield
-          </p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif-brand font-bold text-[#182B1C] tracking-tight">
-            Welcome To Madani Community Center
+      {/* 2. HOW BOOKING WORKS (4 SIMPLE STEPS) */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center max-w-2xl mx-auto space-y-2 mb-12">
+          <span className="text-xs font-bold uppercase tracking-wider text-[#B8C053]">
+            Simple 4-Step Process
+          </span>
+          <h2 className="text-3xl font-serif-brand font-bold text-[#182B1C]">
+            How to Book the Center
           </h2>
-          <div className="w-16 h-1 bg-[#B8C053] mx-auto rounded-full" />
-          <p className="text-base sm:text-lg text-stone-600 leading-relaxed font-normal pt-2">
-            Established on Tinsley Park Road in Sheffield, Madani Community Center brings together high-standard primary education, youth engagement, sisters' programmes, and multi-purpose community facilities under one roof. Working under the guidance of Dawat-e-Islami, our center provides an inspiring environment that pairs academic ambition with authentic Islamic values.
+          <p className="text-sm text-stone-600">
+            No account required. Submit your preferred dates online and receive prompt coordinator review.
           </p>
         </div>
 
-        {/* 4 Core Pillars Overview */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-12">
-          {/* Pillar 1 */}
-          <div className="p-6 rounded-2xl bg-white border border-stone-200/90 shadow-xs hover:border-[#B8C053] hover:shadow-md transition-all text-center space-y-3 group">
-            <div className="h-12 w-12 rounded-full bg-[#F0F4E8] text-[#182B1C] flex items-center justify-center mx-auto group-hover:bg-[#B8C053] transition-colors">
-              <GraduationCap className="h-6 w-6" />
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+          {[
+            {
+              step: '01',
+              title: 'Choose Facility',
+              desc: 'Select from our main assembly hall, boardroom suite, classrooms, or youth activity lounge.',
+            },
+            {
+              step: '02',
+              title: 'Check Live Calendar',
+              desc: 'View real-time availability to ensure no conflicting reservations on your chosen date.',
+            },
+            {
+              step: '03',
+              title: 'Submit Request',
+              desc: 'Fill out your event requirements and receive your official reference code instantly.',
+            },
+            {
+              step: '04',
+              title: 'Coordinator Approval',
+              desc: 'Our bookings coordinator reviews your request and emails confirmation within 24–48 hours.',
+            },
+          ].map((item, idx) => (
+            <div
+              key={idx}
+              className="p-6 rounded-3xl border border-stone-200 bg-white shadow-xs space-y-3 relative overflow-hidden"
+            >
+              <span className="text-3xl font-extrabold text-[#B8C053]/40 block font-mono">
+                {item.step}
+              </span>
+              <h3 className="text-base font-bold text-[#182B1C]">{item.title}</h3>
+              <p className="text-xs text-stone-600 leading-relaxed">{item.desc}</p>
             </div>
-            <h3 className="text-lg font-bold text-stone-900 font-serif-brand">
-              Primary Education
-            </h3>
-            <p className="text-xs text-stone-600 leading-relaxed">
-              Home to Darul Madinah primary school, offering an exceptional academic foundation alongside Islamic ethos.
-            </p>
-            <div className="pt-1">
-              <button
-                onClick={() => onNavigate('/darul-madinah')}
-                className="text-xs font-semibold text-[#182B1C] hover:text-[#A5AD3F] transition-colors underline-offset-4 hover:underline cursor-pointer"
-              >
-                Learn More →
-              </button>
-            </div>
-          </div>
-
-          {/* Pillar 2 */}
-          <div className="p-6 rounded-2xl bg-white border border-stone-200/90 shadow-xs hover:border-[#B8C053] hover:shadow-md transition-all text-center space-y-3 group">
-            <div className="h-12 w-12 rounded-full bg-[#F0F4E8] text-[#182B1C] flex items-center justify-center mx-auto group-hover:bg-[#B8C053] transition-colors">
-              <Users className="h-6 w-6" />
-            </div>
-            <h3 className="text-lg font-bold text-stone-900 font-serif-brand">
-              Youth Activities
-            </h3>
-            <p className="text-xs text-stone-600 leading-relaxed">
-              Sports, study circles, skills workshops, and mentoring circles for teenagers and young adults in Sheffield.
-            </p>
-            <div className="pt-1">
-              <button
-                onClick={() => onNavigate('/youth')}
-                className="text-xs font-semibold text-[#182B1C] hover:text-[#A5AD3F] transition-colors underline-offset-4 hover:underline cursor-pointer"
-              >
-                Explore Youth →
-              </button>
-            </div>
-          </div>
-
-          {/* Pillar 3 */}
-          <div className="p-6 rounded-2xl bg-white border border-stone-200/90 shadow-xs hover:border-[#B8C053] hover:shadow-md transition-all text-center space-y-3 group">
-            <div className="h-12 w-12 rounded-full bg-[#F0F4E8] text-[#182B1C] flex items-center justify-center mx-auto group-hover:bg-[#B8C053] transition-colors">
-              <HeartHandshake className="h-6 w-6" />
-            </div>
-            <h3 className="text-lg font-bold text-stone-900 font-serif-brand">
-              Sisters' Programmes
-            </h3>
-            <p className="text-xs text-stone-600 leading-relaxed">
-              Dedicated gatherings, Islamic classes, wellbeing workshops, and family sessions in a private, dignified space.
-            </p>
-            <div className="pt-1">
-              <button
-                onClick={() => onNavigate('/sisters')}
-                className="text-xs font-semibold text-[#182B1C] hover:text-[#A5AD3F] transition-colors underline-offset-4 hover:underline cursor-pointer"
-              >
-                View Programmes →
-              </button>
-            </div>
-          </div>
-
-          {/* Pillar 4 */}
-          <div className="p-6 rounded-2xl bg-white border border-stone-200/90 shadow-xs hover:border-[#B8C053] hover:shadow-md transition-all text-center space-y-3 group">
-            <div className="h-12 w-12 rounded-full bg-[#F0F4E8] text-[#182B1C] flex items-center justify-center mx-auto group-hover:bg-[#B8C053] transition-colors">
-              <Building className="h-6 w-6" />
-            </div>
-            <h3 className="text-lg font-bold text-stone-900 font-serif-brand">
-              Venue & Hall Hire
-            </h3>
-            <p className="text-xs text-stone-600 leading-relaxed">
-              Flexible halls, meeting rooms, and classroom spaces available for hire for community events and functions.
-            </p>
-            <div className="pt-1">
-              <button
-                onClick={() => onNavigate('/venue-hire')}
-                className="text-xs font-semibold text-[#182B1C] hover:text-[#A5AD3F] transition-colors underline-offset-4 hover:underline cursor-pointer"
-              >
-                Hire Spaces →
-              </button>
-            </div>
-          </div>
+          ))}
         </div>
       </section>
 
-      {/* =========================================================================
-          DARUL MADINAH PRIMARY FEATURE SECTION
-          ========================================================================= */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="rounded-2xl border border-stone-200 bg-white overflow-hidden shadow-sm">
-          <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch">
-            {/* Visual half */}
-            <div className="lg:col-span-6 bg-stone-900 relative min-h-[340px]">
-              <PlaceholderImage
-                placeholderKey="darul-madinah-classroom"
-                aspectRatio="16:9"
-                alt="Darul Madinah Primary School Classroom at Madani Community Center"
-                className="h-full w-full object-cover"
-              />
-            </div>
-
-            {/* Content half */}
-            <div className="lg:col-span-6 p-6 sm:p-10 lg:p-12 flex flex-col justify-between space-y-6">
-              <div className="space-y-4">
-                <span className="text-xs font-bold uppercase tracking-wider text-[#B8C053]">
-                  Primary Education
-                </span>
-
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif-brand font-bold tracking-tight text-[#182B1C] leading-tight">
-                  Darul Madinah Primary School
-                </h2>
-
-                <p className="text-sm sm:text-base text-stone-600 leading-relaxed font-normal">
-                  Providing children with a strong academic foundation alongside Islamic values, character development, and a nurturing learning environment.
-                </p>
-
-                <ul className="space-y-2.5 text-xs sm:text-sm text-stone-700 pt-1">
-                  <li className="flex items-center gap-2.5">
-                    <CheckCircle className="h-4 w-4 text-[#B8C053] shrink-0" />
-                    <span>Broad & balanced National Curriculum subjects</span>
-                  </li>
-                  <li className="flex items-center gap-2.5">
-                    <CheckCircle className="h-4 w-4 text-[#B8C053] shrink-0" />
-                    <span>Integrated Tajweed, Islamic studies, and moral etiquette</span>
-                  </li>
-                  <li className="flex items-center gap-2.5">
-                    <CheckCircle className="h-4 w-4 text-[#B8C053] shrink-0" />
-                    <span>Small class sizes with high teacher engagement</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="flex flex-wrap items-center gap-3 pt-2">
-                <Button
-                  variant="primary"
-                  size="md"
-                  roundedPill={true}
-                  onClick={() => onNavigate('/darul-madinah')}
-                >
-                  Admissions Information
-                </Button>
-                <Button
-                  variant="outline"
-                  size="md"
-                  roundedPill={true}
-                  onClick={() => onNavigate('/darul-madinah#admissions')}
-                >
-                  Enquire Now
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* =========================================================================
-          UPCOMING EVENTS & WHAT'S ON
-          ========================================================================= */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+      {/* 3. FEATURED FACILITIES OVERVIEW WITH PRICES */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 border-b border-stone-200 pb-4">
           <div>
             <span className="text-xs font-bold uppercase tracking-wider text-[#B8C053]">
-              What's On
+              Spaces for Every Occasion
             </span>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif-brand font-bold text-[#182B1C] mt-1">
-              Events at Madani Center
+            <h2 className="text-3xl font-serif-brand font-bold text-[#182B1C] mt-1">
+              Available Rooms & Hire Prices
             </h2>
-            <p className="text-sm text-stone-600 mt-1 max-w-xl">
-              Join upcoming seminars, youth gatherings, open mornings, and community programmes on Tinsley Park Road.
-            </p>
           </div>
-          <div className="shrink-0">
-            <Button
-              variant="outline"
-              size="sm"
-              roundedPill={true}
-              onClick={() => onNavigate('/events')}
-              icon={<ArrowRight className="h-3.5 w-3.5" />}
-            >
-              View All Events
-            </Button>
-          </div>
+          <button
+            onClick={() => onNavigate('/facilities')}
+            className="text-xs font-bold text-[#182B1C] hover:text-[#437A3B] transition-colors flex items-center gap-1 cursor-pointer"
+          >
+            <span>View Full Technical Specs & Pricing</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </button>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {upcomingEvents.map((evt) => (
-            <EventCard key={evt.id} event={evt} onSelect={onSelectEvent} />
-          ))}
-        </div>
-      </section>
-
-      {/* =========================================================================
-          YOUTH & SISTERS DUAL SPOTLIGHT
-          ========================================================================= */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-        {/* Youth Feature */}
-        <div className="rounded-2xl border border-stone-200 bg-white p-6 sm:p-8 lg:p-10 shadow-xs">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            <div className="lg:col-span-7 space-y-4">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#B8C053]">
-                Youth Development
-              </span>
-              <h3 className="text-2xl sm:text-3xl font-serif-brand font-bold text-[#182B1C]">
-                A Space for Young People
-              </h3>
-              <p className="text-sm text-stone-600 leading-relaxed">
-                Empowering the next generation with faith, friendship, leadership, and practical skills through weekly gatherings, football tournaments, study circles, and community volunteering.
-              </p>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 pt-2 text-xs text-stone-700">
-                <span className="p-2.5 rounded-lg bg-[#FAF9F5] border border-stone-200/80">· Youth Circles</span>
-                <span className="p-2.5 rounded-lg bg-[#FAF9F5] border border-stone-200/80">· Sports & Fitness</span>
-                <span className="p-2.5 rounded-lg bg-[#FAF9F5] border border-stone-200/80">· Skills Workshops</span>
-                <span className="p-2.5 rounded-lg bg-[#FAF9F5] border border-stone-200/80">· Islamic Learning</span>
-                <span className="p-2.5 rounded-lg bg-[#FAF9F5] border border-stone-200/80">· Mentoring</span>
-                <span className="p-2.5 rounded-lg bg-[#FAF9F5] border border-stone-200/80">· Day Trips</span>
-              </div>
-              <div className="pt-2">
-                <Button
-                  variant="primary"
-                  size="md"
-                  roundedPill={true}
-                  onClick={() => onNavigate('/youth')}
-                  icon={<ArrowRight className="h-4 w-4" />}
-                >
-                  Explore Youth
-                </Button>
-              </div>
-            </div>
-
-            <div className="lg:col-span-5">
-              <PlaceholderImage
-                placeholderKey="youth-workshop"
-                aspectRatio="16:9"
-                alt="Youth workshop and mentoring circle at Madani Community Center"
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* Sisters Feature */}
-        <div className="rounded-2xl border border-stone-200 bg-white p-6 sm:p-8 lg:p-10 shadow-xs">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            <div className="lg:col-span-5 order-2 lg:order-1">
-              <PlaceholderImage
-                placeholderKey="sisters-event"
-                aspectRatio="16:9"
-                alt="Sisters community gathering and lecture setup"
-              />
-            </div>
-
-            <div className="lg:col-span-7 space-y-4 order-1 lg:order-2">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#B8C053]">
-                Sisters & Families
-              </span>
-              <h3 className="text-2xl sm:text-3xl font-serif-brand font-bold text-[#182B1C]">
-                Programmes for Sisters
-              </h3>
-              <p className="text-sm text-stone-600 leading-relaxed">
-                Dedicated activities, educational lectures, wellbeing sessions, and supportive social meetups organised in a comfortable, welcoming, and dignified environment.
-              </p>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 pt-2 text-xs text-stone-700">
-                <span className="p-2.5 rounded-lg bg-[#FAF9F5] border border-stone-200/80">· Islamic Learning</span>
-                <span className="p-2.5 rounded-lg bg-[#FAF9F5] border border-stone-200/80">· Coffee Mornings</span>
-                <span className="p-2.5 rounded-lg bg-[#FAF9F5] border border-stone-200/80">· Family Seminars</span>
-                <span className="p-2.5 rounded-lg bg-[#FAF9F5] border border-stone-200/80">· Parenting Guidance</span>
-                <span className="p-2.5 rounded-lg bg-[#FAF9F5] border border-stone-200/80">· Wellbeing Circles</span>
-                <span className="p-2.5 rounded-lg bg-[#FAF9F5] border border-stone-200/80">· Community Aid</span>
-              </div>
-              <div className="pt-2">
-                <Button
-                  variant="primary"
-                  size="md"
-                  roundedPill={true}
-                  onClick={() => onNavigate('/sisters')}
-                  icon={<ArrowRight className="h-4 w-4" />}
-                >
-                  View Sisters' Activities
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* =========================================================================
-          VENUE HIRE SPOTLIGHT
-          ========================================================================= */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="rounded-2xl border border-stone-200 bg-[#FAF9F5] p-6 sm:p-10 shadow-xs">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            <div className="lg:col-span-6 space-y-4">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#B8C053]">
-                Facility Hire
-              </span>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif-brand font-bold text-[#182B1C]">
-                A Venue for Your Event
-              </h2>
-              <p className="text-sm text-stone-600 leading-relaxed font-normal">
-                Flexible spaces in Sheffield for suitable community events, meetings, educational workshops, and private functions.
-              </p>
-
-              <div className="space-y-2 text-xs text-stone-700">
-                <p className="font-semibold text-stone-900">Suitable For:</p>
-                <div className="grid grid-cols-2 gap-2 text-xs">
-                  <span>· Community Gatherings</span>
-                  <span>· Educational Seminars</span>
-                  <span>· Training Sessions</span>
-                  <span>· Family Milestones (Ethos-compliant)</span>
-                  <span>· Committee Meetings</span>
-                  <span>· Charity Fundraisers</span>
-                </div>
-              </div>
-
-              <div className="pt-2">
-                <Button
-                  variant="dark"
-                  size="md"
-                  roundedPill={true}
-                  onClick={() => onNavigate('/venue-hire')}
-                  icon={<ArrowRight className="h-4 w-4" />}
-                >
-                  Make a Venue Enquiry
-                </Button>
-              </div>
-            </div>
-
-            <div className="lg:col-span-6">
-              <PlaceholderImage
-                placeholderKey="venue-hall"
-                aspectRatio="16:9"
-                alt="Main Event Hall at Madani Community Center"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* =========================================================================
-          FACILITIES SECTION
-          ========================================================================= */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-10">
-          <span className="text-xs font-bold uppercase tracking-wider text-[#B8C053]">
-            Building Facilities
-          </span>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif-brand font-bold text-[#182B1C] mt-1">
-            Our Center Facilities
-          </h2>
-          <p className="text-sm text-stone-600 mt-1">
-            Overview of key spaces and amenities within the Tinsley Park Road building.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
-          {centerFacilities.map((fac) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {facilities.map((fac) => (
             <div
               key={fac.id}
-              className="p-5 rounded-2xl border border-stone-200/90 bg-white shadow-xs space-y-2.5 hover:border-[#B8C053] transition-colors"
+              className="rounded-3xl border border-stone-200 bg-white shadow-xs overflow-hidden flex flex-col justify-between hover:shadow-md transition-shadow"
             >
-              <div className="flex items-center justify-between">
-                <div className="h-9 w-9 rounded-xl bg-[#F0F4E8] flex items-center justify-center">
-                  {facilityIcons[fac.iconName] || <Building className="h-5 w-5 text-[#182B1C]" />}
+              <div>
+                <div className="relative aspect-video bg-stone-100 overflow-hidden">
+                  <PlaceholderImage
+                    placeholderKey={fac.placeholderKey}
+                    aspectRatio="16:9"
+                    alt={fac.name}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute top-3 right-3 bg-[#182B1C]/90 text-white text-xs px-3 py-1 rounded-full font-bold">
+                    £{fac.hourlyRate}/hr
+                  </div>
                 </div>
-                <span className="text-[11px] font-mono text-stone-400">
-                  {fac.status}
-                </span>
+
+                <div className="p-6 space-y-3">
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-xl font-serif-brand font-bold text-[#182B1C]">
+                      {fac.name}
+                    </h3>
+                    <span className="text-xs text-stone-500 font-medium flex items-center gap-1">
+                      <Users className="w-3.5 h-3.5 text-stone-400" />
+                      Up to {fac.capacity}
+                    </span>
+                  </div>
+
+                  <p className="text-xs text-stone-600 leading-relaxed line-clamp-2">
+                    {fac.description}
+                  </p>
+
+                  <div className="pt-2 flex flex-wrap gap-1.5">
+                    {fac.equipment.slice(0, 3).map((eq, i) => (
+                      <span
+                        key={i}
+                        className="text-[11px] px-2.5 py-1 rounded-lg bg-stone-100 text-stone-700 font-medium"
+                      >
+                        {eq}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </div>
-              <h4 className="text-sm font-bold text-stone-900">
-                {fac.name}
-              </h4>
-              <p className="text-xs text-stone-600 leading-relaxed">
-                {fac.description}
-              </p>
+
+              <div className="p-6 pt-0 flex items-center justify-between border-t border-stone-100 mt-2">
+                <span className="text-xs text-stone-500 font-medium">
+                  Deposit: £{fac.depositRequired} refundable
+                </span>
+                <button
+                  onClick={() => handleBookFacility(fac.id)}
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold bg-[#182B1C] text-white hover:bg-[#253f2a] transition-colors cursor-pointer"
+                >
+                  <span>Book This Space</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </button>
+              </div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* =========================================================================
-          COMMUNITY CTA SECTION
-          ========================================================================= */}
+      {/* 4. COMMUNITY ETHOS & CONDITIONS BANNER */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="rounded-2xl bg-[#142217] text-white p-8 sm:p-12 text-center shadow-lg relative overflow-hidden border border-[#233827]">
-          <div className="relative z-10 max-w-2xl mx-auto space-y-4">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#B8C053]">
-              Get Involved
-            </span>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif-brand font-bold text-white leading-tight">
-              Be Part of Madani Community Center
-            </h2>
-            <p className="text-sm sm:text-base text-stone-200 leading-relaxed font-normal">
-              Whether by attending upcoming activities, volunteering your skills, helping organise local initiatives, or enrolling children at Darul Madinah, there are many ways to get involved in Sheffield.
-            </p>
-
-            <div className="flex flex-wrap items-center justify-center gap-3 pt-4">
-              <Button
-                variant="primary"
-                size="md"
-                roundedPill={true}
-                onClick={() => onNavigate('/get-involved')}
-              >
-                Volunteer With Us
-              </Button>
-              <Button
-                variant="outline-white"
-                size="md"
-                roundedPill={true}
-                onClick={() => onNavigate('/contact')}
-              >
-                Contact Our Team
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* =========================================================================
-          INTERACTIVE GOOGLE MAP & LOCATION SECTION
-          ========================================================================= */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-4">
-        <div className="space-y-4">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
-            <div>
+        <div className="rounded-3xl border border-[#273E2C] bg-[#142318] text-white p-8 sm:p-12 shadow-sm">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className="lg:col-span-8 space-y-4">
               <span className="text-xs font-bold uppercase tracking-wider text-[#B8C053]">
-                Location & Accessibility
+                Respectful Community Ethos
               </span>
-              <h2 className="text-2xl sm:text-3xl font-serif-brand font-bold text-[#182B1C] mt-1">
-                Find Us on Tinsley Park Road
-              </h2>
-              <p className="text-sm text-stone-600 mt-0.5">
-                Sheffield, S9 5DL · Easily accessible via car, bus routes, and local transit.
+              <h3 className="text-2xl sm:text-3xl font-serif-brand font-bold text-white leading-tight">
+                Family-Oriented, Alcohol-Free & Inclusive Environment
+              </h3>
+              <p className="text-sm text-stone-300 leading-relaxed">
+                As a faith-inspired community centre under Dawat-e-Islami Sheffield, we take pride in offering a welcoming, safe space for voluntary groups, local families, charity workshops, and educational clinics. In keeping with our ethos, strictly no alcohol, gambling, or unlawful activities are permitted on site.
               </p>
             </div>
-            <div className="flex items-center gap-2">
-              <Button
-                variant="primary"
-                size="sm"
-                roundedPill={true}
-                asLink
-                href={siteConfig.links.googleMapsDirections}
-                external
-                icon={<ExternalLink className="h-3.5 w-3.5" />}
+
+            <div className="lg:col-span-4 flex flex-col gap-3">
+              <button
+                onClick={() => onNavigate('/booking')}
+                className="w-full py-3.5 px-6 rounded-full text-sm font-bold bg-[#B8C053] text-[#14220C] hover:bg-[#c5cd62] transition-colors text-center cursor-pointer shadow-xs"
               >
-                Get Directions
-              </Button>
+                Check Date Availability Now
+              </button>
+              <button
+                onClick={() => onNavigate('/contact')}
+                className="w-full py-3 px-6 rounded-full text-xs font-medium text-stone-300 hover:text-white border border-white/20 hover:bg-white/5 transition-colors text-center cursor-pointer"
+              >
+                Have Questions? Contact Team
+              </button>
             </div>
           </div>
-
-          {/* Interactive Google Map */}
-          <GoogleMapInteractive heightClass="h-[360px] sm:h-[420px]" />
         </div>
       </section>
     </div>
