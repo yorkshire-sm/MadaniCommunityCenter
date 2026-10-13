@@ -4,120 +4,283 @@ interface MadaniLogoProps {
   className?: string;
   size?: number;
   variant?: 'emblem' | 'full';
+  monochrome?: boolean;
 }
 
 export const MadaniLogo: React.FC<MadaniLogoProps> = ({
   className = 'w-full h-full',
   size,
   variant = 'emblem',
+  monochrome = false,
 }) => {
+  // Brand color palette extracted directly from the official logo
+  const navy = monochrome ? 'currentColor' : '#0B2545';
+  const royalBlue = monochrome ? 'currentColor' : '#0077C8';
+  const teal = monochrome ? 'currentColor' : '#00A896';
+  const facetDark = monochrome ? 'currentColor' : '#09315D';
+
   return (
     <svg
-      viewBox={variant === 'full' ? '0 0 500 500' : '10 2 80 84'}
+      viewBox={variant === 'full' ? '0 0 500 520' : '90 15 320 360'}
       className={className}
       width={size}
       height={size}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      aria-label="Madani Community Center Logo"
+      aria-label="Madani Community Center Official Logo"
     >
       <defs>
-        {/* Rich Metallic Gold Gradient for Crescent & Book Pages */}
-        <linearGradient id="mGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#F3D379" />
-          <stop offset="45%" stopColor="#C69C28" />
-          <stop offset="100%" stopColor="#956E13" />
+        {/* Subtle Blue & Teal Shading Gradients */}
+        <linearGradient id="logoBlueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#0284C7" />
+          <stop offset="100%" stopColor="#0069B4" />
         </linearGradient>
 
-        {/* Deep Emerald Forest Green Gradient for Dome & Central Figure */}
-        <linearGradient id="mEmeraldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stopColor="#176346" />
-          <stop offset="60%" stopColor="#0D4B34" />
-          <stop offset="100%" stopColor="#083625" />
+        <linearGradient id="logoTealGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#02B19E" />
+          <stop offset="100%" stopColor="#009688" />
         </linearGradient>
 
-        {/* Vibrant Olive Green for Supporting Community Figures */}
-        <linearGradient id="mOliveGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#7EBA65" />
-          <stop offset="100%" stopColor="#4A8336" />
+        <linearGradient id="logoFacetGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stopColor="#0A2D54" />
+          <stop offset="100%" stopColor="#061F3C" />
         </linearGradient>
       </defs>
 
-      {/* 1. Gold Crescent Moon on Pinnacle */}
+      {/* ========================================================
+          1. CRESCENT MOON AT APEX
+          ======================================================== */}
       <path
-        d="M55.5 12.5 C55.5 16 52.8 19 49 19 C48 19 47.1 18.8 46.2 18.4 C49.2 17.2 51.2 14.3 51.2 11.2 C51.2 9.6 50.6 8.2 49.5 7 C53.3 7.8 55.5 9.8 55.5 12.5 Z"
-        fill="url(#mGoldGrad)"
+        d="M260 30 
+           C242 30, 228 44, 228 62 
+           C228 80, 242 94, 260 94 
+           C250 88, 244 76, 244 62 
+           C244 48, 250 36, 260 30 Z"
+        fill={navy}
       />
 
-      {/* 2. Architectural Dome / Arch Frame */}
+      {/* ========================================================
+          2. ISLAMIC DOME & ARCH FRAMEWORK (DEEP NAVY)
+          ======================================================== */}
+      {/* Outer Arch Contour */}
       <path
-        d="M50 19.5 
-           C51 22, 57 28, 66 35 
-           C75 42, 76 52, 76 66 
-           L70.5 66 
-           C70.5 53, 69 45, 62 39 
-           C56 34, 51 28, 50 24 
-           C49 28, 44 34, 38 39 
-           C31 45, 29.5 53, 29.5 66 
-           L24 66 
-           C24 52, 25 42, 34 35 
-           C43 28, 49 22, 50 19.5 Z"
-        fill="url(#mEmeraldGrad)"
+        d="M250 88 
+           C258 102, 290 128, 326 156 
+           C360 182, 368 214, 368 250 
+           L368 360 L338 360 
+           L338 250 
+           C338 220, 330 196, 305 174 
+           C278 150, 256 130, 250 118 
+           C244 130, 222 150, 195 174 
+           C170 196, 162 220, 162 250 
+           L162 360 L132 360 
+           L132 250 
+           C132 214, 140 182, 174 156 
+           C210 128, 242 102, 250 88 Z"
+        fill={navy}
       />
 
-      {/* 3. Central Figure (Leader / Student) */}
-      <circle cx="50" cy="41" r="5.2" fill="url(#mEmeraldGrad)" />
+      {/* Decorative Outer Side Pillars / Buttresses */}
       <path
-        d="M50 67 
-           C49 61, 46.5 53, 39 44 
-           C43.5 48.5, 47 53, 48 58 
-           C48.8 54.5, 49.5 50.5, 50 48 
-           C50.5 50.5, 51.2 54.5, 52 58 
-           C53 53, 56.5 48.5, 61 44 
-           C53.5 53, 51 61, 50 67 Z"
-        fill="url(#mEmeraldGrad)"
+        d="M125 210 L145 210 L145 360 L125 360 Z"
+        fill={navy}
+      />
+      <path
+        d="M355 210 L375 210 L375 360 L355 360 Z"
+        fill={navy}
+      />
+      {/* Inner Trim Pillars */}
+      <path
+        d="M156 235 L164 235 L164 360 L156 360 Z"
+        fill="#FFFFFF"
+      />
+      <path
+        d="M336 235 L344 235 L344 360 L336 360 Z"
+        fill="#FFFFFF"
       />
 
-      {/* 4. Left Supporting Figure */}
-      <circle cx="36" cy="46" r="3.9" fill="url(#mOliveGrad)" />
+      {/* ========================================================
+          3. THREE COMMUNITY FIGURES (LEARNING & BELONGING)
+          ======================================================== */}
+      {/* Central Figure (Deep Navy) */}
+      <circle cx="250" cy="158" r="9" fill={navy} />
       <path
-        d="M48 67.5 
-           C45 64, 40 58.5, 29.5 49 
-           C29 53, 32.5 60, 40 62.8 
-           C43.5 64.2, 46.5 66, 48 67.5 Z"
-        fill="url(#mOliveGrad)"
+        d="M250 172 
+           C255 176, 268 188, 275 204 
+           L262 208 
+           C256 197, 252 190, 250 188 
+           C248 190, 244 197, 238 208 
+           L225 204 
+           C232 188, 245 176, 250 172 Z"
+        fill={navy}
       />
 
-      {/* 5. Right Supporting Figure */}
-      <circle cx="64" cy="46" r="3.9" fill="url(#mOliveGrad)" />
+      {/* Left Figure (Vibrant Teal) */}
+      <circle cx="218" cy="174" r="8" fill={teal} />
       <path
-        d="M52 67.5 
-           C55 64, 60 58.5, 70.5 49 
-           C71 53, 67.5 60, 60 62.8 
-           C56.5 64.2, 53.5 66, 52 67.5 Z"
-        fill="url(#mOliveGrad)"
+        d="M218 186 
+           C212 190, 204 196, 204 204 
+           C215 204, 228 208, 240 220 
+           L245 214 
+           C236 200, 226 190, 218 186 Z"
+        fill={teal}
       />
 
-      {/* 6. Open Book (Upper Golden Pages) */}
+      {/* Right Figure (Royal Blue) */}
+      <circle cx="282" cy="174" r="8" fill={royalBlue} />
       <path
-        d="M50 68 
-           C54 65.5, 65 61.5, 77 65 
-           C72.5 69, 62 72.5, 52.2 74.5 
-           C50.8 74.8, 49.2 74.8, 47.8 74.5 
-           C38 72.5, 27.5 69, 23 65 
-           C35 61.5, 46 65.5, 50 68 Z"
-        fill="url(#mGoldGrad)"
+        d="M282 186 
+           C288 190, 296 196, 296 204 
+           C285 204, 272 208, 260 220 
+           L255 214 
+           C264 200, 274 190, 282 186 Z"
+        fill={royalBlue}
       />
 
-      {/* 7. Open Book (Lower Emerald Base & Spine) */}
+      {/* ========================================================
+          4. OPEN BOOK PAGES (EDUCATION & WISDOM)
+          ======================================================== */}
+      {/* Top Page Layer (Deep Navy) */}
       <path
-        d="M50 73.5 
-           C55.5 70.5, 69.5 67, 81.5 71.5 
-           C75 76.5, 62.5 80.5, 50 82 
-           C37.5 80.5, 25 76.5, 18.5 71.5 
-           C30.5 67, 44.5 70.5, 50 73.5 Z"
-        fill="url(#mEmeraldGrad)"
+        d="M250 236 
+           C232 225, 202 216, 175 220 
+           C174 228, 176 235, 180 240 
+           C205 234, 230 238, 250 248 
+           C270 238, 295 234, 320 240 
+           C324 235, 326 228, 325 220 
+           C298 216, 268 225, 250 236 Z"
+        fill={navy}
       />
+
+      {/* Lower Blue Left Wing / Page */}
+      <path
+        d="M250 245 
+           C230 234, 200 232, 172 238 
+           L172 245 
+           C200 238, 230 242, 250 254 
+           Z"
+        fill={royalBlue}
+      />
+
+      {/* Lower Blue Right Wing / Page */}
+      <path
+        d="M250 245 
+           C270 234, 300 232, 328 238 
+           L328 245 
+           C300 238, 270 242, 250 254 
+           Z"
+        fill={navy}
+      />
+
+      {/* Center Spine */}
+      <path
+        d="M248 244 L252 244 L252 258 L248 258 Z"
+        fill={navy}
+      />
+
+      {/* ========================================================
+          5. THE GEOMETRIC "M" ICON
+          ======================================================== */}
+      {/* Left Vertical Stem & Diagonal Wing (Royal Blue) */}
+      <path
+        d="M174 248 
+           L204 248 
+           L204 360 
+           L174 360 Z"
+        fill="url(#logoBlueGrad)"
+      />
+      <path
+        d="M204 248 
+           L250 338 
+           L250 310 
+           L222 256 
+           L238 256 
+           L204 248 Z"
+        fill="url(#logoBlueGrad)"
+      />
+      {/* Triangular Left Infill */}
+      <polygon
+        points="204,248 250,338 204,360"
+        fill={royalBlue}
+      />
+
+      {/* Center Fold Facet Shadow (Deep Navy / Indigo) */}
+      <polygon
+        points="250,292 268,318 250,338 232,318"
+        fill={facetDark}
+      />
+
+      {/* Right Vertical Stem & Diagonal Wing (Vibrant Teal) */}
+      <path
+        d="M296 248 
+           L326 248 
+           L326 360 
+           L296 360 Z"
+        fill="url(#logoTealGrad)"
+      />
+      <path
+        d="M296 248 
+           L250 338 
+           L250 310 
+           L278 256 
+           L262 256 
+           L296 248 Z"
+        fill="url(#logoTealGrad)"
+      />
+      {/* Triangular Right Infill */}
+      <polygon
+        points="296,248 250,338 296,360"
+        fill={teal}
+      />
+
+      {/* ========================================================
+          6. FULL VARIANT TYPOGRAPHY (IF VARIANT === 'FULL')
+          ======================================================== */}
+      {variant === 'full' && (
+        <g>
+          {/* Main Title: MADANI */}
+          <text
+            x="250"
+            y="418"
+            textAnchor="middle"
+            fontFamily="'Plus Jakarta Sans', system-ui, sans-serif"
+            fontSize="52"
+            fontWeight="800"
+            letterSpacing="2"
+            fill={navy}
+          >
+            MADANI
+          </text>
+
+          {/* Sub-Title: COMMUNITY CENTER */}
+          <text
+            x="250"
+            y="452"
+            textAnchor="middle"
+            fontFamily="'Plus Jakarta Sans', system-ui, sans-serif"
+            fontSize="21"
+            fontWeight="700"
+            letterSpacing="4"
+            fill={navy}
+          >
+            COMMUNITY CENTER
+          </text>
+
+          {/* Motto: -- LEARN | CONNECT | BELONG -- */}
+          <text
+            x="250"
+            y="480"
+            textAnchor="middle"
+            fontFamily="'Plus Jakarta Sans', system-ui, sans-serif"
+            fontSize="12.5"
+            fontWeight="600"
+            letterSpacing="2.5"
+            fill={navy}
+          >
+            -- LEARN | CONNECT | BELONG --
+          </text>
+        </g>
+      )}
     </svg>
   );
 };

@@ -7,7 +7,7 @@ A modern, secure, full-stack community centre booking platform designed for trad
 ## 🚀 Key Features
 
 1. **Streamlined 4-Section Public Website**:
-   - **Home (`index.php`)**: Centre photography, introduction, facilities summary, and quick "Check Availability" & "Book Now" actions.
+   - **Home (`index.php`)**: Center photography, introduction, facilities summary, and quick "Check Availability" & "Book Now" actions.
    - **Facilities & Pricing (`facilities.php`)**: Room breakdowns, dimensions, hourly rates (weekday & weekend), capacities, equipment amenities.
    - **Availability & Booking (`booking.php`)**: Live date & time availability checker, transactional race-condition conflict prevention, multi-step booking request form, and automated reference generation (`MCC-2026-XXXX`).
    - **Contact & Location (`contact.php`)**: Interactive Google Maps embed, Tinsley Park Road address, phone, email, and enquiry form.

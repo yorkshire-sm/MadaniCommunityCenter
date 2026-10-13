@@ -134,7 +134,7 @@ export default function App() {
   const isAdminPage = currentPath === '/admin' || currentPath === '/dashboard';
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FAF9F5] text-stone-900 font-sans selection:bg-[#B8C053]/30 selection:text-[#18260D]">
+    <div className="min-h-screen w-full max-w-full overflow-x-hidden flex flex-col bg-[#FAF9F5] text-stone-900 font-sans selection:bg-[#B8C053]/30 selection:text-[#18260D]">
       {/* Skip to Content Link (Accessibility) */}
       <a
         href="#main-content"

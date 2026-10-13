@@ -1,6 +1,6 @@
 <?php
 define('APP_ROOT', __DIR__);
-$page_title = "Home - Community Centre Bookings";
+$page_title = "Home - Community Center Bookings";
 require_once APP_ROOT . '/includes/header.php';
 
 // Fetch active facilities from MySQL database

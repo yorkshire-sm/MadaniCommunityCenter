@@ -1,49 +1,49 @@
-<svg viewBox="0 0 500 500" width="500" height="500" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 500 520" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Madani Community Center Official Logo">
   <defs>
-    <linearGradient id="madaniGold" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stopColor="#DFBD5E" />
-      <stop offset="45%" stopColor="#C59B27" />
-      <stop offset="100%" stopColor="#9C7718" />
+    <linearGradient id="svgBlueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284C7" />
+      <stop offset="100%" stop-color="#0069B4" />
     </linearGradient>
-    <linearGradient id="madaniEmerald" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stopColor="#145A40" />
-      <stop offset="60%" stopColor="#0B422E" />
-      <stop offset="100%" stopColor="#072F21" />
+    <linearGradient id="svgTealGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#02B19E" />
+      <stop offset="100%" stop-color="#009688" />
     </linearGradient>
-    <linearGradient id="madaniOlive" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stopColor="#6AA355" />
-      <stop offset="100%" stopColor="#457A32" />
+    <linearGradient id="svgFacetGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0A2D54" />
+      <stop offset="100%" stop-color="#061F3C" />
     </linearGradient>
   </defs>
 
-  <!-- Crescent Moon -->
-  <path d="M268 52 C268 67 256 79 240 79 C236.5 79 233.2 78.3 230 77.1 C241.5 73.2 249.5 62.5 249.5 50 C249.5 44 247.3 38.5 243.6 34.2 C257.6 36.5 268 43 268 52 Z" fill="url(#madaniGold)" />
+  <!-- 1. Crescent Moon at Apex -->
+  <path d="M260 30 C242 30, 228 44, 228 62 C228 80, 242 94, 260 94 C250 88, 244 76, 244 62 C244 48, 250 36, 260 30 Z" fill="#0B2545" />
 
-  <!-- Dome / Arch -->
-  <path d="M250 82 C253 92, 276 114, 308 138 C340 162, 344 195, 344 250 L326 250 C326 200, 321 174, 294 152 C270 132, 253 112, 250 98 C247 112, 230 132, 206 152 C179 174, 174 200, 174 250 L156 250 C156 195, 160 162, 192 138 C224 114, 247 92, 250 82 Z" fill="url(#madaniEmerald)" />
+  <!-- 2. Islamic Dome & Arch Framework (Deep Navy) -->
+  <path d="M250 88 C258 102, 290 128, 326 156 C360 182, 368 214, 368 250 L368 360 L338 360 L338 250 C338 220, 330 196, 305 174 C278 150, 256 130, 250 118 C244 130, 222 150, 195 174 C170 196, 162 220, 162 250 L162 360 L132 360 L132 250 C132 214, 140 182, 174 156 C210 128, 242 102, 250 88 Z" fill="#0B2545" />
+  <path d="M125 210 L145 210 L145 360 L125 360 Z" fill="#0B2545" />
+  <path d="M355 210 L375 210 L375 360 L355 360 Z" fill="#0B2545" />
 
-  <!-- Central Figure -->
-  <circle cx="250" cy="172" r="18" fill="url(#madaniEmerald)" />
-  <path d="M250 270 C247 245, 238 215, 210 182 C226 198, 238 214, 243 232 C245 220, 248 205, 250 196 C252 205, 255 220, 257 232 C262 214, 274 198, 290 182 C262 215, 253 245, 250 270 Z" fill="url(#madaniEmerald)" />
+  <!-- 3. Three Community Figures -->
+  <circle cx="250" cy="158" r="9" fill="#0B2545" />
+  <path d="M250 172 C255 176, 268 188, 275 204 L262 208 C256 197, 252 190, 250 188 C248 190, 244 197, 238 208 L225 204 C232 188, 245 176, 250 172 Z" fill="#0B2545" />
+  <circle cx="218" cy="174" r="8" fill="#00A896" />
+  <path d="M218 186 C212 190, 204 196, 204 204 C215 204, 228 208, 240 220 L245 214 C236 200, 226 190, 218 186 Z" fill="#00A896" />
+  <circle cx="282" cy="174" r="8" fill="#0077C8" />
+  <path d="M282 186 C288 190, 296 196, 296 204 C285 204, 272 208, 260 220 L255 214 C264 200, 274 190, 282 186 Z" fill="#0077C8" />
 
-  <!-- Left Figure -->
-  <circle cx="198" cy="192" r="14" fill="url(#madaniOlive)" />
-  <path d="M242 272 C232 260, 215 240, 175 204 C173 218, 185 244, 212 254 C224 259, 235 266, 242 272 Z" fill="url(#madaniOlive)" />
+  <!-- 4. Open Book Pages -->
+  <path d="M250 236 C232 225, 202 216, 175 220 C174 228, 176 235, 180 240 C205 234, 230 238, 250 248 C270 238, 295 234, 320 240 C324 235, 326 228, 325 220 C298 216, 268 225, 250 236 Z" fill="#0B2545" />
+  <path d="M250 245 C230 234, 200 232, 172 238 L172 245 C200 238, 230 242, 250 254 Z" fill="#0077C8" />
+  <path d="M250 245 C270 234, 300 232, 328 238 L328 245 C300 238, 270 242, 250 254 Z" fill="#0B2545" />
 
-  <!-- Right Figure -->
-  <circle cx="302" cy="192" r="14" fill="url(#madaniOlive)" />
-  <path d="M258 272 C268 260, 285 240, 325 204 C327 218, 315 244, 288 254 C276 259, 265 266, 258 272 Z" fill="url(#madaniOlive)" />
+  <!-- 5. Geometric M Symbol -->
+  <path d="M174 248 L204 248 L204 360 L174 360 Z" fill="url(#svgBlueGrad)" />
+  <polygon points="204,248 250,338 204,360" fill="#0077C8" />
+  <polygon points="250,292 268,318 250,338 232,318" fill="#09315D" />
+  <path d="M296 248 L326 248 L326 360 L296 360 Z" fill="url(#svgTealGrad)" />
+  <polygon points="296,248 250,338 296,360" fill="#00A896" />
 
-  <!-- Open Book (Golden Pages) -->
-  <path d="M250 273 C265 264, 305 250, 348 262 C332 276, 295 288, 258 296 C253 297, 247 297, 242 296 C205 288, 168 276, 152 262 C195 250, 235 264, 250 273 Z" fill="url(#madaniGold)" />
-
-  <!-- Open Book (Emerald Base Pages) -->
-  <path d="M250 293 C270 282, 320 270, 362 284 C340 302, 295 316, 250 322 C205 316, 160 302, 138 284 C180 270, 230 282, 250 293 Z" fill="url(#madaniEmerald)" />
-
-  <!-- Typography -->
-  <text x="250" y="390" text-anchor="middle" font-family="'Playfair Display', Georgia, serif" font-size="46" font-weight="bold" letter-spacing="6" fill="#0B422E">MADANI</text>
-  <text x="250" y="426" text-anchor="middle" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="18" font-weight="700" letter-spacing="5" fill="#0B422E">COMMUNITY CENTER</text>
-  <line x1="55" y1="450" x2="160" y2="450" stroke="#C59B27" stroke-width="1.5" />
-  <text x="250" y="454" text-anchor="middle" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" font-weight="600" letter-spacing="3" fill="#0B422E">LEARN | CONNECT | BELONG</text>
-  <line x1="340" y1="450" x2="445" y2="450" stroke="#C59B27" stroke-width="1.5" />
+  <!-- 6. Typography -->
+  <text x="250" y="418" text-anchor="middle" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="52" font-weight="800" letter-spacing="2" fill="#0B2545">MADANI</text>
+  <text x="250" y="452" text-anchor="middle" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="21" font-weight="700" letter-spacing="4" fill="#0B2545">COMMUNITY CENTER</text>
+  <text x="250" y="480" text-anchor="middle" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="12.5" font-weight="600" letter-spacing="2.5" fill="#0B2545">-- LEARN | CONNECT | BELONG --</text>
 </svg>
