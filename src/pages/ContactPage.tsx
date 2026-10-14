@@ -32,13 +32,13 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
 
       {/* Header */}
       <section className="space-y-3 max-w-2xl">
-        <span className="text-xs font-bold uppercase tracking-wider text-[#B8C053]">
+        <span className="text-xs font-bold uppercase tracking-wider text-[#00A896]">
           Get in Touch
         </span>
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif-brand font-bold text-[#182B1C] tracking-tight">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif-brand font-bold text-[#0B2545] tracking-tight">
           Contact Madani Community Center
         </h1>
-        <p className="text-base text-stone-600 leading-relaxed font-normal">
+        <p className="text-base text-slate-600 leading-relaxed font-normal">
           We are here to assist with school admissions, youth activities, sisters’ gatherings, venue hire, or general community queries in Sheffield.
         </p>
       </section>
@@ -47,10 +47,10 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
       <section className="space-y-3">
         <div className="flex items-center justify-between">
           <div>
-            <h2 className="text-xl font-serif-brand font-bold text-[#182B1C]">
+            <h2 className="text-xl font-serif-brand font-bold text-[#0B2545]">
               Interactive Location Map
             </h2>
-            <p className="text-xs text-stone-500">
+            <p className="text-xs text-slate-500">
               Located on Tinsley Park Road, Sheffield (S9 5DL) · Easily accessible via Sheffield Parkway & M1 J34
             </p>
           </div>
@@ -58,10 +58,10 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
             href={mapPlaceUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-semibold bg-[#FAF9F5] text-[#182B1C] hover:bg-[#F0F4E8] border border-stone-300 transition-colors"
+            className="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-semibold bg-[#F0F7FF] text-[#0B2545] hover:bg-[#E0F0FE] border border-[#BAE6FD] transition-colors"
           >
             <span>Open in Google Maps App</span>
-            <ExternalLink className="h-3 w-3 text-[#B8C053]" />
+            <ExternalLink className="h-3 w-3 text-[#0077C8]" />
           </a>
         </div>
 
@@ -74,24 +74,24 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
         {/* Left Column (5 cols): Visit Us, Opening Hours, Directory */}
         <div className="lg:col-span-5 space-y-6">
           {/* Address & Quick Links Card */}
-          <div className="rounded-2xl border border-stone-200 bg-white p-6 sm:p-8 shadow-xs space-y-5">
+          <div className="rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 shadow-xs space-y-5">
             <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-[#B8C053] block mb-1">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#00A896] block mb-1">
                 Center Address
               </span>
-              <h3 className="text-xl font-serif-brand font-bold text-stone-900">
+              <h3 className="text-xl font-serif-brand font-bold text-slate-900">
                 {siteConfig.centerName}
               </h3>
-              <p className="text-xs text-stone-500">{siteConfig.regionalSubtitle}</p>
+              <p className="text-xs text-slate-500">{siteConfig.regionalSubtitle}</p>
             </div>
 
-            <div className="flex items-start gap-3 text-sm text-stone-700">
-              <MapPin className="h-4 w-4 text-[#B8C053] shrink-0 mt-0.5" />
+            <div className="flex items-start gap-3 text-sm text-slate-700">
+              <MapPin className="h-4 w-4 text-[#00A896] shrink-0 mt-0.5" />
               <div>
-                <p className="font-semibold text-stone-900">{siteConfig.address.line1}</p>
+                <p className="font-semibold text-slate-900">{siteConfig.address.line1}</p>
                 <p>{siteConfig.address.city}</p>
                 <p className="font-mono text-xs">{siteConfig.address.postcode}</p>
-                <p className="text-xs text-stone-500">{siteConfig.address.country}</p>
+                <p className="text-xs text-slate-500">{siteConfig.address.country}</p>
               </div>
             </div>
 
@@ -113,41 +113,41 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
           </div>
 
           {/* Operational Status (Opening Hours & Parking) */}
-          <div className="rounded-2xl border border-stone-200 bg-[#FAF9F5] p-6 space-y-4 text-xs text-stone-600">
+          <div className="rounded-2xl border border-slate-200 bg-[#F0F7FF]/50 p-6 space-y-4 text-xs text-slate-600">
             <div className="space-y-1">
-              <div className="flex items-center gap-2 font-semibold text-stone-800">
-                <Clock className="h-4 w-4 text-[#B8C053]" />
+              <div className="flex items-center gap-2 font-semibold text-slate-800">
+                <Clock className="h-4 w-4 text-[#0077C8]" />
                 <span>Center Opening Hours</span>
               </div>
-              <p className="text-stone-600 leading-relaxed">
+              <p className="text-slate-600 leading-relaxed">
                 {siteConfig.status.openingHoursPlaceholder}
               </p>
             </div>
 
-            <div className="pt-2 border-t border-stone-200 space-y-1">
-              <div className="flex items-center gap-2 font-semibold text-stone-800">
-                <Car className="h-4 w-4 text-[#B8C053]" />
+            <div className="pt-2 border-t border-slate-200 space-y-1">
+              <div className="flex items-center gap-2 font-semibold text-slate-800">
+                <Car className="h-4 w-4 text-[#0077C8]" />
                 <span>Parking & Public Transport</span>
               </div>
-              <p className="text-stone-600 leading-relaxed">
+              <p className="text-slate-600 leading-relaxed">
                 {siteConfig.status.parkingPlaceholder}
               </p>
             </div>
           </div>
 
           {/* Department Contact Placeholders */}
-          <div className="rounded-2xl border border-stone-200 bg-white p-6 space-y-3">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-[#B8C053]">
+          <div className="rounded-2xl border border-slate-200 bg-white p-6 space-y-3">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-[#00A896]">
               Department Enquiries
             </h4>
-            <div className="divide-y divide-stone-100 text-xs text-stone-600">
+            <div className="divide-y divide-slate-100 text-xs text-slate-600">
               <div className="py-2.5 flex items-center justify-between">
-                <span className="font-medium text-stone-800">General Enquiries</span>
-                <span className="font-mono text-stone-600">{siteConfig.contact.email}</span>
+                <span className="font-medium text-slate-800">General Enquiries</span>
+                <span className="font-mono text-slate-600">{siteConfig.contact.email}</span>
               </div>
               <div className="py-2.5 flex items-center justify-between">
-                <span className="font-medium text-stone-800">Darul Madinah Primary</span>
-                <span className="font-mono text-stone-600">{siteConfig.contact.darulMadinahEmail}</span>
+                <span className="font-medium text-slate-800">Darul Madinah Primary</span>
+                <span className="font-mono text-slate-600">{siteConfig.contact.darulMadinahEmail}</span>
               </div>
               <div className="py-2.5 flex items-center justify-between">
                 <span className="font-medium text-stone-800">Venue & Hall Hire</span>

@@ -35,11 +35,11 @@ export const VenueHirePage: React.FC<VenueHirePageProps> = ({ onNavigate }) => {
       <section className="rounded-2xl border border-stone-200 bg-white p-6 sm:p-10 shadow-xs">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-7 space-y-5">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#B8C053]">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#00A896]">
               Community & Private Hire
             </span>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif-brand font-bold tracking-tight text-[#182B1C] leading-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif-brand font-bold tracking-tight text-[#0B2545] leading-tight">
               Venue Hire at Madani Center
             </h1>
 
@@ -78,10 +78,10 @@ export const VenueHirePage: React.FC<VenueHirePageProps> = ({ onNavigate }) => {
       {/* Spaces Breakdown */}
       <section id="spaces-list" className="space-y-8">
         <div>
-          <span className="text-xs font-bold uppercase tracking-wider text-[#B8C053]">
+          <span className="text-xs font-bold uppercase tracking-wider text-[#00A896]">
             Our Spaces
           </span>
-          <h2 className="text-2xl sm:text-3xl font-serif-brand font-bold text-[#182B1C] mt-1">
+          <h2 className="text-2xl sm:text-3xl font-serif-brand font-bold text-[#0B2545] mt-1">
             Available Rooms & Halls
           </h2>
           <p className="text-sm text-stone-600 mt-1 max-w-2xl">
@@ -104,7 +104,7 @@ export const VenueHirePage: React.FC<VenueHirePageProps> = ({ onNavigate }) => {
               <div className="p-6 sm:p-8 space-y-4 flex-1 flex flex-col justify-between">
                 <div className="space-y-3">
                   <div className="flex items-center justify-between text-xs text-stone-500">
-                    <span className="font-bold text-[#182B1C] uppercase tracking-wider">{space.category}</span>
+                    <span className="font-bold text-[#0B2545] uppercase tracking-wider">{space.category}</span>
                     <span className="font-mono text-[11px] text-stone-400">{space.capacityText}</span>
                   </div>
 
@@ -154,12 +154,12 @@ export const VenueHirePage: React.FC<VenueHirePageProps> = ({ onNavigate }) => {
       </section>
 
       {/* Suitable For & Guidelines */}
-      <section className="rounded-2xl bg-[#FAF9F5] border border-stone-200 p-6 sm:p-10 space-y-6">
+      <section className="rounded-2xl bg-[#F8FAFC] border border-slate-200 p-6 sm:p-10 space-y-6">
         <div>
-          <span className="text-xs font-bold uppercase tracking-wider text-[#B8C053]">
+          <span className="text-xs font-bold uppercase tracking-wider text-[#00A896]">
             Booking Guidelines
           </span>
-          <h2 className="text-2xl sm:text-3xl font-serif-brand font-bold text-[#182B1C] mt-1">
+          <h2 className="text-2xl sm:text-3xl font-serif-brand font-bold text-[#0B2545] mt-1">
             Suitable Events & Center Ethos
           </h2>
           <p className="text-sm text-stone-600 mt-1 max-w-2xl">
@@ -170,13 +170,13 @@ export const VenueHirePage: React.FC<VenueHirePageProps> = ({ onNavigate }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-2">
           <div className="p-6 rounded-xl bg-white border border-stone-200 space-y-3">
             <h4 className="text-base font-serif-brand font-bold text-stone-900 flex items-center gap-2">
-              <CheckCircle className="h-4 w-4 text-[#B8C053]" />
+              <CheckCircle className="h-4 w-4 text-[#00A896]" />
               Suitable Occasions
             </h4>
             <ul className="text-xs text-stone-600 space-y-2">
               {suitableEventTypes.map((item) => (
                 <li key={item} className="flex items-center gap-2">
-                  <span className="h-1.5 w-1.5 rounded-full bg-[#182B1C]" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#0B2545]" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -185,24 +185,24 @@ export const VenueHirePage: React.FC<VenueHirePageProps> = ({ onNavigate }) => {
 
           <div className="p-6 rounded-xl bg-white border border-stone-200 space-y-3">
             <h4 className="text-base font-serif-brand font-bold text-stone-900 flex items-center gap-2">
-              <ShieldCheck className="h-4 w-4 text-[#B8C053]" />
+              <ShieldCheck className="h-4 w-4 text-[#00A896]" />
               Center Ethos & Conditions
             </h4>
             <ul className="text-xs text-stone-600 space-y-2">
               <li className="flex items-start gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#B8C053] mt-1 shrink-0" />
+                <span className="h-1.5 w-1.5 rounded-full bg-[#00A896] mt-1 shrink-0" />
                 <span>Strictly alcohol-free, smoke-free, and vape-free premises across all indoor and outdoor grounds.</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#B8C053] mt-1 shrink-0" />
+                <span className="h-1.5 w-1.5 rounded-full bg-[#00A896] mt-1 shrink-0" />
                 <span>Respectful modesty and sound levels appropriate for a residential Sheffield neighbourhood.</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#B8C053] mt-1 shrink-0" />
+                <span className="h-1.5 w-1.5 rounded-full bg-[#00A896] mt-1 shrink-0" />
                 <span>All private food and catering must be fully Halal.</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#B8C053] mt-1 shrink-0" />
+                <span className="h-1.5 w-1.5 rounded-full bg-[#00A896] mt-1 shrink-0" />
                 <span>Hirers are responsible for basic clearance and leaving spaces in good order.</span>
               </li>
             </ul>
@@ -213,10 +213,10 @@ export const VenueHirePage: React.FC<VenueHirePageProps> = ({ onNavigate }) => {
       {/* Venue Gallery */}
       <section className="space-y-6">
         <div>
-          <span className="text-xs font-bold uppercase tracking-wider text-[#B8C053]">
+          <span className="text-xs font-bold uppercase tracking-wider text-[#00A896]">
             Gallery
           </span>
-          <h2 className="text-2xl sm:text-3xl font-serif-brand font-bold text-[#182B1C] mt-1">
+          <h2 className="text-2xl sm:text-3xl font-serif-brand font-bold text-[#0B2545] mt-1">
             Facility Impressions
           </h2>
         </div>
@@ -243,10 +243,10 @@ export const VenueHirePage: React.FC<VenueHirePageProps> = ({ onNavigate }) => {
       <section ref={formRef} className="rounded-2xl border border-stone-200 bg-white p-6 sm:p-10 shadow-xs">
         <div className="max-w-3xl mx-auto space-y-6">
           <div className="text-center space-y-2">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#B8C053]">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#00A896]">
               Booking Enquiry
             </span>
-            <h2 className="text-2xl sm:text-3xl font-serif-brand font-bold text-[#182B1C]">
+            <h2 className="text-2xl sm:text-3xl font-serif-brand font-bold text-[#0B2545]">
               Make a Venue Enquiry
             </h2>
             <p className="text-xs sm:text-sm text-stone-600 max-w-xl mx-auto">

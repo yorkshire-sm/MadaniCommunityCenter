@@ -134,11 +134,11 @@ export default function App() {
   const isAdminPage = currentPath === '/admin' || currentPath === '/dashboard';
 
   return (
-    <div className="min-h-screen w-full max-w-full overflow-x-hidden flex flex-col bg-[#FAF9F5] text-stone-900 font-sans selection:bg-[#B8C053]/30 selection:text-[#18260D]">
+    <div className="min-h-screen w-full max-w-full overflow-x-hidden flex flex-col bg-[#F8FAFC] text-slate-900 font-sans selection:bg-[#0077C8]/20 selection:text-[#0B2545]">
       {/* Skip to Content Link (Accessibility) */}
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:px-4 focus:py-2 focus:bg-[#182B1C] focus:text-white focus:rounded-md focus:shadow-md focus:text-xs font-semibold"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:px-4 focus:py-2 focus:bg-[#0B2545] focus:text-white focus:rounded-md focus:shadow-md focus:text-xs font-semibold"
       >
         Skip to main content
       </a>

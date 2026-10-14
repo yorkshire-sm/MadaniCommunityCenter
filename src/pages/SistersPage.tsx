@@ -28,32 +28,32 @@ export const SistersPage: React.FC<SistersPageProps> = ({ onNavigate, onSelectEv
   const pillars = [
     {
       title: 'Dedicated Islamic Learning',
-      icon: <BookOpen className="h-5 w-5 text-[#182B1C]" />,
+      icon: <BookOpen className="h-5 w-5 text-[#0B2545]" />,
       desc: 'Weekly classes in Tajweed, understanding the Qur’an, prophetic character (Seerah), and everyday fiqh for women.',
     },
     {
       title: 'Wellbeing & Practical Workshops',
-      icon: <Sparkles className="h-5 w-5 text-[#182B1C]" />,
+      icon: <Sparkles className="h-5 w-5 text-[#0B2545]" />,
       desc: 'Interactive sessions on mental wellbeing, nutrition, creative arts, and personal development led by qualified facilitators.',
     },
     {
       title: 'Community Coffee & Social Circles',
-      icon: <Coffee className="h-5 w-5 text-[#182B1C]" />,
+      icon: <Coffee className="h-5 w-5 text-[#0B2545]" />,
       desc: 'Relaxed morning meetups where mothers, students, and elders build lasting friendships and mutual support networks.',
     },
     {
       title: 'Family & Parenting Seminars',
-      icon: <Heart className="h-5 w-5 text-[#182B1C]" />,
+      icon: <Heart className="h-5 w-5 text-[#0B2545]" />,
       desc: 'Guidance and discussion circles on raising resilient children in modern Britain, managing screens, and cultivating a spiritual home.',
     },
     {
       title: 'Charity & Community Projects',
-      icon: <Heart className="h-5 w-5 text-[#182B1C]" />,
+      icon: <Heart className="h-5 w-5 text-[#0B2545]" />,
       desc: 'Leading community outreach, organising aid drives, seasonal gift boxes, and supporting vulnerable families across Sheffield.',
     },
     {
       title: 'Private & Dignified Facilities',
-      icon: <Shield className="h-5 w-5 text-[#182B1C]" />,
+      icon: <Shield className="h-5 w-5 text-[#0B2545]" />,
       desc: 'All programmes are hosted in private, comfortable, and fully equipped spaces designed with dignity and privacy in mind.',
     },
   ];
@@ -71,11 +71,11 @@ export const SistersPage: React.FC<SistersPageProps> = ({ onNavigate, onSelectEv
       <section className="rounded-2xl border border-stone-200 bg-white p-6 sm:p-10 shadow-xs">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-7 space-y-5">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#B8C053]">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#00A896]">
               Sisters at Madani Community Center
             </span>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif-brand font-bold tracking-tight text-[#182B1C] leading-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif-brand font-bold tracking-tight text-[#0B2545] leading-tight">
               A Warm, Inspiring Space for Sisters
             </h1>
 
@@ -122,10 +122,10 @@ export const SistersPage: React.FC<SistersPageProps> = ({ onNavigate, onSelectEv
       {/* Pillars Grid */}
       <section className="space-y-8">
         <div>
-          <span className="text-xs font-bold uppercase tracking-wider text-[#B8C053]">
+          <span className="text-xs font-bold uppercase tracking-wider text-[#00A896]">
             Our Programmes
           </span>
-          <h2 className="text-2xl sm:text-3xl font-serif-brand font-bold text-[#182B1C] mt-1">
+          <h2 className="text-2xl sm:text-3xl font-serif-brand font-bold text-[#0B2545] mt-1">
             What We Offer for Sisters
           </h2>
           <p className="text-sm text-stone-600 mt-1 max-w-2xl">
@@ -139,7 +139,7 @@ export const SistersPage: React.FC<SistersPageProps> = ({ onNavigate, onSelectEv
               key={pillar.title}
               className="p-6 rounded-2xl border border-stone-200/90 bg-white shadow-xs space-y-2.5"
             >
-              <div className="p-2.5 rounded-lg bg-[#F0F4E8] w-fit">
+              <div className="p-2.5 rounded-lg bg-[#F0F7FF] w-fit">
                 {pillar.icon}
               </div>
               <h3 className="text-base font-bold text-stone-900 font-serif-brand">{pillar.title}</h3>
@@ -155,10 +155,10 @@ export const SistersPage: React.FC<SistersPageProps> = ({ onNavigate, onSelectEv
       <section id="sisters-calendar" className="space-y-6">
         <div className="flex items-center justify-between">
           <div>
-            <span className="text-xs font-bold uppercase tracking-wider text-[#B8C053]">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#00A896]">
               Calendar
             </span>
-            <h2 className="text-2xl sm:text-3xl font-serif-brand font-bold text-[#182B1C] mt-1">
+            <h2 className="text-2xl sm:text-3xl font-serif-brand font-bold text-[#0B2545] mt-1">
               Upcoming Sisters’ Gatherings
             </h2>
           </div>
@@ -183,16 +183,16 @@ export const SistersPage: React.FC<SistersPageProps> = ({ onNavigate, onSelectEv
       <section id="sisters-updates" className="rounded-2xl border border-stone-200 bg-white p-6 sm:p-10 shadow-xs">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           <div className="lg:col-span-5 space-y-4">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#B8C053]">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#00A896]">
               Stay Connected
             </span>
-            <h2 className="text-2xl sm:text-3xl font-serif-brand font-bold text-[#182B1C]">
+            <h2 className="text-2xl sm:text-3xl font-serif-brand font-bold text-[#0B2545]">
               Join Our Sisters’ Updates
             </h2>
             <p className="text-sm text-stone-600 leading-relaxed">
               Be the first to hear about upcoming workshops, morning teas, sister halaqahs, and family seminars hosted at Madani Community Center.
             </p>
-            <div className="p-4 rounded-xl bg-[#FAF9F5] border border-stone-200 text-xs text-stone-600 space-y-2">
+            <div className="p-4 rounded-xl bg-[#F8FAFC] border border-stone-200 text-xs text-stone-600 space-y-2">
               <p className="font-semibold text-stone-800">Crèche & Family Amenities</p>
               <p>Where designated, specific gatherings offer supervised play areas to allow mothers with young children to participate comfortably.</p>
               <p className="font-mono text-[11px] text-stone-400">Direct contact: {siteConfig.contact.sistersEmail}</p>

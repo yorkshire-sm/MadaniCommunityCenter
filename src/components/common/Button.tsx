@@ -39,22 +39,22 @@ export const Button: React.FC<ButtonProps> = ({
   }[size];
 
   const variantStyles = {
-    // Chartreuse / Olive-Gold primary matching Luqman Academy site
+    // Official Logo Royal/Ocean Blue primary
     primary:
-      'bg-[#B8C053] text-[#18260D] hover:bg-[#A5AD3F] border border-[#9CA436] shadow-sm focus-visible:outline-[#B8C053]',
-    // Deep forest dark green
+      'bg-[#0077C8] text-white hover:bg-[#0069B4] border border-[#0069B4] shadow-sm focus-visible:outline-[#0077C8]',
+    // Official Logo Deep Navy dark
     dark:
-      'bg-[#182B1C] text-white hover:bg-[#101E13] border border-[#101E13] shadow-sm focus-visible:outline-[#182B1C]',
-    // Secondary light olive tint
+      'bg-[#0B2545] text-white hover:bg-[#07192F] border border-[#07192F] shadow-sm focus-visible:outline-[#0B2545]',
+    // Secondary light ice blue tint
     secondary:
-      'bg-[#F0F4E8] text-[#182B1C] hover:bg-[#E3EACF] border border-[#D5E0C2] focus-visible:outline-[#B8C053]',
+      'bg-[#F0F7FF] text-[#0B2545] hover:bg-[#E0F0FE] border border-[#BAE6FD] focus-visible:outline-[#0077C8]',
     // Outline on light surface
     outline:
-      'bg-transparent text-stone-800 hover:bg-stone-100 border border-stone-300 focus-visible:outline-stone-900',
-    // Outline on dark hero (matching "Find Us" from Luqman Academy header)
+      'bg-transparent text-slate-800 hover:bg-slate-100 border border-slate-300 focus-visible:outline-[#0B2545]',
+    // Outline on dark hero
     'outline-white':
       'bg-transparent text-white hover:bg-white/10 border border-white/60 focus-visible:outline-white',
-    text: 'bg-transparent text-[#182B1C] hover:text-[#B8C053] underline-offset-4 hover:underline p-0 min-h-0',
+    text: 'bg-transparent text-[#0B2545] hover:text-[#0077C8] underline-offset-4 hover:underline p-0 min-h-0',
   }[variant];
 
   const widthStyle = fullWidth ? 'w-full' : '';

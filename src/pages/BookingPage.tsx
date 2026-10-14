@@ -226,20 +226,20 @@ export const BookingPage: React.FC<BookingPageProps> = ({
   return (
     <div className="space-y-12 sm:space-y-16 py-6 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* Header Banner */}
-      <section className="rounded-3xl border border-stone-200/90 bg-white p-6 sm:p-10 shadow-xs">
+      <section className="rounded-3xl border border-slate-200 bg-white p-6 sm:p-10 shadow-xs">
         <div className="max-w-3xl space-y-3">
-          <span className="text-xs font-bold uppercase tracking-wider text-[#B8C053]">
+          <span className="text-xs font-bold uppercase tracking-wider text-[#00A896]">
             Simple Online Booking
           </span>
-          <h1 className="text-3xl sm:text-4xl font-serif-brand font-bold text-[#182B1C] tracking-tight">
+          <h1 className="text-3xl sm:text-4xl font-serif-brand font-bold text-[#0B2545] tracking-tight">
             Check Availability & Request a Booking
           </h1>
-          <p className="text-sm sm:text-base text-stone-600 leading-relaxed">
+          <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
             Select your preferred room, date, and times below. Our system checks real-time availability and calculates estimated hire costs immediately. All submissions are sent directly to the facility manager for rapid review.
           </p>
 
-          <div className="flex items-center gap-2 pt-1 text-xs text-stone-500">
-            <Lock className="w-3.5 h-3.5 text-stone-400" />
+          <div className="flex items-center gap-2 pt-1 text-xs text-slate-500">
+            <Lock className="w-3.5 h-3.5 text-slate-400" />
             <span>Public privacy protected: Personal customer details are never visible on the public availability calendar.</span>
           </div>
         </div>
@@ -247,22 +247,22 @@ export const BookingPage: React.FC<BookingPageProps> = ({
 
       {/* Success Modal / Banner */}
       {submittedBooking && (
-        <div className="rounded-3xl border-2 border-[#437A3B] bg-[#F2F8F1] p-6 sm:p-10 shadow-md animate-fade-in">
-          <div className="flex flex-col sm:flex-row items-start justify-between gap-6 pb-6 border-b border-[#437A3B]/20">
+        <div className="rounded-3xl border-2 border-[#00A896] bg-[#F0FDF4] p-6 sm:p-10 shadow-md animate-fade-in">
+          <div className="flex flex-col sm:flex-row items-start justify-between gap-6 pb-6 border-b border-[#00A896]/20">
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-2xl bg-[#437A3B] text-white flex items-center justify-center shrink-0 shadow-xs">
+              <div className="w-12 h-12 rounded-2xl bg-[#00A896] text-white flex items-center justify-center shrink-0 shadow-xs">
                 <CheckCircle2 className="w-7 h-7" />
               </div>
               <div className="space-y-1">
-                <span className="text-xs font-bold uppercase tracking-wider text-[#437A3B]">
+                <span className="text-xs font-bold uppercase tracking-wider text-[#00A896]">
                   Booking Request Received
                 </span>
-                <h3 className="text-2xl font-serif-brand font-bold text-[#142318]">
+                <h3 className="text-2xl font-serif-brand font-bold text-[#0B2545]">
                   Thank You, {submittedBooking.customerName}!
                 </h3>
-                <p className="text-sm text-stone-700">
+                <p className="text-sm text-slate-700">
                   Your request has been securely logged with Reference Number:{' '}
-                  <strong className="text-base text-[#142318] bg-white px-2 py-0.5 rounded border border-stone-300 font-mono">
+                  <strong className="text-base text-[#0B2545] bg-white px-2 py-0.5 rounded border border-slate-300 font-mono">
                     {submittedBooking.reference}
                   </strong>
                 </p>
@@ -273,7 +273,7 @@ export const BookingPage: React.FC<BookingPageProps> = ({
               <button
                 type="button"
                 onClick={() => window.print()}
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-semibold bg-white text-stone-800 border border-stone-300 hover:bg-stone-50 transition-colors shadow-xs cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-semibold bg-white text-slate-800 border border-slate-300 hover:bg-slate-50 transition-colors shadow-xs cursor-pointer"
               >
                 <Printer className="w-3.5 h-3.5" />
                 Print Confirmation
@@ -281,42 +281,42 @@ export const BookingPage: React.FC<BookingPageProps> = ({
               <button
                 type="button"
                 onClick={() => setSubmittedBooking(null)}
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-semibold bg-[#142318] text-white hover:bg-[#253f2a] transition-colors cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-semibold bg-[#0B2545] text-white hover:bg-[#0077C8] transition-colors cursor-pointer"
               >
                 Make Another Booking
               </button>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-6 text-xs text-stone-700">
-            <div className="bg-white p-3.5 rounded-xl border border-stone-200">
-              <span className="text-stone-400 font-semibold block mb-1">FACILITY</span>
-              <strong className="text-sm text-[#142318]">{submittedBooking.facilityName}</strong>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-6 text-xs text-slate-700">
+            <div className="bg-white p-3.5 rounded-xl border border-slate-200">
+              <span className="text-slate-400 font-semibold block mb-1">FACILITY</span>
+              <strong className="text-sm text-[#0B2545]">{submittedBooking.facilityName}</strong>
             </div>
-            <div className="bg-white p-3.5 rounded-xl border border-stone-200">
-              <span className="text-stone-400 font-semibold block mb-1">DATE & TIME</span>
-              <strong className="text-sm text-[#142318]">
+            <div className="bg-white p-3.5 rounded-xl border border-slate-200">
+              <span className="text-slate-400 font-semibold block mb-1">DATE & TIME</span>
+              <strong className="text-sm text-[#0B2545]">
                 {submittedBooking.date} ({submittedBooking.startTime} - {submittedBooking.finishTime})
               </strong>
             </div>
-            <div className="bg-white p-3.5 rounded-xl border border-stone-200">
-              <span className="text-stone-400 font-semibold block mb-1">ESTIMATED TOTAL</span>
-              <strong className="text-sm text-[#142318]">
+            <div className="bg-white p-3.5 rounded-xl border border-slate-200">
+              <span className="text-slate-400 font-semibold block mb-1">ESTIMATED TOTAL</span>
+              <strong className="text-sm text-[#0B2545]">
                 £{submittedBooking.totalCost} ({submittedBooking.hours} hrs)
               </strong>
             </div>
-            <div className="bg-white p-3.5 rounded-xl border border-stone-200">
-              <span className="text-stone-400 font-semibold block mb-1">STATUS</span>
+            <div className="bg-white p-3.5 rounded-xl border border-slate-200">
+              <span className="text-slate-400 font-semibold block mb-1">STATUS</span>
               <span className="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-bold bg-amber-100 text-amber-900 border border-amber-300">
                 Pending Approval
               </span>
             </div>
           </div>
 
-          <div className="mt-6 p-4 rounded-xl bg-white border border-[#437A3B]/30 flex items-start gap-3 text-xs text-stone-700">
-            <Info className="w-4 h-4 text-[#437A3B] shrink-0 mt-0.5" />
+          <div className="mt-6 p-4 rounded-xl bg-white border border-[#00A896]/30 flex items-start gap-3 text-xs text-slate-700">
+            <Info className="w-4 h-4 text-[#00A896] shrink-0 mt-0.5" />
             <div>
-              <strong>Next Steps:</strong> An automated confirmation email has been logged for <span className="font-semibold text-stone-900">{submittedBooking.customerEmail}</span>. Our bookings team will review calendar arrangements and send your official invoice & keyholder confirmation within 24–48 hours.
+              <strong>Next Steps:</strong> An automated confirmation email has been logged for <span className="font-semibold text-slate-900">{submittedBooking.customerEmail}</span>. Our bookings team will review calendar arrangements and send your official invoice & keyholder confirmation within 24–48 hours.
             </div>
           </div>
         </div>
@@ -327,27 +327,27 @@ export const BookingPage: React.FC<BookingPageProps> = ({
         {/* Left Column: Public Availability Calendar (5 cols) */}
         <div className="lg:col-span-5 space-y-6">
           <div className="rounded-3xl border border-stone-200 bg-white p-6 shadow-xs">
-            <div className="flex items-center justify-between pb-4 border-b border-stone-100 flex-wrap gap-2">
+            <div className="flex items-center justify-between pb-4 border-b border-slate-100 flex-wrap gap-2">
               <div className="flex items-center gap-2">
-                <CalendarIcon className="w-5 h-5 text-[#B8C053]" />
-                <h3 className="text-base font-bold text-[#182B1C]">
+                <CalendarIcon className="w-5 h-5 text-[#0077C8]" />
+                <h3 className="text-base font-bold text-[#0B2545]">
                   Live Availability Calendar
                 </h3>
               </div>
-              <span className="text-[11px] text-stone-400">
+              <span className="text-[11px] text-slate-400">
                 Click a date to select
               </span>
             </div>
 
             {/* Facility Filter for Calendar */}
             <div className="mt-4">
-              <label className="text-[11px] font-semibold text-stone-500 uppercase tracking-wider block mb-1">
+              <label className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider block mb-1">
                 Filter Calendar by Space
               </label>
               <select
                 value={calendarFacilityFilter}
                 onChange={(e) => setCalendarFacilityFilter(e.target.value)}
-                className="w-full text-xs py-2 px-3 rounded-xl border border-stone-200 bg-stone-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#B8C053]"
+                className="w-full text-xs py-2 px-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0077C8]"
               >
                 <option value="all">All Spaces & Halls</option>
                 {facilities.map((fac) => (
@@ -360,14 +360,14 @@ export const BookingPage: React.FC<BookingPageProps> = ({
 
             {/* Month Navigation */}
             <div className="flex items-center justify-between mt-5 mb-3 px-1">
-              <span className="text-sm font-bold text-[#182B1C]">
+              <span className="text-sm font-bold text-[#0B2545]">
                 {monthNames[month]} {year}
               </span>
               <div className="flex items-center gap-1">
                 <button
                   type="button"
                   onClick={prevMonth}
-                  className="p-1.5 rounded-lg border border-stone-200 hover:bg-stone-50 text-stone-700 cursor-pointer"
+                  className="p-1.5 rounded-lg border border-slate-200 hover:bg-slate-50 text-slate-700 cursor-pointer"
                   aria-label="Previous month"
                 >
                   <ChevronLeft className="w-4 h-4" />
@@ -375,7 +375,7 @@ export const BookingPage: React.FC<BookingPageProps> = ({
                 <button
                   type="button"
                   onClick={nextMonth}
-                  className="p-1.5 rounded-lg border border-stone-200 hover:bg-stone-50 text-stone-700 cursor-pointer"
+                  className="p-1.5 rounded-lg border border-slate-200 hover:bg-slate-50 text-slate-700 cursor-pointer"
                   aria-label="Next month"
                 >
                   <ChevronRight className="w-4 h-4" />
@@ -384,7 +384,7 @@ export const BookingPage: React.FC<BookingPageProps> = ({
             </div>
 
             {/* Days of Week Header */}
-            <div className="grid grid-cols-7 gap-1 text-center text-[10px] font-bold text-stone-400 uppercase py-1 border-b border-stone-100">
+            <div className="grid grid-cols-7 gap-1 text-center text-[10px] font-bold text-slate-400 uppercase py-1 border-b border-slate-100">
               <span>Sun</span>
               <span>Mon</span>
               <span>Tue</span>
@@ -408,8 +408,8 @@ export const BookingPage: React.FC<BookingPageProps> = ({
                 const availability = getDayAvailability(dateStr);
                 const isSelected = bookingDate === dateStr;
 
-                let dayBg = 'bg-stone-50 hover:bg-stone-100 text-stone-800';
-                let indicatorDot = 'bg-[#437A3B]';
+                let dayBg = 'bg-slate-50 hover:bg-slate-100 text-slate-800';
+                let indicatorDot = 'bg-[#00A896]';
 
                 if (availability.status === 'blocked') {
                   dayBg = 'bg-rose-50/80 text-rose-800 hover:bg-rose-100';
@@ -420,8 +420,8 @@ export const BookingPage: React.FC<BookingPageProps> = ({
                 }
 
                 if (isSelected) {
-                  dayBg = 'bg-[#182B1C] text-white shadow-xs font-bold';
-                  indicatorDot = 'bg-[#B8C053]';
+                  dayBg = 'bg-[#0B2545] text-white shadow-xs font-bold';
+                  indicatorDot = 'bg-[#00A896]';
                 }
 
                 return (
@@ -433,7 +433,7 @@ export const BookingPage: React.FC<BookingPageProps> = ({
                       setErrorMsg(null);
                     }}
                     className={`h-11 sm:h-12 rounded-xl flex flex-col items-center justify-between p-1 transition-all text-xs cursor-pointer ${dayBg} ${
-                      isSelected ? 'ring-2 ring-[#B8C053]' : ''
+                      isSelected ? 'ring-2 ring-[#0077C8]' : ''
                     }`}
                   >
                     <span className="font-semibold text-[11px]">{dayNum}</span>
@@ -444,9 +444,9 @@ export const BookingPage: React.FC<BookingPageProps> = ({
             </div>
 
             {/* Calendar Legend */}
-            <div className="mt-5 pt-4 border-t border-stone-100 flex items-center justify-between text-[11px] text-stone-600 flex-wrap gap-2">
+            <div className="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-600 flex-wrap gap-2">
               <div className="flex items-center gap-1.5">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#437A3B]" />
+                <span className="w-2.5 h-2.5 rounded-full bg-[#00A896]" />
                 <span>Available</span>
               </div>
               <div className="flex items-center gap-1.5">
@@ -461,22 +461,22 @@ export const BookingPage: React.FC<BookingPageProps> = ({
           </div>
 
           {/* Quick Help Card */}
-          <div className="p-5 rounded-3xl bg-[#FAF9F5] border border-stone-200 space-y-3">
-            <div className="flex items-center gap-2 text-xs font-bold text-[#182B1C] uppercase tracking-wider">
-              <HelpCircle className="w-4 h-4 text-[#B8C053]" />
+          <div className="p-5 rounded-3xl bg-[#F0F7FF]/50 border border-slate-200 space-y-3">
+            <div className="flex items-center gap-2 text-xs font-bold text-[#0B2545] uppercase tracking-wider">
+              <HelpCircle className="w-4 h-4 text-[#0077C8]" />
               Booking Policy Summary
             </div>
-            <ul className="space-y-2 text-xs text-stone-600 leading-relaxed">
+            <ul className="space-y-2 text-xs text-slate-600 leading-relaxed">
               <li className="flex items-start gap-1.5">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#437A3B] shrink-0 mt-0.5" />
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#00A896] shrink-0 mt-0.5" />
                 <span><strong>No Account Needed:</strong> Anyone can submit a booking request without prior registration.</span>
               </li>
               <li className="flex items-start gap-1.5">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#437A3B] shrink-0 mt-0.5" />
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#00A896] shrink-0 mt-0.5" />
                 <span><strong>Pending Review:</strong> All submissions require administrator approval to prevent conflicting events.</span>
               </li>
               <li className="flex items-start gap-1.5">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#437A3B] shrink-0 mt-0.5" />
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#00A896] shrink-0 mt-0.5" />
                 <span><strong>Deposit Policy:</strong> A refundable bond is required before keys or access are issued.</span>
               </li>
             </ul>
@@ -487,16 +487,16 @@ export const BookingPage: React.FC<BookingPageProps> = ({
         <div className="lg:col-span-7">
           <form
             onSubmit={handleSubmit}
-            className="rounded-3xl border border-stone-200 bg-white p-6 sm:p-10 shadow-xs space-y-8"
+            className="rounded-3xl border border-slate-200 bg-white p-6 sm:p-10 shadow-xs space-y-8"
           >
             <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-[#B8C053]">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#00A896]">
                 Step 1 of 3
               </span>
-              <h3 className="text-2xl font-serif-brand font-bold text-[#182B1C] mt-1">
+              <h3 className="text-2xl font-serif-brand font-bold text-[#0B2545] mt-1">
                 Select Space, Date & Times
               </h3>
-              <p className="text-xs text-stone-500 mt-1">
+              <p className="text-xs text-slate-500 mt-1">
                 Prices and duration update live as you choose your booking window.
               </p>
             </div>
@@ -524,7 +524,7 @@ export const BookingPage: React.FC<BookingPageProps> = ({
             {/* Section 1: Facility & Schedule */}
             <div className="space-y-4">
               <div>
-                <label className="text-xs font-bold text-stone-700 block mb-1.5">
+                <label className="text-xs font-bold text-slate-700 block mb-1.5">
                   Select Facility Space <span className="text-rose-500">*</span>
                 </label>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
@@ -535,19 +535,19 @@ export const BookingPage: React.FC<BookingPageProps> = ({
                       onClick={() => setFacilityId(fac.id)}
                       className={`p-3 rounded-2xl border text-left transition-all cursor-pointer flex flex-col justify-between ${
                         facilityId === fac.id
-                          ? 'border-[#182B1C] bg-[#FAF9F5] ring-2 ring-[#B8C053]'
-                          : 'border-stone-200 hover:border-stone-300 bg-white'
+                          ? 'border-[#0077C8] bg-[#F0F7FF] ring-2 ring-[#0077C8]'
+                          : 'border-slate-200 hover:border-slate-300 bg-white'
                       }`}
                     >
                       <div>
-                        <span className="font-bold text-xs text-[#182B1C] block">
+                        <span className="font-bold text-xs text-[#0B2545] block">
                           {fac.name}
                         </span>
-                        <span className="text-[11px] text-stone-500">
+                        <span className="text-[11px] text-slate-500">
                           Capacity: {fac.capacity} people
                         </span>
                       </div>
-                      <span className="text-xs font-bold text-[#437A3B] mt-2 block">
+                      <span className="text-xs font-bold text-[#0077C8] mt-2 block">
                         £{isWeekend ? fac.weekendRate : fac.hourlyRate} / hr
                       </span>
                     </button>
@@ -558,7 +558,7 @@ export const BookingPage: React.FC<BookingPageProps> = ({
               {/* Date & Time Row */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 <div>
-                  <label className="text-xs font-bold text-stone-700 block mb-1">
+                  <label className="text-xs font-bold text-slate-700 block mb-1">
                     Booking Date <span className="text-rose-500">*</span>
                   </label>
                   <input
@@ -567,7 +567,7 @@ export const BookingPage: React.FC<BookingPageProps> = ({
                     min={new Date().toISOString().split('T')[0]}
                     onChange={(e) => setBookingDate(e.target.value)}
                     required
-                    className="w-full text-xs py-2.5 px-3 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-[#B8C053]"
+                    className="w-full text-xs py-2.5 px-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#0077C8]"
                   />
                   {isWeekend && (
                     <span className="text-[10px] text-amber-700 font-semibold block mt-1">
@@ -577,14 +577,14 @@ export const BookingPage: React.FC<BookingPageProps> = ({
                 </div>
 
                 <div>
-                  <label className="text-xs font-bold text-stone-700 block mb-1">
+                  <label className="text-xs font-bold text-slate-700 block mb-1">
                     Start Time <span className="text-rose-500">*</span>
                   </label>
                   <select
                     value={startTime}
                     onChange={(e) => setStartTime(e.target.value)}
                     required
-                    className="w-full text-xs py-2.5 px-3 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-[#B8C053]"
+                    className="w-full text-xs py-2.5 px-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#0077C8]"
                   >
                     {[
                       '08:00', '08:30', '09:00', '09:30', '10:00', '10:30',
@@ -601,14 +601,14 @@ export const BookingPage: React.FC<BookingPageProps> = ({
                 </div>
 
                 <div>
-                  <label className="text-xs font-bold text-stone-700 block mb-1">
+                  <label className="text-xs font-bold text-slate-700 block mb-1">
                     Finish Time <span className="text-rose-500">*</span>
                   </label>
                   <select
                     value={finishTime}
                     onChange={(e) => setFinishTime(e.target.value)}
                     required
-                    className="w-full text-xs py-2.5 px-3 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-[#B8C053]"
+                    className="w-full text-xs py-2.5 px-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#0077C8]"
                   >
                     {[
                       '09:00', '09:30', '10:00', '10:30', '11:00', '11:30',
@@ -626,12 +626,12 @@ export const BookingPage: React.FC<BookingPageProps> = ({
               </div>
 
               {/* Live Cost Summary Bar */}
-              <div className="p-4 rounded-2xl bg-[#142318] text-white flex items-center justify-between flex-wrap gap-3">
+              <div className="p-4 rounded-2xl bg-[#0B2545] text-white flex items-center justify-between flex-wrap gap-3">
                 <div className="space-y-0.5">
-                  <span className="text-[11px] text-stone-300 uppercase tracking-wider font-semibold block">
+                  <span className="text-[11px] text-slate-300 uppercase tracking-wider font-semibold block">
                     Estimated Hire Total
                   </span>
-                  <div className="flex items-center gap-2 text-xs text-stone-300">
+                  <div className="flex items-center gap-2 text-xs text-slate-300">
                     <span>{durationHours} Hours</span>
                     <span>•</span>
                     <span>£{hourlyRate}/hr</span>
@@ -645,10 +645,10 @@ export const BookingPage: React.FC<BookingPageProps> = ({
                 </div>
 
                 <div className="text-right">
-                  <span className="text-2xl font-extrabold text-[#B8C053]">
+                  <span className="text-2xl font-extrabold text-[#00A896]">
                     £{totalCost.toFixed(2)}
                   </span>
-                  <span className="text-[10px] text-stone-300 block">
+                  <span className="text-[10px] text-slate-300 block">
                     Deposit: £{selectedFacility.depositRequired} refundable
                   </span>
                 </div>
@@ -656,26 +656,26 @@ export const BookingPage: React.FC<BookingPageProps> = ({
             </div>
 
             {/* Section 2: Event Details */}
-            <div className="pt-6 border-t border-stone-100 space-y-4">
+            <div className="pt-6 border-t border-slate-100 space-y-4">
               <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-[#B8C053]">
+                <span className="text-xs font-bold uppercase tracking-wider text-[#00A896]">
                   Step 2 of 3
                 </span>
-                <h4 className="text-lg font-serif-brand font-bold text-[#182B1C] mt-0.5">
+                <h4 className="text-lg font-serif-brand font-bold text-[#0B2545] mt-0.5">
                   Event Purpose & Requirements
                 </h4>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="text-xs font-bold text-stone-700 block mb-1">
+                  <label className="text-xs font-bold text-slate-700 block mb-1">
                     Event Type / Description <span className="text-rose-500">*</span>
                   </label>
                   <select
                     value={eventType}
                     onChange={(e) => setEventType(e.target.value)}
                     required
-                    className="w-full text-xs py-2.5 px-3 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-[#B8C053]"
+                    className="w-full text-xs py-2.5 px-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#0077C8]"
                   >
                     <option value="Community Seminar / Workshop">Community Seminar / Workshop</option>
                     <option value="Educational Course / Tuition">Educational Course / Tuition</option>
@@ -689,7 +689,7 @@ export const BookingPage: React.FC<BookingPageProps> = ({
                 </div>
 
                 <div>
-                  <label className="text-xs font-bold text-stone-700 block mb-1">
+                  <label className="text-xs font-bold text-slate-700 block mb-1">
                     Expected Number of Attendees <span className="text-rose-500">*</span>
                   </label>
                   <input
@@ -702,7 +702,7 @@ export const BookingPage: React.FC<BookingPageProps> = ({
                     className={`w-full text-xs py-2.5 px-3 rounded-xl border focus:outline-none focus:ring-2 ${
                       isOverCapacity
                         ? 'border-rose-400 bg-rose-50 text-rose-900 focus:ring-rose-400'
-                        : 'border-stone-300 focus:ring-[#B8C053]'
+                        : 'border-slate-300 focus:ring-[#0077C8]'
                     }`}
                   />
                   {isOverCapacity && (
@@ -715,13 +715,13 @@ export const BookingPage: React.FC<BookingPageProps> = ({
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="text-xs font-bold text-stone-700 block mb-1">
+                  <label className="text-xs font-bold text-slate-700 block mb-1">
                     Preferred Room Layout
                   </label>
                   <select
                     value={layoutPreference}
                     onChange={(e) => setLayoutPreference(e.target.value)}
-                    className="w-full text-xs py-2.5 px-3 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-[#B8C053]"
+                    className="w-full text-xs py-2.5 px-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#0077C8]"
                   >
                     <option value="Theatre style (Chairs facing stage)">Theatre style (Chairs facing stage)</option>
                     <option value="Banquet / Dining rounds">Banquet / Dining rounds</option>
@@ -732,17 +732,17 @@ export const BookingPage: React.FC<BookingPageProps> = ({
                 </div>
 
                 <div>
-                  <label className="text-xs font-bold text-stone-700 block mb-1">
+                  <label className="text-xs font-bold text-slate-700 block mb-1">
                     Commercial Warming Kitchen Add-On
                   </label>
-                  <label className="flex items-center gap-2 p-2.5 rounded-xl border border-stone-200 bg-stone-50 cursor-pointer">
+                  <label className="flex items-center gap-2 p-2.5 rounded-xl border border-slate-200 bg-slate-50 cursor-pointer">
                     <input
                       type="checkbox"
                       checked={needsKitchen}
                       onChange={(e) => setNeedsKitchen(e.target.checked)}
-                      className="rounded text-[#437A3B] focus:ring-[#B8C053]"
+                      className="rounded text-[#0077C8] focus:ring-[#0077C8]"
                     />
-                    <span className="text-xs text-stone-700">
+                    <span className="text-xs text-slate-700">
                       Yes, add warming kitchen (£15/hour)
                     </span>
                   </label>
@@ -750,7 +750,7 @@ export const BookingPage: React.FC<BookingPageProps> = ({
               </div>
 
               <div>
-                <label className="text-xs font-bold text-stone-700 block mb-1">
+                <label className="text-xs font-bold text-slate-700 block mb-1">
                   Additional Equipment or Special Requirements
                 </label>
                 <textarea
@@ -758,18 +758,18 @@ export const BookingPage: React.FC<BookingPageProps> = ({
                   value={additionalRequirements}
                   onChange={(e) => setAdditionalRequirements(e.target.value)}
                   placeholder="e.g. Wireless microphones, stage lectern, audio testing, disabled parking space..."
-                  className="w-full text-xs py-2 px-3 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-[#B8C053]"
+                  className="w-full text-xs py-2 px-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#0077C8]"
                 />
               </div>
             </div>
 
             {/* Section 3: Customer Information */}
-            <div className="pt-6 border-t border-stone-100 space-y-4">
+            <div className="pt-6 border-t border-slate-100 space-y-4">
               <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-[#B8C053]">
+                <span className="text-xs font-bold uppercase tracking-wider text-[#00A896]">
                   Step 3 of 3
                 </span>
-                <h4 className="text-lg font-serif-brand font-bold text-[#182B1C] mt-0.5">
+                <h4 className="text-lg font-serif-brand font-bold text-[#0B2545] mt-0.5">
                   Contact & Organisation Details
                 </h4>
               </div>
@@ -789,7 +789,7 @@ export const BookingPage: React.FC<BookingPageProps> = ({
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="text-xs font-bold text-stone-700 block mb-1">
+                  <label className="text-xs font-bold text-slate-700 block mb-1">
                     Full Name <span className="text-rose-500">*</span>
                   </label>
                   <input
@@ -798,12 +798,12 @@ export const BookingPage: React.FC<BookingPageProps> = ({
                     onChange={(e) => setFullName(e.target.value)}
                     required
                     placeholder="e.g. Tariq Mahmood"
-                    className="w-full text-xs py-2.5 px-3 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-[#B8C053]"
+                    className="w-full text-xs py-2.5 px-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#0077C8]"
                   />
                 </div>
 
                 <div>
-                  <label className="text-xs font-bold text-stone-700 block mb-1">
+                  <label className="text-xs font-bold text-slate-700 block mb-1">
                     Email Address <span className="text-rose-500">*</span>
                   </label>
                   <input
@@ -812,14 +812,14 @@ export const BookingPage: React.FC<BookingPageProps> = ({
                     onChange={(e) => setEmail(e.target.value)}
                     required
                     placeholder="e.g. tariq@example.com"
-                    className="w-full text-xs py-2.5 px-3 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-[#B8C053]"
+                    className="w-full text-xs py-2.5 px-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#0077C8]"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="text-xs font-bold text-stone-700 block mb-1">
+                  <label className="text-xs font-bold text-slate-700 block mb-1">
                     Telephone Number <span className="text-rose-500">*</span>
                   </label>
                   <input
@@ -828,12 +828,12 @@ export const BookingPage: React.FC<BookingPageProps> = ({
                     onChange={(e) => setPhone(e.target.value)}
                     required
                     placeholder="e.g. 07700 900123"
-                    className="w-full text-xs py-2.5 px-3 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-[#B8C053]"
+                    className="w-full text-xs py-2.5 px-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#0077C8]"
                   />
                 </div>
 
                 <div>
-                  <label className="text-xs font-bold text-stone-700 block mb-1">
+                  <label className="text-xs font-bold text-slate-700 block mb-1">
                     Organisation / Charity Name (Optional)
                   </label>
                   <input
@@ -841,7 +841,7 @@ export const BookingPage: React.FC<BookingPageProps> = ({
                     value={organisation}
                     onChange={(e) => setOrganisation(e.target.value)}
                     placeholder="e.g. Sheffield Youth Network"
-                    className="w-full text-xs py-2.5 px-3 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-[#B8C053]"
+                    className="w-full text-xs py-2.5 px-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#0077C8]"
                   />
                 </div>
               </div>
@@ -854,9 +854,9 @@ export const BookingPage: React.FC<BookingPageProps> = ({
                     checked={termsAccepted}
                     onChange={(e) => setTermsAccepted(e.target.checked)}
                     required
-                    className="mt-0.5 rounded text-[#437A3B] focus:ring-[#B8C053]"
+                    className="mt-0.5 rounded text-[#0077C8] focus:ring-[#0077C8]"
                   />
-                  <span className="text-xs text-stone-600">
+                  <span className="text-xs text-slate-600">
                     I confirm this booking adheres to the center’s alcohol-free ethos and community guidelines. I understand bookings are subject to administrator approval. <span className="text-rose-500">*</span>
                   </span>
                 </label>
@@ -867,9 +867,9 @@ export const BookingPage: React.FC<BookingPageProps> = ({
                     checked={privacyAccepted}
                     onChange={(e) => setPrivacyAccepted(e.target.checked)}
                     required
-                    className="mt-0.5 rounded text-[#437A3B] focus:ring-[#B8C053]"
+                    className="mt-0.5 rounded text-[#0077C8] focus:ring-[#0077C8]"
                   />
-                  <span className="text-xs text-stone-600">
+                  <span className="text-xs text-slate-600">
                     I agree to the privacy notice for processing this booking in accordance with UK GDPR. Customer contact details will never be displayed publicly. <span className="text-rose-500">*</span>
                   </span>
                 </label>
@@ -877,8 +877,8 @@ export const BookingPage: React.FC<BookingPageProps> = ({
             </div>
 
             {/* Form Actions */}
-            <div className="pt-6 border-t border-stone-100 flex items-center justify-between flex-wrap gap-4">
-              <span className="text-xs text-stone-500">
+            <div className="pt-6 border-t border-slate-100 flex items-center justify-between flex-wrap gap-4">
+              <span className="text-xs text-slate-500">
                 You will receive a reference code immediately on submission.
               </span>
 
@@ -887,8 +887,8 @@ export const BookingPage: React.FC<BookingPageProps> = ({
                 disabled={isSubmitting || conflictCheck.hasConflict || isOverCapacity}
                 className={`inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-sm font-bold shadow-md transition-all cursor-pointer ${
                   isSubmitting || conflictCheck.hasConflict || isOverCapacity
-                    ? 'bg-stone-300 text-stone-500 cursor-not-allowed'
-                    : 'bg-[#B8C053] text-[#14220C] hover:bg-[#c5cd62] active:scale-98'
+                    ? 'bg-slate-300 text-slate-500 cursor-not-allowed'
+                    : 'bg-gradient-to-r from-[#0077C8] to-[#00A896] hover:from-[#0284C7] hover:to-[#02B19E] text-white active:scale-98'
                 }`}
               >
                 {isSubmitting ? (

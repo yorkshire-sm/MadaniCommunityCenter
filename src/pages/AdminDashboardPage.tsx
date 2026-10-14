@@ -435,15 +435,15 @@ export const AdminDashboardPage: React.FC<AdminDashboardPageProps> = ({ onNaviga
   if (!isAuthenticated) {
     return (
       <div className="min-h-[80vh] flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-md w-full space-y-8 bg-white p-8 sm:p-10 rounded-3xl border border-stone-200 shadow-md">
+        <div className="max-w-md w-full space-y-8 bg-white p-8 sm:p-10 rounded-3xl border border-slate-200 shadow-md">
           <div className="text-center space-y-2">
-            <div className="w-14 h-14 mx-auto rounded-2xl bg-[#142318] text-[#B8C053] flex items-center justify-center shadow-xs">
+            <div className="w-14 h-14 mx-auto rounded-2xl bg-[#0B2545] text-[#00A896] flex items-center justify-center shadow-xs">
               <Lock className="w-7 h-7" />
             </div>
-            <h2 className="text-2xl font-serif-brand font-bold text-[#182B1C]">
+            <h2 className="text-2xl font-serif-brand font-bold text-[#0B2545]">
               Admin Security Gateway
             </h2>
-            <p className="text-xs text-stone-500">
+            <p className="text-xs text-slate-500">
               Madani Community Center Booking Administration
             </p>
           </div>
@@ -457,7 +457,7 @@ export const AdminDashboardPage: React.FC<AdminDashboardPageProps> = ({ onNaviga
 
           <form onSubmit={handleLogin} className="space-y-4">
             <div>
-              <label className="text-xs font-bold text-stone-700 block mb-1">
+              <label className="text-xs font-bold text-slate-700 block mb-1">
                 Admin Username or Email
               </label>
               <input
@@ -466,12 +466,12 @@ export const AdminDashboardPage: React.FC<AdminDashboardPageProps> = ({ onNaviga
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 placeholder="admin@madanicenter.org.uk"
-                className="w-full text-xs py-2.5 px-3 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-[#B8C053]"
+                className="w-full text-xs py-2.5 px-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#0077C8]"
               />
             </div>
 
             <div>
-              <label className="text-xs font-bold text-stone-700 block mb-1">
+              <label className="text-xs font-bold text-slate-700 block mb-1">
                 Admin Password
               </label>
               <input
@@ -480,13 +480,13 @@ export const AdminDashboardPage: React.FC<AdminDashboardPageProps> = ({ onNaviga
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••••••"
-                className="w-full text-xs py-2.5 px-3 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-[#B8C053]"
+                className="w-full text-xs py-2.5 px-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#0077C8]"
               />
             </div>
 
             <div>
-              <label className="text-xs font-bold text-stone-700 block mb-1">
-                2FA Authenticator Code <span className="text-stone-400 font-normal">(Optional)</span>
+              <label className="text-xs font-bold text-slate-700 block mb-1">
+                2FA Authenticator Code <span className="text-slate-400 font-normal">(Optional)</span>
               </label>
               <input
                 type="text"
@@ -494,7 +494,7 @@ export const AdminDashboardPage: React.FC<AdminDashboardPageProps> = ({ onNaviga
                 value={twoFactorCode}
                 onChange={(e) => setTwoFactorCode(e.target.value)}
                 placeholder="e.g. 123456"
-                className="w-full text-xs py-2.5 px-3 rounded-xl border border-stone-300 font-mono tracking-widest focus:outline-none focus:ring-2 focus:ring-[#B8C053]"
+                className="w-full text-xs py-2.5 px-3 rounded-xl border border-slate-300 font-mono tracking-widest focus:outline-none focus:ring-2 focus:ring-[#0077C8]"
               />
             </div>
 
@@ -504,27 +504,27 @@ export const AdminDashboardPage: React.FC<AdminDashboardPageProps> = ({ onNaviga
                 disabled={lockoutTime > 0}
                 className={`w-full py-3 rounded-xl text-xs font-bold transition-all shadow-xs cursor-pointer flex items-center justify-center gap-2 ${
                   lockoutTime > 0
-                    ? 'bg-stone-300 text-stone-500 cursor-not-allowed'
-                    : 'bg-[#182B1C] text-white hover:bg-[#253f2a]'
+                    ? 'bg-slate-300 text-slate-500 cursor-not-allowed'
+                    : 'bg-[#0B2545] text-white hover:bg-[#0077C8]'
                 }`}
               >
-                <ShieldCheck className="w-4 h-4 text-[#B8C053]" />
+                <ShieldCheck className="w-4 h-4 text-[#00A896]" />
                 {lockoutTime > 0 ? `Locked (${lockoutTime}s remaining)` : 'Authenticate & Enter Dashboard'}
               </button>
             </div>
           </form>
 
           {/* Quick Demo Credentials Reminder */}
-          <div className="p-3 rounded-xl bg-stone-50 border border-stone-200 text-[11px] text-stone-600 space-y-1">
-            <span className="font-bold text-[#182B1C] block">Default Admin Login:</span>
-            <div>Username: <code className="bg-stone-200 px-1 py-0.5 rounded text-stone-900 font-mono">admin@madanicenter.org.uk</code></div>
-            <div>Password: <code className="bg-stone-200 px-1 py-0.5 rounded text-stone-900 font-mono">MadaniAdmin2026!</code></div>
+          <div className="p-3 rounded-xl bg-slate-50 border border-slate-200 text-[11px] text-slate-600 space-y-1">
+            <span className="font-bold text-[#0B2545] block">Default Admin Login:</span>
+            <div>Username: <code className="bg-slate-200 px-1 py-0.5 rounded text-slate-900 font-mono">admin@madanicenter.org.uk</code></div>
+            <div>Password: <code className="bg-slate-200 px-1 py-0.5 rounded text-slate-900 font-mono">MadaniAdmin2026!</code></div>
           </div>
 
           <div className="text-center pt-2">
             <button
               onClick={() => onNavigate('/')}
-              className="text-xs text-stone-500 hover:text-stone-800 transition-colors"
+              className="text-xs text-slate-500 hover:text-slate-800 transition-colors"
             >
               ← Return to Public Website
             </button>
@@ -537,16 +537,16 @@ export const AdminDashboardPage: React.FC<AdminDashboardPageProps> = ({ onNaviga
   return (
     <div className="py-6 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
       {/* Top Header Bar */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 bg-[#142318] text-white p-5 sm:p-6 rounded-3xl shadow-sm border border-[#273E2C]">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 bg-[#0B2545] text-white p-5 sm:p-6 rounded-3xl shadow-sm border border-[#143A66]">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-[#B8C053]/20 text-[#B8C053] flex items-center justify-center shrink-0 border border-[#B8C053]/30">
+          <div className="w-10 h-10 rounded-xl bg-[#00A896]/20 text-[#00A896] flex items-center justify-center shrink-0 border border-[#00A896]/30">
             <ShieldCheck className="w-6 h-6" />
           </div>
           <div>
             <h1 className="text-xl font-serif-brand font-bold text-white">
               Madani Booking Administration
             </h1>
-            <span className="text-[11px] text-stone-300">
+            <span className="text-[11px] text-slate-300">
               Authenticated session: admin@madanicenter.org.uk • 15m inactivity timeout active
             </span>
           </div>
@@ -555,15 +555,15 @@ export const AdminDashboardPage: React.FC<AdminDashboardPageProps> = ({ onNaviga
         <div className="flex items-center gap-2.5 flex-wrap">
           <button
             onClick={() => onNavigate('/')}
-            className="px-3.5 py-1.5 rounded-lg text-xs font-medium text-stone-300 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
+            className="px-3.5 py-1.5 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
           >
             View Public Site
           </button>
           <button
             onClick={handleExportCSV}
-            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-white text-stone-800 hover:bg-stone-100 transition-colors cursor-pointer shadow-xs"
+            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-800 hover:bg-slate-100 transition-colors cursor-pointer shadow-xs"
           >
-            <FileSpreadsheet className="w-3.5 h-3.5 text-[#437A3B]" />
+            <FileSpreadsheet className="w-3.5 h-3.5 text-[#00A896]" />
             Export CSV
           </button>
           <button
@@ -597,8 +597,8 @@ export const AdminDashboardPage: React.FC<AdminDashboardPageProps> = ({ onNaviga
               }}
               className={`flex items-center gap-2 px-4 py-2.5 rounded-t-xl text-xs font-semibold transition-all cursor-pointer whitespace-nowrap ${
                 isActive
-                  ? 'border-b-2 border-[#182B1C] text-[#182B1C] bg-stone-100'
-                  : 'text-stone-500 hover:text-stone-800 hover:bg-stone-50'
+                  ? 'border-b-2 border-[#0077C8] text-[#0077C8] bg-slate-100'
+                  : 'text-slate-500 hover:text-slate-800 hover:bg-slate-50'
               }`}
             >
               <Icon className="w-4 h-4" />
@@ -618,14 +618,14 @@ export const AdminDashboardPage: React.FC<AdminDashboardPageProps> = ({ onNaviga
         <div className="space-y-8 animate-fade-in">
           {/* KPI Stat Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-            <div className="p-5 rounded-3xl bg-white border border-stone-200 shadow-xs space-y-2">
-              <span className="text-[11px] font-bold uppercase tracking-wider text-stone-400 block">
+            <div className="p-5 rounded-3xl bg-white border border-slate-200 shadow-xs space-y-2">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block">
                 Total Bookings
               </span>
-              <div className="text-3xl font-extrabold text-[#182B1C]">
+              <div className="text-3xl font-extrabold text-[#0B2545]">
                 {totalBookings}
               </div>
-              <span className="text-[10px] text-stone-500">All recorded requests</span>
+              <span className="text-[10px] text-slate-500">All recorded requests</span>
             </div>
 
             <div className="p-5 rounded-3xl bg-amber-50/80 border border-amber-200 shadow-xs space-y-2">
@@ -639,53 +639,53 @@ export const AdminDashboardPage: React.FC<AdminDashboardPageProps> = ({ onNaviga
               <span className="text-[10px] text-amber-700">Requires coordinator review</span>
             </div>
 
-            <div className="p-5 rounded-3xl bg-emerald-50/80 border border-emerald-200 shadow-xs space-y-2">
-              <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-800 block">
+            <div className="p-5 rounded-3xl bg-teal-50/80 border border-teal-200 shadow-xs space-y-2">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-teal-800 block">
                 Confirmed Bookings
               </span>
-              <div className="text-3xl font-extrabold text-emerald-900">
+              <div className="text-3xl font-extrabold text-teal-900">
                 {confirmedCount}
               </div>
-              <span className="text-[10px] text-emerald-700">Reserved & calendar blocked</span>
+              <span className="text-[10px] text-teal-700">Reserved & calendar blocked</span>
             </div>
 
-            <div className="p-5 rounded-3xl bg-white border border-stone-200 shadow-xs space-y-2">
-              <span className="text-[11px] font-bold uppercase tracking-wider text-stone-400 block">
+            <div className="p-5 rounded-3xl bg-white border border-slate-200 shadow-xs space-y-2">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block">
                 Cancelled / Rejected
               </span>
-              <div className="text-3xl font-extrabold text-stone-700">
+              <div className="text-3xl font-extrabold text-slate-700">
                 {cancelledCount}
               </div>
-              <span className="text-[10px] text-stone-500">Released time slots</span>
+              <span className="text-[10px] text-slate-500">Released time slots</span>
             </div>
 
-            <div className="p-5 rounded-3xl bg-[#142318] text-white border border-[#273E2C] shadow-xs space-y-2">
-              <span className="text-[11px] font-bold uppercase tracking-wider text-[#B8C053] block">
+            <div className="p-5 rounded-3xl bg-[#0B2545] text-white border border-[#143A66] shadow-xs space-y-2">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-[#00A896] block">
                 Confirmed Revenue
               </span>
               <div className="text-3xl font-extrabold text-white">
                 £{totalRevenue.toFixed(0)}
               </div>
-              <span className="text-[10px] text-stone-300">Excluding deposit bonds</span>
+              <span className="text-[10px] text-slate-300">Excluding deposit bonds</span>
             </div>
           </div>
 
           {/* Quick Actions Row */}
-          <div className="flex items-center justify-between bg-stone-100 p-4 rounded-2xl flex-wrap gap-3">
-            <div className="text-xs text-stone-700 font-medium">
+          <div className="flex items-center justify-between bg-slate-100 p-4 rounded-2xl flex-wrap gap-3">
+            <div className="text-xs text-slate-700 font-medium">
               Administrative Quick Actions:
             </div>
             <div className="flex items-center gap-2 flex-wrap">
               <button
                 onClick={() => setShowAddModal(true)}
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold bg-[#182B1C] text-white hover:bg-[#253f2a] transition-colors cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold bg-[#0B2545] text-white hover:bg-[#0077C8] transition-colors cursor-pointer"
               >
                 <Plus className="w-3.5 h-3.5" />
                 Add Phone / Manual Booking
               </button>
               <button
                 onClick={() => setShowBlockModal(true)}
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold bg-white border border-stone-300 text-stone-800 hover:bg-stone-50 transition-colors cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold bg-white border border-slate-300 text-slate-800 hover:bg-slate-50 transition-colors cursor-pointer"
               >
                 <Clock className="w-3.5 h-3.5 text-rose-500" />
                 Block Out Date
@@ -694,13 +694,13 @@ export const AdminDashboardPage: React.FC<AdminDashboardPageProps> = ({ onNaviga
           </div>
 
           {/* Pending Approval Priority List */}
-          <div className="rounded-3xl border border-stone-200 bg-white p-6 shadow-xs space-y-4">
-            <div className="flex items-center justify-between pb-3 border-b border-stone-100">
+          <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-xs space-y-4">
+            <div className="flex items-center justify-between pb-3 border-b border-slate-100">
               <div>
-                <h3 className="text-base font-bold text-[#182B1C]">
+                <h3 className="text-base font-bold text-[#0B2545]">
                   Bookings Awaiting Review ({pendingCount})
                 </h3>
-                <p className="text-xs text-stone-500">
+                <p className="text-xs text-slate-500">
                   New submissions from the public website needing approval or rejection
                 </p>
               </div>
@@ -712,12 +712,12 @@ export const AdminDashboardPage: React.FC<AdminDashboardPageProps> = ({ onNaviga
             </div>
 
             {pendingCount === 0 ? (
-              <div className="text-center py-8 text-stone-400 text-xs">
-                <CheckCircle2 className="w-8 h-8 mx-auto text-[#437A3B] mb-2 opacity-80" />
+              <div className="text-center py-8 text-slate-400 text-xs">
+                <CheckCircle2 className="w-8 h-8 mx-auto text-[#00A896] mb-2 opacity-80" />
                 All booking requests have been reviewed. No pending approvals remaining.
               </div>
             ) : (
-              <div className="divide-y divide-stone-100">
+              <div className="divide-y divide-slate-100">
                 {bookings
                   .filter((b) => b.status === 'pending')
                   .map((booking) => (
@@ -727,20 +727,20 @@ export const AdminDashboardPage: React.FC<AdminDashboardPageProps> = ({ onNaviga
                     >
                       <div className="space-y-1">
                         <div className="flex items-center gap-2">
-                          <span className="font-mono text-xs font-bold text-[#182B1C] bg-stone-100 px-2 py-0.5 rounded">
+                          <span className="font-mono text-xs font-bold text-[#0B2545] bg-slate-100 px-2 py-0.5 rounded">
                             {booking.reference}
                           </span>
-                          <strong className="text-sm text-stone-900">{booking.customerName}</strong>
+                          <strong className="text-sm text-slate-900">{booking.customerName}</strong>
                           {booking.organisation && (
-                            <span className="text-xs text-stone-500 font-normal">
+                            <span className="text-xs text-slate-500 font-normal">
                               ({booking.organisation})
                             </span>
                           )}
                         </div>
-                        <p className="text-xs text-stone-600">
+                        <p className="text-xs text-slate-600">
                           {booking.facilityName} • <strong>{booking.date}</strong> ({booking.startTime} - {booking.finishTime}) • £{booking.totalCost}
                         </p>
-                        <p className="text-[11px] text-stone-500 italic">
+                        <p className="text-[11px] text-slate-500 italic">
                           "{booking.eventType}" — {booking.attendees} attendees
                         </p>
                       </div>
@@ -748,13 +748,13 @@ export const AdminDashboardPage: React.FC<AdminDashboardPageProps> = ({ onNaviga
                       <div className="flex items-center gap-2 shrink-0">
                         <button
                           onClick={() => setSelectedBooking(booking)}
-                          className="px-3 py-1.5 rounded-lg text-xs font-medium text-stone-700 bg-stone-100 hover:bg-stone-200 transition-colors cursor-pointer"
+                          className="px-3 py-1.5 rounded-lg text-xs font-medium text-slate-700 bg-slate-100 hover:bg-slate-200 transition-colors cursor-pointer"
                         >
                           View Details
                         </button>
                         <button
                           onClick={() => handleApprove(booking)}
-                          className="inline-flex items-center gap-1 px-3.5 py-1.5 rounded-lg text-xs font-bold bg-[#437A3B] text-white hover:bg-[#34612e] transition-colors cursor-pointer shadow-xs"
+                          className="inline-flex items-center gap-1 px-3.5 py-1.5 rounded-lg text-xs font-bold bg-[#00A896] text-white hover:bg-[#009181] transition-colors cursor-pointer shadow-xs"
                         >
                           <CheckCircle2 className="w-3.5 h-3.5" />
                           Approve
@@ -782,17 +782,17 @@ export const AdminDashboardPage: React.FC<AdminDashboardPageProps> = ({ onNaviga
       {activeTab === 'bookings' && (
         <div className="space-y-6 animate-fade-in">
           {/* Controls Bar */}
-          <div className="rounded-3xl border border-stone-200 bg-white p-5 shadow-xs space-y-4">
+          <div className="rounded-3xl border border-slate-200 bg-white p-5 shadow-xs space-y-4">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
               {/* Search Box */}
               <div className="relative flex-1 max-w-md">
-                <Search className="w-4 h-4 text-stone-400 absolute left-3 top-3" />
+                <Search className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
                 <input
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search reference, customer name, email, organisation..."
-                  className="w-full text-xs py-2.5 pl-9 pr-3 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-[#B8C053]"
+                  className="w-full text-xs py-2.5 pl-9 pr-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#0077C8]"
                 />
               </div>
 
@@ -801,7 +801,7 @@ export const AdminDashboardPage: React.FC<AdminDashboardPageProps> = ({ onNaviga
                 <select
                   value={statusFilter}
                   onChange={(e) => setStatusFilter(e.target.value)}
-                  className="text-xs py-2 px-3 rounded-xl border border-stone-300 bg-stone-50 focus:outline-none"
+                  className="text-xs py-2 px-3 rounded-xl border border-slate-300 bg-slate-50 focus:outline-none"
                 >
                   <option value="all">All Statuses ({bookings.length})</option>
                   <option value="pending">Pending Approval ({pendingCount})</option>
@@ -813,7 +813,7 @@ export const AdminDashboardPage: React.FC<AdminDashboardPageProps> = ({ onNaviga
                 <select
                   value={facilityFilter}
                   onChange={(e) => setFacilityFilter(e.target.value)}
-                  className="text-xs py-2 px-3 rounded-xl border border-stone-300 bg-stone-50 focus:outline-none"
+                  className="text-xs py-2 px-3 rounded-xl border border-slate-300 bg-slate-50 focus:outline-none"
                 >
                   <option value="all">All Facilities</option>
                   {facilities.map((fac) => (
@@ -825,7 +825,7 @@ export const AdminDashboardPage: React.FC<AdminDashboardPageProps> = ({ onNaviga
 
                 <button
                   onClick={() => setShowAddModal(true)}
-                  className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold bg-[#182B1C] text-white hover:bg-[#253f2a] transition-colors cursor-pointer"
+                  className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold bg-[#0B2545] text-white hover:bg-[#0077C8] transition-colors cursor-pointer"
                 >
                   <Plus className="w-3.5 h-3.5" />
                   Add Booking
@@ -835,11 +835,11 @@ export const AdminDashboardPage: React.FC<AdminDashboardPageProps> = ({ onNaviga
           </div>
 
           {/* Bookings Data Table */}
-          <div className="rounded-3xl border border-stone-200 bg-white shadow-xs overflow-hidden">
+          <div className="rounded-3xl border border-slate-200 bg-white shadow-xs overflow-hidden">
             <div className="overflow-x-auto">
               <table className="w-full text-left text-xs border-collapse">
                 <thead>
-                  <tr className="border-b border-stone-200 bg-stone-50/80 text-[11px] font-bold text-stone-600 uppercase tracking-wider">
+                  <tr className="border-b border-slate-200 bg-slate-50/80 text-[11px] font-bold text-slate-600 uppercase tracking-wider">
                     <th className="py-3 px-4">Ref Code</th>
                     <th className="py-3 px-4">Customer</th>
                     <th className="py-3 px-4">Facility</th>
@@ -849,39 +849,39 @@ export const AdminDashboardPage: React.FC<AdminDashboardPageProps> = ({ onNaviga
                     <th className="py-3 px-4 text-right">Actions</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-stone-100 text-stone-700">
+                <tbody className="divide-y divide-slate-100 text-slate-700">
                   {filteredBookings.length === 0 ? (
                     <tr>
-                      <td colSpan={7} className="py-8 text-center text-stone-400">
+                      <td colSpan={7} className="py-8 text-center text-slate-400">
                         No bookings matching selected filters.
                       </td>
                     </tr>
                   ) : (
                     filteredBookings.map((b) => (
-                      <tr key={b.id} className="hover:bg-stone-50/70 transition-colors">
-                        <td className="py-3.5 px-4 font-mono font-bold text-[#182B1C]">
+                      <tr key={b.id} className="hover:bg-slate-50/70 transition-colors">
+                        <td className="py-3.5 px-4 font-mono font-bold text-[#0B2545]">
                           {b.reference}
                         </td>
                         <td className="py-3.5 px-4">
-                          <strong className="text-stone-900 block">{b.customerName}</strong>
-                          <span className="text-[10px] text-stone-500">{b.customerEmail}</span>
+                          <strong className="text-slate-900 block">{b.customerName}</strong>
+                          <span className="text-[10px] text-slate-500">{b.customerEmail}</span>
                         </td>
                         <td className="py-3.5 px-4">
-                          <span className="font-medium text-stone-800">{b.facilityName}</span>
-                          <span className="block text-[10px] text-stone-400">{b.eventType}</span>
+                          <span className="font-medium text-slate-800">{b.facilityName}</span>
+                          <span className="block text-[10px] text-slate-400">{b.eventType}</span>
                         </td>
                         <td className="py-3.5 px-4">
-                          <span className="font-semibold text-stone-900">{b.date}</span>
-                          <span className="block text-[10px] text-stone-500">
+                          <span className="font-semibold text-slate-900">{b.date}</span>
+                          <span className="block text-[10px] text-slate-500">
                             {b.startTime} - {b.finishTime} ({b.hours} hrs)
                           </span>
                         </td>
-                        <td className="py-3.5 px-4 font-bold text-stone-900">
+                        <td className="py-3.5 px-4 font-bold text-slate-900">
                           £{b.totalCost}
                         </td>
                         <td className="py-3.5 px-4">
                           {b.status === 'confirmed' && (
-                            <span className="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-200">
+                            <span className="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-teal-100 text-teal-800 border border-teal-200">
                               Confirmed
                             </span>
                           )}
@@ -896,7 +896,7 @@ export const AdminDashboardPage: React.FC<AdminDashboardPageProps> = ({ onNaviga
                             </span>
                           )}
                           {b.status === 'cancelled' && (
-                            <span className="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-stone-100 text-stone-600 border border-stone-200">
+                            <span className="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-slate-100 text-slate-600 border border-slate-200">
                               Cancelled
                             </span>
                           )}
@@ -908,7 +908,7 @@ export const AdminDashboardPage: React.FC<AdminDashboardPageProps> = ({ onNaviga
                                 setSelectedBooking(b);
                                 setEditNotesText(b.internalNotes || '');
                               }}
-                              className="p-1.5 rounded-lg text-stone-500 hover:text-stone-900 hover:bg-stone-100 cursor-pointer"
+                              className="p-1.5 rounded-lg text-slate-500 hover:text-slate-900 hover:bg-slate-100 cursor-pointer"
                               title="View full details"
                             >
                               <Eye className="w-4 h-4" />
@@ -916,7 +916,7 @@ export const AdminDashboardPage: React.FC<AdminDashboardPageProps> = ({ onNaviga
                             {b.status === 'pending' && (
                               <button
                                 onClick={() => handleApprove(b)}
-                                className="p-1.5 rounded-lg text-[#437A3B] hover:bg-emerald-50 cursor-pointer"
+                                className="p-1.5 rounded-lg text-[#00A896] hover:bg-teal-50 cursor-pointer"
                                 title="Approve booking"
                               >
                                 <CheckCircle2 className="w-4 h-4" />
@@ -948,7 +948,7 @@ export const AdminDashboardPage: React.FC<AdminDashboardPageProps> = ({ onNaviga
         <div className="space-y-6 animate-fade-in">
           <div className="flex items-center justify-between bg-white p-5 rounded-3xl border border-stone-200 shadow-xs flex-wrap gap-4">
             <div>
-              <h3 className="text-base font-bold text-[#182B1C]">
+              <h3 className="text-base font-bold text-[#0B2545]">
                 Blocked Dates & Facility Blackout Periods
               </h3>
               <p className="text-xs text-stone-500">
@@ -957,7 +957,7 @@ export const AdminDashboardPage: React.FC<AdminDashboardPageProps> = ({ onNaviga
             </div>
             <button
               onClick={() => setShowBlockModal(true)}
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold bg-[#182B1C] text-white hover:bg-[#253f2a] transition-colors cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold bg-[#0B2545] text-white hover:bg-[#0077C8] transition-colors cursor-pointer"
             >
               <Plus className="w-3.5 h-3.5" />
               Block New Date
@@ -965,35 +965,37 @@ export const AdminDashboardPage: React.FC<AdminDashboardPageProps> = ({ onNaviga
           </div>
 
           <div className="rounded-3xl border border-stone-200 bg-white shadow-xs overflow-hidden">
-            <table className="w-full text-left text-xs border-collapse">
-              <thead>
-                <tr className="border-b border-stone-200 bg-stone-50 text-[11px] font-bold text-stone-600 uppercase">
-                  <th className="py-3 px-4">Date</th>
-                  <th className="py-3 px-4">Facility Scope</th>
-                  <th className="py-3 px-4">Closure Reason</th>
-                  <th className="py-3 px-4">Logged By</th>
-                  <th className="py-3 px-4 text-right">Action</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-stone-100 text-stone-700">
-                {blockedDates.map((b) => (
-                  <tr key={b.id}>
-                    <td className="py-3.5 px-4 font-bold text-[#182B1C]">{b.date}</td>
-                    <td className="py-3.5 px-4">{b.facilityName}</td>
-                    <td className="py-3.5 px-4 text-stone-800">{b.reason}</td>
-                    <td className="py-3.5 px-4 text-stone-400 text-[11px]">{b.createdBy}</td>
-                    <td className="py-3.5 px-4 text-right">
-                      <button
-                        onClick={() => handleRemoveBlockedDate(b.id)}
-                        className="px-3 py-1 rounded text-[11px] font-medium text-rose-700 hover:bg-rose-50 cursor-pointer"
-                      >
-                        Remove Block
-                      </button>
-                    </td>
+            <div className="overflow-x-auto w-full">
+              <table className="w-full text-left text-xs border-collapse min-w-[500px]">
+                <thead>
+                  <tr className="border-b border-stone-200 bg-stone-50 text-[11px] font-bold text-stone-600 uppercase">
+                    <th className="py-3 px-4">Date</th>
+                    <th className="py-3 px-4">Facility Scope</th>
+                    <th className="py-3 px-4">Closure Reason</th>
+                    <th className="py-3 px-4">Logged By</th>
+                    <th className="py-3 px-4 text-right">Action</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody className="divide-y divide-stone-100 text-stone-700">
+                  {blockedDates.map((b) => (
+                    <tr key={b.id}>
+                      <td className="py-3.5 px-4 font-bold text-[#0B2545]">{b.date}</td>
+                      <td className="py-3.5 px-4">{b.facilityName}</td>
+                      <td className="py-3.5 px-4 text-stone-800">{b.reason}</td>
+                      <td className="py-3.5 px-4 text-stone-400 text-[11px]">{b.createdBy}</td>
+                      <td className="py-3.5 px-4 text-right">
+                        <button
+                          onClick={() => handleRemoveBlockedDate(b.id)}
+                          className="px-3 py-1 rounded text-[11px] font-medium text-rose-700 hover:bg-rose-50 cursor-pointer"
+                        >
+                          Remove Block
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       )}
@@ -1002,7 +1004,7 @@ export const AdminDashboardPage: React.FC<AdminDashboardPageProps> = ({ onNaviga
       {activeTab === 'facilities' && (
         <div className="space-y-6 animate-fade-in">
           <div className="rounded-3xl border border-stone-200 bg-white p-5 shadow-xs">
-            <h3 className="text-base font-bold text-[#182B1C]">
+            <h3 className="text-base font-bold text-[#0B2545]">
               Facility Management
             </h3>
             <p className="text-xs text-stone-500">
@@ -1018,12 +1020,12 @@ export const AdminDashboardPage: React.FC<AdminDashboardPageProps> = ({ onNaviga
               >
                 <div className="flex items-start justify-between">
                   <div>
-                    <h4 className="text-lg font-serif-brand font-bold text-[#182B1C]">
+                    <h4 className="text-lg font-serif-brand font-bold text-[#0B2545]">
                       {fac.name}
                     </h4>
                     <span className="text-xs text-stone-400">{fac.category}</span>
                   </div>
-                  <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800">
+                  <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-[#00A896]/15 text-[#00A896]">
                     Active
                   </span>
                 </div>
@@ -1049,7 +1051,7 @@ export const AdminDashboardPage: React.FC<AdminDashboardPageProps> = ({ onNaviga
 
                 <div className="text-[11px] text-stone-500 pt-2 border-t border-stone-100 flex items-center justify-between">
                   <span>Refundable Bond: £{fac.depositRequired}</span>
-                  <span className="text-[#437A3B] font-semibold">Online Bookings Enabled</span>
+                  <span className="text-[#00A896] font-semibold">Online Bookings Enabled</span>
                 </div>
               </div>
             ))}
@@ -1062,7 +1064,7 @@ export const AdminDashboardPage: React.FC<AdminDashboardPageProps> = ({ onNaviga
         <div className="space-y-6 animate-fade-in">
           <div className="rounded-3xl border border-stone-200 bg-white p-5 shadow-xs flex items-center justify-between flex-wrap gap-3">
             <div>
-              <h3 className="text-base font-bold text-[#182B1C]">
+              <h3 className="text-base font-bold text-[#0B2545]">
                 Security Audit Log & Activity Trail
               </h3>
               <p className="text-xs text-stone-500">
@@ -1075,46 +1077,48 @@ export const AdminDashboardPage: React.FC<AdminDashboardPageProps> = ({ onNaviga
           </div>
 
           <div className="rounded-3xl border border-stone-200 bg-white shadow-xs overflow-hidden">
-            <table className="w-full text-left text-xs border-collapse">
-              <thead>
-                <tr className="border-b border-stone-200 bg-stone-50 text-[11px] font-bold text-stone-600 uppercase">
-                  <th className="py-3 px-4">Timestamp (UTC)</th>
-                  <th className="py-3 px-4">Action</th>
-                  <th className="py-3 px-4">Actor</th>
-                  <th className="py-3 px-4">Details</th>
-                  <th className="py-3 px-4 text-right">IP Address</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-stone-100 font-mono text-[11px] text-stone-700">
-                {auditLogs.map((log) => (
-                  <tr key={log.id} className="hover:bg-stone-50/60">
-                    <td className="py-3 px-4 text-stone-500 whitespace-nowrap">
-                      {log.timestamp.replace('T', ' ').slice(0, 19)}
-                    </td>
-                    <td className="py-3 px-4 font-bold">
-                      <span className={`px-2 py-0.5 rounded text-[10px] ${
-                        log.action.includes('SUCCESS') || log.action.includes('APPROVED')
-                          ? 'bg-emerald-100 text-emerald-800'
-                          : log.action.includes('FAILED') || log.action.includes('REJECTED')
-                          ? 'bg-rose-100 text-rose-800'
-                          : 'bg-stone-100 text-stone-800'
-                      }`}>
-                        {log.action}
-                      </span>
-                    </td>
-                    <td className="py-3 px-4 text-stone-800 font-sans font-medium">
-                      {log.adminUser}
-                    </td>
-                    <td className="py-3 px-4 text-stone-600 font-sans max-w-md truncate">
-                      {log.details}
-                    </td>
-                    <td className="py-3 px-4 text-stone-400 text-right">
-                      {log.ipAddress}
-                    </td>
+            <div className="overflow-x-auto w-full">
+              <table className="w-full text-left text-xs border-collapse min-w-[600px]">
+                <thead>
+                  <tr className="border-b border-stone-200 bg-stone-50 text-[11px] font-bold text-stone-600 uppercase">
+                    <th className="py-3 px-4">Timestamp (UTC)</th>
+                    <th className="py-3 px-4">Action</th>
+                    <th className="py-3 px-4">Actor</th>
+                    <th className="py-3 px-4">Details</th>
+                    <th className="py-3 px-4 text-right">IP Address</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody className="divide-y divide-stone-100 font-mono text-[11px] text-stone-700">
+                  {auditLogs.map((log) => (
+                    <tr key={log.id} className="hover:bg-stone-50/60">
+                      <td className="py-3 px-4 text-stone-500 whitespace-nowrap">
+                        {log.timestamp.replace('T', ' ').slice(0, 19)}
+                      </td>
+                      <td className="py-3 px-4 font-bold">
+                        <span className={`px-2 py-0.5 rounded text-[10px] ${
+                          log.action.includes('SUCCESS') || log.action.includes('APPROVED')
+                            ? 'bg-emerald-100 text-emerald-800'
+                            : log.action.includes('FAILED') || log.action.includes('REJECTED')
+                            ? 'bg-rose-100 text-rose-800'
+                            : 'bg-stone-100 text-stone-800'
+                        }`}>
+                          {log.action}
+                        </span>
+                      </td>
+                      <td className="py-3 px-4 text-stone-800 font-sans font-medium">
+                        {log.adminUser}
+                      </td>
+                      <td className="py-3 px-4 text-stone-600 font-sans max-w-md truncate">
+                        {log.details}
+                      </td>
+                      <td className="py-3 px-4 text-stone-400 text-right">
+                        {log.ipAddress}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       )}
@@ -1124,8 +1128,8 @@ export const AdminDashboardPage: React.FC<AdminDashboardPageProps> = ({ onNaviga
         <div className="space-y-6 animate-fade-in">
           <div className="rounded-3xl border border-stone-200 bg-white p-6 shadow-xs space-y-3">
             <div className="flex items-center gap-2">
-              <ShieldCheck className="w-5 h-5 text-[#437A3B]" />
-              <h3 className="text-base font-bold text-[#182B1C]">
+              <ShieldCheck className="w-5 h-5 text-[#00A896]" />
+              <h3 className="text-base font-bold text-[#0B2545]">
                 UK GDPR Privacy Compliance Center
               </h3>
             </div>
@@ -1140,11 +1144,11 @@ export const AdminDashboardPage: React.FC<AdminDashboardPageProps> = ({ onNaviga
                 value={gdprEmailQuery}
                 onChange={(e) => setGdprEmailQuery(e.target.value)}
                 placeholder="Enter customer email address..."
-                className="flex-1 text-xs py-2 px-3 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-[#B8C053]"
+                className="flex-1 text-xs py-2 px-3 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-[#0077C8]"
               />
               <button
                 type="submit"
-                className="px-4 py-2 rounded-xl text-xs font-semibold bg-[#182B1C] text-white hover:bg-[#253f2a] cursor-pointer"
+                className="px-4 py-2 rounded-xl text-xs font-semibold bg-[#0B2545] text-white hover:bg-[#0077C8] cursor-pointer"
               >
                 Search Records
               </button>
@@ -1154,7 +1158,7 @@ export const AdminDashboardPage: React.FC<AdminDashboardPageProps> = ({ onNaviga
           {gdprResults && (
             <div className="rounded-3xl border border-stone-200 bg-white p-6 shadow-xs space-y-4">
               <div className="flex items-center justify-between pb-3 border-b border-stone-100">
-                <span className="text-xs font-bold text-[#182B1C]">
+                <span className="text-xs font-bold text-[#0B2545]">
                   Found {gdprResults.length} booking record(s) for email query
                 </span>
                 {gdprResults.length > 0 && (
@@ -1194,10 +1198,10 @@ export const AdminDashboardPage: React.FC<AdminDashboardPageProps> = ({ onNaviga
           <div className="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 space-y-6 shadow-2xl border border-stone-200 my-8">
             <div className="flex items-start justify-between pb-4 border-b border-stone-100">
               <div>
-                <span className="font-mono text-xs font-bold text-[#182B1C] bg-stone-100 px-2 py-0.5 rounded">
+                <span className="font-mono text-xs font-bold text-[#0B2545] bg-stone-100 px-2 py-0.5 rounded">
                   {selectedBooking.reference}
                 </span>
-                <h3 className="text-xl font-serif-brand font-bold text-[#182B1C] mt-1">
+                <h3 className="text-xl font-serif-brand font-bold text-[#0B2545] mt-1">
                   Booking Request Details
                 </h3>
               </div>
@@ -1263,7 +1267,7 @@ export const AdminDashboardPage: React.FC<AdminDashboardPageProps> = ({ onNaviga
                 value={editNotesText}
                 onChange={(e) => setEditNotesText(e.target.value)}
                 placeholder="Keyholder assignment, deposit receipt number, catering arrangements..."
-                className="w-full text-xs p-2.5 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-[#B8C053]"
+                className="w-full text-xs p-2.5 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-[#0077C8]"
               />
               <button
                 type="button"
@@ -1281,7 +1285,7 @@ export const AdminDashboardPage: React.FC<AdminDashboardPageProps> = ({ onNaviga
                   <>
                     <button
                       onClick={() => handleApprove(selectedBooking)}
-                      className="px-4 py-2 rounded-xl text-xs font-bold bg-[#437A3B] text-white hover:bg-[#34612e] cursor-pointer"
+                      className="px-4 py-2 rounded-xl text-xs font-bold bg-[#0077C8] text-white hover:bg-[#0069B4] cursor-pointer"
                     >
                       Approve Booking
                     </button>
@@ -1356,7 +1360,7 @@ export const AdminDashboardPage: React.FC<AdminDashboardPageProps> = ({ onNaviga
             className="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 space-y-4 shadow-2xl border border-stone-200 my-8"
           >
             <div className="flex items-center justify-between pb-3 border-b border-stone-100">
-              <h3 className="text-lg font-serif-brand font-bold text-[#182B1C]">
+              <h3 className="text-lg font-serif-brand font-bold text-[#0B2545]">
                 Add Manual / Walk-in Booking
               </h3>
               <button
@@ -1474,7 +1478,7 @@ export const AdminDashboardPage: React.FC<AdminDashboardPageProps> = ({ onNaviga
               </button>
               <button
                 type="submit"
-                className="px-5 py-2 rounded-xl text-xs font-bold bg-[#182B1C] text-white hover:bg-[#253f2a] cursor-pointer"
+                className="px-5 py-2 rounded-xl text-xs font-bold bg-[#0B2545] text-white hover:bg-[#0077C8] cursor-pointer"
               >
                 Save & Confirm Booking
               </button>
@@ -1491,7 +1495,7 @@ export const AdminDashboardPage: React.FC<AdminDashboardPageProps> = ({ onNaviga
             className="bg-white rounded-3xl max-w-md w-full p-6 space-y-4 shadow-2xl border border-stone-200"
           >
             <div className="flex items-center justify-between pb-3 border-b border-stone-100">
-              <h3 className="text-lg font-serif-brand font-bold text-[#182B1C]">
+              <h3 className="text-lg font-serif-brand font-bold text-[#0B2545]">
                 Block Out Date from Booking
               </h3>
               <button

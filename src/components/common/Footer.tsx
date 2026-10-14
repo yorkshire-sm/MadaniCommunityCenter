@@ -27,7 +27,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 <MadaniLogo className="w-full h-full" variant="emblem" />
               </div>
               <div className="flex flex-col min-w-0">
-                <div className="flex items-center text-base sm:text-xl font-bold font-sans whitespace-nowrap">
+                <div className="flex items-center text-sm min-[400px]:text-base sm:text-xl font-bold font-sans whitespace-nowrap">
                   <span className="text-white tracking-wide">MADANI</span>
                   <span className="text-[#00A896] ml-1 sm:ml-1.5 font-extrabold tracking-wider">
                     COMMUNITY CENTER

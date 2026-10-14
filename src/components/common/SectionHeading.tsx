@@ -24,15 +24,15 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
       } ${className}`}
     >
       {kicker && (
-        <p className="text-xs font-bold tracking-widest uppercase text-[#B8C053] flex items-center gap-2">
-          {centered && <span className="h-px w-6 bg-[#B8C053]" aria-hidden="true" />}
+        <p className="text-xs font-bold tracking-widest uppercase text-[#00A896] flex items-center gap-2">
+          {centered && <span className="h-px w-6 bg-[#00A896]" aria-hidden="true" />}
           <span>{kicker}</span>
-          <span className="h-px w-6 bg-[#B8C053]" aria-hidden="true" />
+          <span className="h-px w-6 bg-[#00A896]" aria-hidden="true" />
         </p>
       )}
       <h2
         className={`text-2xl sm:text-3xl lg:text-4xl font-serif-brand font-bold tracking-tight leading-tight ${
-          dark ? 'text-white' : 'text-[#182B1C]'
+          dark ? 'text-white' : 'text-[#0B2545]'
         }`}
       >
         {title}

@@ -64,7 +64,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, onNavigate }) => {
               </div>
 
               <div className="flex flex-col min-w-0">
-                <div className="flex items-center whitespace-nowrap tracking-tight text-sm sm:text-lg md:text-xl font-bold font-sans">
+                <div className="flex items-center whitespace-nowrap tracking-tight text-xs min-[400px]:text-sm sm:text-lg md:text-xl font-bold font-sans">
                   <span className="text-white tracking-wide">MADANI</span>
                   <span className="text-[#00A896] ml-1 sm:ml-1.5 font-extrabold tracking-wider">
                     COMMUNITY CENTER

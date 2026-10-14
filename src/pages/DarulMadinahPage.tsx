@@ -29,22 +29,22 @@ export const DarulMadinahPage: React.FC<DarulMadinahPageProps> = ({ onNavigate }
   const approaches = [
     {
       title: 'Academic Excellence',
-      icon: <GraduationCap className="h-5 w-5 text-[#182B1C]" />,
+      icon: <GraduationCap className="h-5 w-5 text-[#0B2545]" />,
       desc: 'Teaching core subjects including English reading, writing, mathematics, and science with dedicated teachers and small class sizes.',
     },
     {
       title: 'Islamic Values',
-      icon: <BookOpen className="h-5 w-5 text-[#182B1C]" />,
+      icon: <BookOpen className="h-5 w-5 text-[#0B2545]" />,
       desc: 'Integrating moral education, prophetic etiquette (Sunnah), daily supplications, and Qur’an recitation into the daily school rhythm.',
     },
     {
       title: 'Character Development',
-      icon: <Heart className="h-5 w-5 text-[#182B1C]" />,
+      icon: <Heart className="h-5 w-5 text-[#0B2545]" />,
       desc: 'Fostering honesty, humility, perseverance, compassion, and respect for all members of British society.',
     },
     {
       title: 'Safe & Supportive Environment',
-      icon: <Shield className="h-5 w-5 text-[#182B1C]" />,
+      icon: <Shield className="h-5 w-5 text-[#0B2545]" />,
       desc: 'Rigorous child protection safeguarding policies, dedicated pastoral care, and secure premises at Madani Community Center.',
     },
   ];
@@ -71,11 +71,11 @@ export const DarulMadinahPage: React.FC<DarulMadinahPageProps> = ({ onNavigate }
       <section className="rounded-2xl border border-stone-200 bg-white p-6 sm:p-10 shadow-xs">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-7 space-y-5">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#B8C053]">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#00A896]">
               Dawat-e-Islami Educational Network
             </span>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif-brand font-bold tracking-tight text-[#182B1C] leading-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif-brand font-bold tracking-tight text-[#0B2545] leading-tight">
               Darul Madinah Primary School, Sheffield
             </h1>
 
@@ -110,10 +110,10 @@ export const DarulMadinahPage: React.FC<DarulMadinahPageProps> = ({ onNavigate }
 
       {/* WELCOME STATEMENT */}
       <section className="space-y-4 max-w-3xl">
-        <span className="text-xs font-bold uppercase tracking-wider text-[#B8C053]">
+        <span className="text-xs font-bold uppercase tracking-wider text-[#00A896]">
           Headteacher Welcome
         </span>
-        <h2 className="text-2xl sm:text-3xl font-serif-brand font-bold text-[#182B1C]">
+        <h2 className="text-2xl sm:text-3xl font-serif-brand font-bold text-[#0B2545]">
           Welcome to Darul Madinah Sheffield
         </h2>
         <p className="text-sm sm:text-base text-stone-600 leading-relaxed">
@@ -127,10 +127,10 @@ export const DarulMadinahPage: React.FC<DarulMadinahPageProps> = ({ onNavigate }
       {/* OUR APPROACH */}
       <section className="space-y-8">
         <div>
-          <span className="text-xs font-bold uppercase tracking-wider text-[#B8C053]">
+          <span className="text-xs font-bold uppercase tracking-wider text-[#00A896]">
             Educational Philosophy
           </span>
-          <h2 className="text-2xl sm:text-3xl font-serif-brand font-bold text-[#182B1C] mt-1">
+          <h2 className="text-2xl sm:text-3xl font-serif-brand font-bold text-[#0B2545] mt-1">
             Our Approach to Learning
           </h2>
           <p className="text-sm text-stone-600 mt-1 max-w-2xl">
@@ -144,7 +144,7 @@ export const DarulMadinahPage: React.FC<DarulMadinahPageProps> = ({ onNavigate }
               key={item.title}
               className="p-6 rounded-2xl border border-stone-200/90 bg-white shadow-xs space-y-3"
             >
-              <div className="p-2.5 rounded-lg bg-[#F0F4E8] w-fit">
+              <div className="p-2.5 rounded-lg bg-[#F0F7FF] w-fit">
                 {item.icon}
               </div>
               <h3 className="text-base font-bold text-stone-900 font-serif-brand">{item.title}</h3>
@@ -157,12 +157,12 @@ export const DarulMadinahPage: React.FC<DarulMadinahPageProps> = ({ onNavigate }
       </section>
 
       {/* CURRICULUM OVERVIEW */}
-      <section id="curriculum" className="rounded-2xl bg-[#FAF9F5] border border-stone-200 p-6 sm:p-10 space-y-6">
+      <section id="curriculum" className="rounded-2xl bg-[#F8FAFC] border border-slate-200 p-6 sm:p-10 space-y-6">
         <div>
-          <span className="text-xs font-bold uppercase tracking-wider text-[#B8C053]">
+          <span className="text-xs font-bold uppercase tracking-wider text-[#00A896]">
             Curriculum Framework
           </span>
-          <h2 className="text-2xl sm:text-3xl font-serif-brand font-bold text-[#182B1C] mt-1">
+          <h2 className="text-2xl sm:text-3xl font-serif-brand font-bold text-[#0B2545] mt-1">
             Balanced & Purposeful Curriculum
           </h2>
           <p className="text-sm text-stone-600 mt-1 max-w-2xl">
@@ -173,7 +173,7 @@ export const DarulMadinahPage: React.FC<DarulMadinahPageProps> = ({ onNavigate }
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-2">
           <div className="space-y-3 p-6 rounded-xl bg-white border border-stone-200/80">
             <h4 className="text-base font-bold text-stone-900 font-serif-brand flex items-center gap-2">
-              <span className="h-2 w-2 rounded-full bg-[#182B1C]" />
+              <span className="h-2 w-2 rounded-full bg-[#0B2545]" />
               National Curriculum Core Standards
             </h4>
             <p className="text-xs text-stone-600 leading-relaxed">
@@ -189,7 +189,7 @@ export const DarulMadinahPage: React.FC<DarulMadinahPageProps> = ({ onNavigate }
 
           <div className="space-y-3 p-6 rounded-xl bg-white border border-stone-200/80">
             <h4 className="text-base font-bold text-stone-900 font-serif-brand flex items-center gap-2">
-              <span className="h-2 w-2 rounded-full bg-[#B8C053]" />
+              <span className="h-2 w-2 rounded-full bg-[#00A896]" />
               Islamic Studies & Moral Cultivation
             </h4>
             <p className="text-xs text-stone-600 leading-relaxed">
@@ -212,10 +212,10 @@ export const DarulMadinahPage: React.FC<DarulMadinahPageProps> = ({ onNavigate }
       {/* SCHOOL LIFE */}
       <section className="space-y-6">
         <div>
-          <span className="text-xs font-bold uppercase tracking-wider text-[#B8C053]">
+          <span className="text-xs font-bold uppercase tracking-wider text-[#00A896]">
             Daily Experience
           </span>
-          <h2 className="text-2xl sm:text-3xl font-serif-brand font-bold text-[#182B1C] mt-1">
+          <h2 className="text-2xl sm:text-3xl font-serif-brand font-bold text-[#0B2545] mt-1">
             School Life at Darul Madinah
           </h2>
           <p className="text-sm text-stone-600 mt-1 max-w-2xl">
@@ -238,40 +238,40 @@ export const DarulMadinahPage: React.FC<DarulMadinahPageProps> = ({ onNavigate }
 
       {/* PARENTS & GOVERNANCE PORTAL */}
       <section className="rounded-2xl border border-stone-200 bg-white p-6 sm:p-8 space-y-6">
-        <span className="text-xs font-bold uppercase tracking-wider text-[#B8C053]">
+        <span className="text-xs font-bold uppercase tracking-wider text-[#00A896]">
           Parent Information
         </span>
-        <h2 className="text-2xl sm:text-3xl font-serif-brand font-bold text-[#182B1C]">
+        <h2 className="text-2xl sm:text-3xl font-serif-brand font-bold text-[#0B2545]">
           Information for Parents & Carers
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-2">
           <button
             onClick={() => onNavigate('/policies')}
-            className="p-5 rounded-xl bg-[#FAF9F5] border border-stone-200/80 hover:border-[#B8C053] transition-colors text-left space-y-1.5 cursor-pointer"
+            className="p-5 rounded-xl bg-[#F8FAFC] border border-stone-200/80 hover:border-[#0077C8] transition-colors text-left space-y-1.5 cursor-pointer"
           >
-            <FileText className="h-5 w-5 text-[#182B1C]" />
+            <FileText className="h-5 w-5 text-[#0B2545]" />
             <span className="block text-xs font-bold text-stone-900">School Policies</span>
             <span className="block text-[11px] text-stone-500">Admissions, Behaviour & SEND</span>
           </button>
 
           <button
             onClick={() => onNavigate('/safeguarding')}
-            className="p-5 rounded-xl bg-[#FAF9F5] border border-stone-200/80 hover:border-[#B8C053] transition-colors text-left space-y-1.5 cursor-pointer"
+            className="p-5 rounded-xl bg-[#F8FAFC] border border-stone-200/80 hover:border-[#0077C8] transition-colors text-left space-y-1.5 cursor-pointer"
           >
-            <Shield className="h-5 w-5 text-[#182B1C]" />
+            <Shield className="h-5 w-5 text-[#0B2545]" />
             <span className="block text-xs font-bold text-stone-900">Safeguarding & Safety</span>
             <span className="block text-[11px] text-stone-500">Child protection procedures</span>
           </button>
 
-          <div className="p-5 rounded-xl bg-[#FAF9F5] border border-stone-200/80 text-left space-y-1.5">
-            <Calendar className="h-5 w-5 text-[#B8C053]" />
+          <div className="p-5 rounded-xl bg-[#F8FAFC] border border-stone-200/80 text-left space-y-1.5">
+            <Calendar className="h-5 w-5 text-[#00A896]" />
             <span className="block text-xs font-bold text-stone-900">Term Dates 2026/27</span>
             <span className="block text-[11px] text-stone-600">Autumn: 3 Sept – 18 Dec</span>
             <span className="block text-[10px] text-stone-500">Spring: 5 Jan – 26 Mar</span>
           </div>
 
-          <div className="p-5 rounded-xl bg-[#FAF9F5] border border-stone-200/80 text-left space-y-1.5">
+          <div className="p-5 rounded-xl bg-[#F8FAFC] border border-stone-200/80 text-left space-y-1.5">
             <Mail className="h-5 w-5 text-stone-400" />
             <span className="block text-xs font-bold text-stone-900">School Office</span>
             <span className="block text-[11px] text-stone-500">{siteConfig.contact.darulMadinahEmail}</span>
@@ -283,19 +283,19 @@ export const DarulMadinahPage: React.FC<DarulMadinahPageProps> = ({ onNavigate }
       <section ref={admissionsRef} id="admissions" className="rounded-2xl border border-stone-200 bg-white p-6 sm:p-10 shadow-xs">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           <div className="lg:col-span-5 space-y-4">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#B8C053]">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#00A896]">
               Join Our School
             </span>
-            <h2 className="text-2xl sm:text-3xl font-serif-brand font-bold text-[#182B1C]">
+            <h2 className="text-2xl sm:text-3xl font-serif-brand font-bold text-[#0B2545]">
               Admissions Enquiry
             </h2>
             <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
               We welcome applications from families across Sheffield seeking an inspiring, values-led education. Complete the form to request our prospectus, book a school tour, or discuss in-year transfers.
             </p>
-            <div className="p-4 rounded-xl bg-[#F0F4E8] border border-[#D5DEC4] text-xs text-[#182B1C] space-y-1">
+            <div className="p-4 rounded-xl bg-[#F0F7FF] border border-slate-200 text-xs text-[#0B2545] space-y-1">
               <p className="font-bold">Next Open Morning</p>
               <p>Saturday, 7 November 2026 (10:00 – 12:30)</p>
-              <p className="text-[11px] text-[#182B1C]/80">Tour classrooms & meet the headteacher at Madani Center</p>
+              <p className="text-[11px] text-[#0B2545]/80">Tour classrooms & meet the headteacher at Madani Center</p>
             </div>
           </div>
 

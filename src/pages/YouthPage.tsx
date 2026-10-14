@@ -29,32 +29,32 @@ export const YouthPage: React.FC<YouthPageProps> = ({ onNavigate, onSelectEvent 
   const activities = [
     {
       title: 'Sports & Active Recreation',
-      icon: <Trophy className="h-5 w-5 text-[#182B1C]" />,
+      icon: <Trophy className="h-5 w-5 text-[#0B2545]" />,
       desc: 'Regular 5-a-side football tournaments, badminton sessions, table tennis, and outdoor fitness meetups.',
     },
     {
       title: 'Islamic Study Circles & Halaqahs',
-      icon: <BookOpen className="h-5 w-5 text-[#182B1C]" />,
+      icon: <BookOpen className="h-5 w-5 text-[#0B2545]" />,
       desc: 'Approachable discussions on daily faith, identity, overcoming doubts, prayer, and character.',
     },
     {
       title: 'Skills & Practical Workshops',
-      icon: <Briefcase className="h-5 w-5 text-[#182B1C]" />,
+      icon: <Briefcase className="h-5 w-5 text-[#0B2545]" />,
       desc: 'Public speaking masterclasses, CV advice, career mentoring with professionals, and coding basics.',
     },
     {
       title: 'Mentoring & Positive Peer Support',
-      icon: <Users className="h-5 w-5 text-[#182B1C]" />,
+      icon: <Users className="h-5 w-5 text-[#0B2545]" />,
       desc: 'Connecting secondary and college students with experienced older mentors and university students.',
     },
     {
       title: 'Trips, Hiking & Outdoors',
-      icon: <Plane className="h-5 w-5 text-[#182B1C]" />,
+      icon: <Plane className="h-5 w-5 text-[#0B2545]" />,
       desc: 'Organised Peak District day hikes, team-building retreats, and visits to historical cultural sites.',
     },
     {
       title: 'Volunteering & Community Action',
-      icon: <Heart className="h-5 w-5 text-[#182B1C]" />,
+      icon: <Heart className="h-5 w-5 text-[#0B2545]" />,
       desc: 'Leading food parcel drives, event stewarding, and neighbourhood clean-up projects in Sheffield.',
     },
   ];
@@ -72,11 +72,11 @@ export const YouthPage: React.FC<YouthPageProps> = ({ onNavigate, onSelectEvent 
       <section className="rounded-2xl border border-stone-200 bg-white p-6 sm:p-10 shadow-xs">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-7 space-y-5">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#B8C053]">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#00A896]">
               Youth at Madani Community Center
             </span>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif-brand font-bold tracking-tight text-[#182B1C] leading-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif-brand font-bold tracking-tight text-[#0B2545] leading-tight">
               Faith. Friendship. Skills. Community.
             </h1>
 
@@ -123,10 +123,10 @@ export const YouthPage: React.FC<YouthPageProps> = ({ onNavigate, onSelectEvent 
       {/* Activities Grid */}
       <section className="space-y-8">
         <div>
-          <span className="text-xs font-bold uppercase tracking-wider text-[#B8C053]">
+          <span className="text-xs font-bold uppercase tracking-wider text-[#00A896]">
             What We Do
           </span>
-          <h2 className="text-2xl sm:text-3xl font-serif-brand font-bold text-[#182B1C] mt-1">
+          <h2 className="text-2xl sm:text-3xl font-serif-brand font-bold text-[#0B2545] mt-1">
             Activities Designed for Young People
           </h2>
           <p className="text-sm text-stone-600 mt-1 max-w-2xl">
@@ -140,7 +140,7 @@ export const YouthPage: React.FC<YouthPageProps> = ({ onNavigate, onSelectEvent 
               key={act.title}
               className="p-6 rounded-2xl border border-stone-200/90 bg-white shadow-xs space-y-2.5"
             >
-              <div className="p-2.5 rounded-lg bg-[#F0F4E8] w-fit">
+              <div className="p-2.5 rounded-lg bg-[#F0F7FF] w-fit">
                 {act.icon}
               </div>
               <h3 className="text-base font-bold text-stone-900 font-serif-brand">{act.title}</h3>
@@ -156,10 +156,10 @@ export const YouthPage: React.FC<YouthPageProps> = ({ onNavigate, onSelectEvent 
       <section id="youth-events" className="space-y-6">
         <div className="flex items-center justify-between">
           <div>
-            <span className="text-xs font-bold uppercase tracking-wider text-[#B8C053]">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#00A896]">
               Upcoming Sessions
             </span>
-            <h2 className="text-2xl sm:text-3xl font-serif-brand font-bold text-[#182B1C] mt-1">
+            <h2 className="text-2xl sm:text-3xl font-serif-brand font-bold text-[#0B2545] mt-1">
               Youth Fixtures & Circles
             </h2>
           </div>
@@ -184,16 +184,16 @@ export const YouthPage: React.FC<YouthPageProps> = ({ onNavigate, onSelectEvent 
       <section id="youth-enquiry" className="rounded-2xl border border-stone-200 bg-white p-6 sm:p-10 shadow-xs">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           <div className="lg:col-span-5 space-y-4">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#B8C053]">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#00A896]">
               Get Connected
             </span>
-            <h2 className="text-2xl sm:text-3xl font-serif-brand font-bold text-[#182B1C]">
+            <h2 className="text-2xl sm:text-3xl font-serif-brand font-bold text-[#0B2545]">
               Want to Get Involved?
             </h2>
             <p className="text-sm text-stone-600 leading-relaxed">
               Whether you’re interested in football tournaments, study circles, leadership workshops, or volunteering, register below to join our youth updates.
             </p>
-            <div className="rounded-xl bg-[#FAF9F5] border border-stone-200 p-5 text-xs text-stone-600 space-y-2">
+            <div className="rounded-xl bg-[#F8FAFC] border border-stone-200 p-5 text-xs text-stone-600 space-y-2">
               <p className="font-semibold text-stone-800">Who is this for?</p>
               <p>Young people aged 11–25 living in Sheffield or nearby areas. All activities are supervised by vetted mentors with enhanced DBS clearance.</p>
               <p className="font-mono text-[11px] text-stone-400">Questions? Email {siteConfig.contact.youthEmail}</p>

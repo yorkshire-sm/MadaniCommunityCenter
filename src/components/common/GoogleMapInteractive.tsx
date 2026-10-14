@@ -31,13 +31,13 @@ export const GoogleMapInteractive: React.FC<GoogleMapInteractiveProps> = ({
   return (
     <div className={`rounded-2xl border border-stone-200/90 bg-white shadow-xs overflow-hidden ${className}`}>
       {showCardHeader && (
-        <div className="p-4 sm:p-5 border-b border-stone-200 bg-[#FAF9F5] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div className="p-4 sm:p-5 border-b border-stone-200 bg-[#F0F7FF]/50 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div className="flex items-start sm:items-center gap-3">
-            <div className="h-10 w-10 rounded-full bg-[#182B1C] text-[#B8C053] flex items-center justify-center shrink-0 shadow-xs">
+            <div className="h-10 w-10 rounded-full bg-[#0B2545] text-[#00A896] flex items-center justify-center shrink-0 shadow-xs">
               <MapPin className="h-5 w-5" />
             </div>
             <div>
-              <h4 className="text-base font-bold text-[#182B1C] font-serif-brand">
+              <h4 className="text-base font-bold text-[#0B2545] font-serif-brand">
                 Madani Community Center
               </h4>
               <p className="text-xs text-stone-600">
@@ -51,7 +51,7 @@ export const GoogleMapInteractive: React.FC<GoogleMapInteractiveProps> = ({
               href={directionsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-semibold bg-[#B8C053] text-[#18260D] hover:bg-[#A5AD3F] transition-colors shadow-2xs"
+              className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-semibold bg-[#0077C8] text-white hover:bg-[#0069B4] transition-colors shadow-2xs"
             >
               <Navigation className="h-3.5 w-3.5" />
               <span>Get Directions</span>
@@ -64,8 +64,8 @@ export const GoogleMapInteractive: React.FC<GoogleMapInteractiveProps> = ({
             >
               {copied ? (
                 <>
-                  <Check className="h-3.5 w-3.5 text-emerald-600" />
-                  <span className="text-emerald-600 font-semibold">Copied</span>
+                  <Check className="h-3.5 w-3.5 text-[#00A896]" />
+                  <span className="text-[#00A896] font-semibold">Copied</span>
                 </>
               ) : (
                 <>
@@ -95,18 +95,18 @@ export const GoogleMapInteractive: React.FC<GoogleMapInteractiveProps> = ({
             href={mapPlaceUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-semibold bg-white/95 text-[#182B1C] hover:bg-white border border-stone-300 shadow-md backdrop-blur-xs transition-all hover:scale-[1.02]"
+            className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-semibold bg-white/95 text-[#0B2545] hover:bg-white border border-stone-300 shadow-md backdrop-blur-xs transition-all hover:scale-[1.02]"
           >
             <span>View on Google Maps</span>
-            <ExternalLink className="h-3 w-3 text-[#B8C053]" />
+            <ExternalLink className="h-3 w-3 text-[#0077C8]" />
           </a>
         </div>
       </div>
 
       {/* Footer Info Strip */}
-      <div className="px-4 py-2.5 bg-[#FAF9F5] border-t border-stone-200 flex flex-wrap items-center justify-between text-[11px] text-stone-600 gap-2">
+      <div className="px-4 py-2.5 bg-[#F0F7FF]/30 border-t border-stone-200 flex flex-wrap items-center justify-between text-[11px] text-stone-600 gap-2">
         <span className="flex items-center gap-1.5">
-          <span className="h-2 w-2 rounded-full bg-emerald-500" />
+          <span className="h-2 w-2 rounded-full bg-[#00A896]" />
           <span>Coordinates: <strong>53.3974° N, 1.4185° W</strong></span>
         </span>
         <span className="font-mono text-stone-400">
