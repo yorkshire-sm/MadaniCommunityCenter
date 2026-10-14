@@ -51,14 +51,14 @@ export const PoliciesPage: React.FC<PoliciesPageProps> = ({ onNavigate }) => {
 
       {/* Header */}
       <section className="space-y-4 max-w-3xl">
-        <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#0E4D34]">
-          <span className="h-px w-6 bg-[#C59B27]" aria-hidden="true" />
+        <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#00A896]">
+          <span className="h-px w-6 bg-[#0077C8]" aria-hidden="true" />
           <span>Governance & Statutory Compliance</span>
         </div>
-        <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-stone-900 leading-tight">
+        <h1 className="text-3xl sm:text-4xl font-serif-brand font-bold tracking-tight text-[#0B2545] leading-tight">
           School & Center Policies
         </h1>
-        <p className="text-base text-stone-600 leading-relaxed font-normal">
+        <p className="text-base text-slate-600 leading-relaxed font-normal">
           Statutory policies, codes of practice, and procedural guidance for Darul Madinah Primary School and the Dawat-e-Islami Sheffield community center.
         </p>
       </section>
@@ -75,14 +75,14 @@ export const PoliciesPage: React.FC<PoliciesPageProps> = ({ onNavigate }) => {
       </div>
 
       {downloadNotice && (
-        <div className="rounded-xl border border-stone-300 bg-white p-5 flex items-start justify-between gap-3 text-xs text-stone-700 shadow-sm animate-fade-in">
+        <div className="rounded-xl border border-slate-300 bg-white p-5 flex items-start justify-between gap-3 text-xs text-slate-700 shadow-sm animate-fade-in">
           <div className="flex items-start gap-2.5">
-            <CheckCircle className="h-5 w-5 text-[#0E4D34] shrink-0" />
+            <CheckCircle className="h-5 w-5 text-[#00A896] shrink-0" />
             <p>{downloadNotice}</p>
           </div>
           <button
             onClick={() => setDownloadNotice(null)}
-            className="text-stone-400 hover:text-stone-700 font-bold"
+            className="text-slate-400 hover:text-slate-700 font-bold"
           >
             ✕
           </button>
@@ -90,15 +90,15 @@ export const PoliciesPage: React.FC<PoliciesPageProps> = ({ onNavigate }) => {
       )}
 
       {/* Categories Filter */}
-      <div className="flex flex-wrap items-center gap-1.5 p-1 bg-stone-100 rounded-lg border border-stone-200 w-fit">
+      <div className="flex flex-wrap items-center gap-1.5 p-1 bg-slate-100 rounded-lg border border-slate-200 w-fit">
         {categories.map((cat) => (
           <button
             key={cat}
             onClick={() => setFilterCategory(cat)}
             className={`px-3 py-1.5 text-xs font-medium rounded-md transition-colors ${
               filterCategory === cat
-                ? 'bg-white text-[#0E4D34] font-semibold shadow-xs'
-                : 'text-stone-600 hover:text-stone-900'
+                ? 'bg-[#0B2545] text-white font-semibold shadow-xs'
+                : 'text-slate-600 hover:text-slate-900'
             }`}
           >
             {cat}
@@ -111,21 +111,21 @@ export const PoliciesPage: React.FC<PoliciesPageProps> = ({ onNavigate }) => {
         {filtered.map((policy) => (
           <div
             key={policy.id}
-            className="rounded-lg border border-stone-200 bg-white p-5 sm:p-6 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:border-stone-300 transition-colors"
+            className="rounded-lg border border-slate-200 bg-white p-5 sm:p-6 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:border-slate-300 transition-colors"
           >
             <div className="space-y-1.5 max-w-2xl">
               <div className="flex items-center gap-2 text-xs">
-                <span className="font-semibold text-[#0E4D34]">{policy.category}</span>
-                <span className="text-stone-300">·</span>
-                <span className="font-mono text-stone-400 text-[11px]">{policy.status}</span>
-                <span className="text-stone-300">·</span>
-                <span className="text-stone-400 text-[11px]">{policy.lastUpdated}</span>
+                <span className="font-semibold text-[#00A896] uppercase tracking-wider">{policy.category}</span>
+                <span className="text-slate-300">·</span>
+                <span className="font-mono text-slate-400 text-[11px]">{policy.status}</span>
+                <span className="text-slate-300">·</span>
+                <span className="text-slate-400 text-[11px]">{policy.lastUpdated}</span>
               </div>
-              <h3 className="text-base font-bold text-stone-900">{policy.title}</h3>
-              <p className="text-xs text-stone-600 leading-relaxed">
+              <h3 className="text-base font-bold text-slate-900">{policy.title}</h3>
+              <p className="text-xs text-slate-600 leading-relaxed">
                 {policy.description}
               </p>
-              <p className="text-[11px] font-mono text-stone-400 pt-1">
+              <p className="text-[11px] font-mono text-slate-400 pt-1">
                 Format: {policy.documentType} ({policy.fileSizePlaceholder})
               </p>
             </div>
@@ -145,13 +145,13 @@ export const PoliciesPage: React.FC<PoliciesPageProps> = ({ onNavigate }) => {
       </div>
 
       {/* Dedicated Safeguarding Link */}
-      <div className="rounded-xl border border-stone-200 bg-[#FAF9F5] p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <div className="rounded-xl border border-slate-200 bg-[#F8FAFC] p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div className="space-y-1">
-          <h4 className="text-sm font-bold text-stone-900 flex items-center gap-2">
-            <Shield className="h-4 w-4 text-[#0E4D34]" />
+          <h4 className="text-sm font-bold text-slate-900 flex items-center gap-2">
+            <Shield className="h-4 w-4 text-[#00A896]" />
             Looking for Our Safeguarding Statement?
           </h4>
-          <p className="text-xs text-stone-600">
+          <p className="text-xs text-slate-600">
             Read our dedicated safeguarding policy, reporting procedures, and child protection standards.
           </p>
         </div>

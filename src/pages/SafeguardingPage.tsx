@@ -30,47 +30,47 @@ export const SafeguardingPage: React.FC<SafeguardingPageProps> = ({ onNavigate }
 
       {/* Header */}
       <section className="space-y-4 max-w-3xl">
-        <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#0E4D34]">
+        <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#00A896]">
           <Shield className="h-4 w-4" />
           <span>Child Protection & Welfare</span>
         </div>
-        <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-stone-900 leading-tight">
+        <h1 className="text-3xl sm:text-4xl font-serif-brand font-bold tracking-tight text-[#0B2545] leading-tight">
           Safeguarding Commitment
         </h1>
-        <p className="text-base text-stone-600 leading-relaxed font-normal">
+        <p className="text-base text-slate-600 leading-relaxed font-normal">
           Dawat-e-Islami Sheffield and Darul Madinah Primary School consider the safety, protection, and emotional wellbeing of children and vulnerable individuals to be of paramount importance.
         </p>
       </section>
 
       {/* Core Principles */}
       <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="p-6 rounded-lg border border-stone-200 bg-white shadow-xs space-y-2.5">
-          <CheckCircle className="h-5 w-5 text-[#0E4D34]" />
-          <h3 className="text-base font-bold text-stone-900">Safer Recruitment</h3>
-          <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
+        <div className="p-6 rounded-2xl border border-slate-200 bg-white shadow-xs space-y-2.5">
+          <CheckCircle className="h-5 w-5 text-[#00A896]" />
+          <h3 className="text-base font-bold text-slate-900">Safer Recruitment</h3>
+          <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
             All teachers, teaching assistants, youth mentors, and regular volunteers undergo rigorous vetting including Enhanced DBS checks, identity verification, and professional reference reviews.
           </p>
         </div>
 
-        <div className="p-6 rounded-lg border border-stone-200 bg-white shadow-xs space-y-2.5">
-          <Lock className="h-5 w-5 text-[#0E4D34]" />
-          <h3 className="text-base font-bold text-stone-900">Mandatory Staff Training</h3>
-          <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
+        <div className="p-6 rounded-2xl border border-slate-200 bg-white shadow-xs space-y-2.5">
+          <Lock className="h-5 w-5 text-[#00A896]" />
+          <h3 className="text-base font-bold text-slate-900">Mandatory Staff Training</h3>
+          <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
             Staff undertake statutory annual safeguarding updates in alignment with the UK Department for Education’s ‘Keeping Children Safe in Education’ (KCSIE) framework.
           </p>
         </div>
 
-        <div className="p-6 rounded-lg border border-stone-200 bg-white shadow-xs space-y-2.5">
-          <AlertTriangle className="h-5 w-5 text-[#0E4D34]" />
-          <h3 className="text-base font-bold text-stone-900">Clear Referral Pathways</h3>
-          <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
+        <div className="p-6 rounded-2xl border border-slate-200 bg-white shadow-xs space-y-2.5">
+          <AlertTriangle className="h-5 w-5 text-[#00A896]" />
+          <h3 className="text-base font-bold text-slate-900">Clear Referral Pathways</h3>
+          <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
             We maintain an open culture where any concern, no matter how small, is promptly documented and investigated by our Designated Safeguarding Leads.
           </p>
         </div>
       </section>
 
       {/* Designated Safeguarding Leads (Placeholders clearly marked) */}
-      <section className="rounded-xl border border-stone-200 bg-white p-6 sm:p-8 space-y-6">
+      <section className="rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 space-y-6">
         <SectionHeading
           kicker="Safeguarding Leadership"
           title="Designated Safeguarding Contacts"
@@ -78,42 +78,42 @@ export const SafeguardingPage: React.FC<SafeguardingPageProps> = ({ onNavigate }
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
-          <div className="p-5 rounded-lg bg-[#FAF9F5] border border-stone-200 space-y-2">
-            <span className="text-xs font-semibold text-[#0E4D34] uppercase tracking-wider block">
+          <div className="p-5 rounded-xl bg-[#F8FAFC] border border-slate-200 space-y-2">
+            <span className="text-xs font-semibold text-[#00A896] uppercase tracking-wider block">
               Designated Safeguarding Lead (DSL)
             </span>
-            <h4 className="text-base font-bold text-stone-900">
+            <h4 className="text-base font-bold text-slate-900">
               [DESIGNATED SAFEGUARDING LEAD NAME]
             </h4>
-            <p className="text-xs text-stone-500">
+            <p className="text-xs text-slate-500">
               School Leadership & Safeguarding Coordinator
             </p>
-            <div className="pt-2 text-xs space-y-1 text-stone-600">
-              <p>Email: safeguarding.sheffield@example.org <span className="text-stone-400 font-mono">(Placeholder)</span></p>
-              <p>Telephone: 01234 567890 <span className="text-stone-400 font-mono">(Placeholder)</span></p>
+            <div className="pt-2 text-xs space-y-1 text-slate-600">
+              <p>Email: safeguarding.sheffield@example.org <span className="text-slate-400 font-mono">(Placeholder)</span></p>
+              <p>Telephone: 01234 567890 <span className="text-slate-400 font-mono">(Placeholder)</span></p>
             </div>
           </div>
 
-          <div className="p-5 rounded-lg bg-[#FAF9F5] border border-stone-200 space-y-2">
-            <span className="text-xs font-semibold text-[#0E4D34] uppercase tracking-wider block">
+          <div className="p-5 rounded-xl bg-[#F8FAFC] border border-slate-200 space-y-2">
+            <span className="text-xs font-semibold text-[#00A896] uppercase tracking-wider block">
               Deputy Designated Safeguarding Lead (DDSL)
             </span>
-            <h4 className="text-base font-bold text-stone-900">
+            <h4 className="text-base font-bold text-slate-900">
               [DEPUTY SAFEGUARDING LEAD NAME]
             </h4>
-            <p className="text-xs text-stone-500">
+            <p className="text-xs text-slate-500">
               Pastoral Care & Community Welfare Officer
             </p>
-            <div className="pt-2 text-xs space-y-1 text-stone-600">
-              <p>Email: deputy.safeguarding@example.org <span className="text-stone-400 font-mono">(Placeholder)</span></p>
-              <p>Telephone: 01234 567890 <span className="text-stone-400 font-mono">(Placeholder)</span></p>
+            <div className="pt-2 text-xs space-y-1 text-slate-600">
+              <p>Email: deputy.safeguarding@example.org <span className="text-slate-400 font-mono">(Placeholder)</span></p>
+              <p>Telephone: 01234 567890 <span className="text-slate-400 font-mono">(Placeholder)</span></p>
             </div>
           </div>
         </div>
       </section>
 
       {/* External Statutory Contacts */}
-      <section className="rounded-xl border border-stone-200 bg-[#FAF9F5] p-6 sm:p-8 space-y-4">
+      <section className="rounded-2xl border border-slate-200 bg-[#F8FAFC] p-6 sm:p-8 space-y-4">
         <h3 className="text-base font-bold text-stone-900">
           Statutory External Helplines & Sheffield Local Authority
         </h3>

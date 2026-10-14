@@ -29,17 +29,17 @@ export const GetInvolvedPage: React.FC<GetInvolvedPageProps> = ({ onNavigate }) 
   const waysToHelp = [
     {
       title: 'Volunteer Your Time',
-      icon: <Users className="h-5 w-5 text-[#0E4D34]" />,
+      icon: <Users className="h-5 w-5 text-[#0B2545]" />,
       desc: 'Join our friendly team of local volunteers who help steward events, mentor youth, assist in the office, or prepare halls.',
     },
     {
       title: 'Support Center Development',
-      icon: <Gift className="h-5 w-5 text-[#0E4D34]" />,
+      icon: <Gift className="h-5 w-5 text-[#0B2545]" />,
       desc: 'Contribute towards the acquisition and ongoing renovation of the Sheffield building. Every contribution helps build a lasting community legacy.',
     },
     {
       title: 'Spread the Word',
-      icon: <Sparkles className="h-5 w-5 text-[#0E4D34]" />,
+      icon: <Sparkles className="h-5 w-5 text-[#0B2545]" />,
       desc: 'Tell Sheffield families, neighbours, and friends about Darul Madinah primary school, youth circles, and upcoming community open days.',
     },
   ];
@@ -54,29 +54,30 @@ export const GetInvolvedPage: React.FC<GetInvolvedPageProps> = ({ onNavigate }) 
       />
 
       {/* Hero Section */}
-      <section className="rounded-xl border border-stone-200 bg-white p-6 sm:p-10 shadow-xs">
+      <section className="rounded-2xl border border-slate-200 bg-white p-6 sm:p-10 shadow-xs">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-7 space-y-5">
-            <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#0E4D34]">
-              <span className="h-px w-6 bg-[#C59B27]" aria-hidden="true" />
+            <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#00A896]">
+              <span className="h-px w-6 bg-[#0077C8]" aria-hidden="true" />
               <span>Community Action & Volunteering</span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-stone-900 leading-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif-brand font-bold tracking-tight text-[#0B2545] leading-tight">
               Be Part of Our Sheffield Journey
             </h1>
 
-            <p className="text-base sm:text-lg text-stone-600 leading-relaxed font-normal">
+            <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
               A thriving community center relies on dedicated volunteers, skilled supporters, and local families working hand-in-hand. Find out how you can contribute.
             </p>
 
             <div className="flex flex-wrap items-center gap-3 pt-2">
-              <Button variant="primary" size="md" onClick={scrollToVolunteer}>
+              <Button variant="primary" size="md" roundedPill={true} onClick={scrollToVolunteer}>
                 Register as a Volunteer
               </Button>
               <Button
                 variant="outline"
                 size="md"
+                roundedPill={true}
                 onClick={() => onNavigate('/events')}
               >
                 Attend Community Days
@@ -106,13 +107,13 @@ export const GetInvolvedPage: React.FC<GetInvolvedPageProps> = ({ onNavigate }) 
           {waysToHelp.map((way) => (
             <div
               key={way.title}
-              className="p-6 rounded-lg border border-stone-200/90 bg-white shadow-xs space-y-3"
+              className="p-6 rounded-2xl border border-slate-200/90 bg-white shadow-xs space-y-3"
             >
-              <div className="p-2.5 rounded-md bg-[#F0F6F2] w-fit">
+              <div className="p-2.5 rounded-xl bg-teal-50 w-fit">
                 {way.icon}
               </div>
-              <h3 className="text-base font-bold text-stone-900">{way.title}</h3>
-              <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
+              <h3 className="text-base font-bold text-slate-900 font-serif-brand">{way.title}</h3>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                 {way.desc}
               </p>
             </div>
@@ -121,7 +122,7 @@ export const GetInvolvedPage: React.FC<GetInvolvedPageProps> = ({ onNavigate }) 
       </section>
 
       {/* Volunteer Registration Section */}
-      <section ref={volunteerRef} className="rounded-xl border border-stone-200 bg-white p-6 sm:p-10 shadow-xs">
+      <section ref={volunteerRef} className="rounded-2xl border border-slate-200 bg-white p-6 sm:p-10 shadow-xs">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           <div className="lg:col-span-5 space-y-4">
             <SectionHeading
@@ -129,8 +130,8 @@ export const GetInvolvedPage: React.FC<GetInvolvedPageProps> = ({ onNavigate }) 
               title="Register Your Interest"
               description="Tell us about your availability, skills, and the areas you would like to help with."
             />
-            <div className="rounded-lg bg-[#FAF9F5] border border-stone-200 p-4 text-xs text-stone-600 space-y-2">
-              <p className="font-semibold text-stone-800">Safeguarding & DBS Notice</p>
+            <div className="rounded-xl bg-[#F8FAFC] border border-slate-200 p-4 text-xs text-slate-600 space-y-2">
+              <p className="font-semibold text-slate-800">Safeguarding & DBS Notice</p>
               <p>
                 In line with our strict safeguarding policy, any volunteer role involving direct contact with children or vulnerable adults will require an Enhanced DBS check and safer recruitment reference checks.
               </p>

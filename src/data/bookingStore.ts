@@ -505,8 +505,8 @@ export const bookingStore = {
     const blocked = this.getBlockedDates();
     const isBlocked = blocked.some(b => b.date === date && (b.facilityId === 'all' || b.facilityId === facilityId));
     if (isBlocked) {
-      const blockReason = blocked.find(b => b.date === date && (b.facilityId === 'all' || b.facilityId === facilityId))?.reason || 'Center closed';
-      return { hasConflict: true, reason: `This date is closed by administration: ${blockReason}` };
+      const blockReason = blocked.find(b => b.date === date && (b.facilityId === 'all' || b.facilityId === facilityId))?.reason || 'Reserved';
+      return { hasConflict: true, reason: `This date is already a Booked Slot (${blockReason}). Please select an available green date.` };
     }
 
     const bookings = this.getBookings();

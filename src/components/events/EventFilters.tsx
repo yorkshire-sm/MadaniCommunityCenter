@@ -21,10 +21,10 @@ export const EventFilters: React.FC<EventFiltersProps> = ({
             key={category}
             type="button"
             onClick={() => onSelectCategory(category)}
-            className={`px-4 py-1.5 text-xs font-semibold rounded-full transition-all whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B8C053] cursor-pointer ${
+            className={`px-4 py-1.5 text-xs font-semibold rounded-full transition-all whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0077C8] cursor-pointer ${
               isActive
-                ? 'bg-[#182B1C] text-white shadow-xs'
-                : 'text-stone-700 hover:text-stone-900 hover:bg-stone-100'
+                ? 'bg-[#0B2545] text-white shadow-xs'
+                : 'text-slate-700 hover:text-slate-900 hover:bg-slate-100'
             }`}
           >
             {category}

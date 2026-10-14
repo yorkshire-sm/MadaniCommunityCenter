@@ -136,8 +136,8 @@ export const PlaceholderImage: React.FC<PlaceholderImageProps> = ({
       label: placeholderKey.replace(/-/g, ' ').toUpperCase(),
       brief: customBrief || 'Editorial photograph representing center activity and facilities.',
       imageUrl: 'https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?auto=format&fit=crop&w=1200&q=80',
-      dominantColor: '#16281F',
-      accentColor: '#B8C053',
+      dominantColor: '#0B2545',
+      accentColor: '#00A896',
     };
 
   const imageToUse = src || config.imageUrl;
@@ -193,7 +193,7 @@ export const PlaceholderImage: React.FC<PlaceholderImageProps> = ({
     <figure
       className={`group relative overflow-hidden rounded-xl border border-stone-200/90 bg-stone-900 text-stone-100 shadow-xs select-none ${ratioClass} ${className}`}
       style={{
-        background: `radial-gradient(ellipse at 70% 30%, ${config.dominantColor}EE 0%, ${config.dominantColor} 60%, #0F1713 100%)`,
+        background: `radial-gradient(ellipse at 70% 30%, ${config.dominantColor}EE 0%, ${config.dominantColor} 60%, #07192F 100%)`,
       }}
       aria-label={alt}
     >

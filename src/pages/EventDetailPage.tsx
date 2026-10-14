@@ -60,7 +60,7 @@ export const EventDetailPage: React.FC<EventDetailPageProps> = ({
       <div>
         <button
           onClick={() => onNavigate('/events')}
-          className="inline-flex items-center gap-1.5 text-xs font-semibold text-stone-600 hover:text-[#0E4D34] transition-colors"
+          className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600 hover:text-[#0077C8] transition-colors"
         >
           <ArrowLeft className="h-3.5 w-3.5" />
           <span>Back to All Events</span>
@@ -73,8 +73,8 @@ export const EventDetailPage: React.FC<EventDetailPageProps> = ({
         <div className="lg:col-span-8 space-y-8">
           {/* Header & Meta */}
           <div className="space-y-3">
-            <div className="flex flex-wrap items-center gap-2 text-xs font-medium text-stone-500">
-              <span className="text-[#0E4D34] font-semibold">{event.category}</span>
+            <div className="flex flex-wrap items-center gap-2 text-xs font-medium text-slate-500">
+              <span className="text-[#00A896] font-semibold uppercase tracking-wider">{event.category}</span>
               <span aria-hidden="true">·</span>
               <span>{event.audience}</span>
               <span aria-hidden="true">·</span>
@@ -114,16 +114,16 @@ export const EventDetailPage: React.FC<EventDetailPageProps> = ({
               <h3 className="text-base font-bold text-stone-900">
                 Programme Timetable
               </h3>
-              <div className="divide-y divide-stone-100">
+              <div className="divide-y divide-slate-100">
                 {event.programmeSchedule.map((item, idx) => (
                   <div key={idx} className="py-3 flex items-start gap-4 text-xs sm:text-sm">
-                    <span className="font-mono font-semibold text-[#0E4D34] shrink-0 w-16">
+                    <span className="font-mono font-semibold text-[#0077C8] shrink-0 w-16">
                       {item.time}
                     </span>
                     <div>
-                      <p className="font-medium text-stone-900">{item.item}</p>
+                      <p className="font-medium text-slate-900">{item.item}</p>
                       {item.notes && (
-                        <p className="text-stone-500 text-xs mt-0.5">{item.notes}</p>
+                        <p className="text-slate-500 text-xs mt-0.5">{item.notes}</p>
                       )}
                     </div>
                   </div>
@@ -134,11 +134,11 @@ export const EventDetailPage: React.FC<EventDetailPageProps> = ({
 
           {/* Speaker or Facilitator details */}
           {event.speakerOrFacilitator && (
-            <div className="rounded-xl border border-stone-200 bg-[#FAF9F5] p-5 flex items-start gap-3">
-              <UserCheck className="h-5 w-5 text-[#0E4D34] shrink-0 mt-0.5" />
+            <div className="rounded-xl border border-slate-200 bg-[#F8FAFC] p-5 flex items-start gap-3">
+              <UserCheck className="h-5 w-5 text-[#00A896] shrink-0 mt-0.5" />
               <div className="text-xs space-y-0.5">
-                <span className="font-semibold text-stone-900 block">Facilitator / Speaker</span>
-                <span className="text-stone-600">{event.speakerOrFacilitator}</span>
+                <span className="font-semibold text-slate-900 block">Facilitator / Speaker</span>
+                <span className="text-slate-600">{event.speakerOrFacilitator}</span>
               </div>
             </div>
           )}
@@ -146,42 +146,42 @@ export const EventDetailPage: React.FC<EventDetailPageProps> = ({
 
         {/* Right Column (4 cols): Operational Details Card & Registration */}
         <div className="lg:col-span-4 space-y-6">
-          <div className="sticky top-24 rounded-xl border border-stone-200 bg-white p-6 shadow-xs space-y-6">
-            <div className="space-y-4 text-sm text-stone-700">
-              <h3 className="text-base font-bold text-stone-900 pb-2 border-b border-stone-100">
+          <div className="sticky top-24 rounded-xl border border-slate-200 bg-white p-6 shadow-xs space-y-6">
+            <div className="space-y-4 text-sm text-slate-700">
+              <h3 className="text-base font-bold text-slate-900 pb-2 border-b border-slate-100">
                 Event Logistics
               </h3>
 
               <div className="flex items-start gap-3">
-                <Calendar className="h-4 w-4 text-[#C59B27] shrink-0 mt-1" />
+                <Calendar className="h-4 w-4 text-[#00A896] shrink-0 mt-1" />
                 <div>
-                  <p className="text-xs font-semibold text-stone-500 uppercase">Date</p>
-                  <p className="font-medium text-stone-900">{event.dateFormatted}</p>
+                  <p className="text-xs font-semibold text-slate-500 uppercase">Date</p>
+                  <p className="font-medium text-slate-900">{event.dateFormatted}</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
-                <Clock className="h-4 w-4 text-[#C59B27] shrink-0 mt-1" />
+                <Clock className="h-4 w-4 text-[#00A896] shrink-0 mt-1" />
                 <div>
-                  <p className="text-xs font-semibold text-stone-500 uppercase">Time</p>
-                  <p className="font-medium text-stone-900">{event.startTime} – {event.endTime}</p>
+                  <p className="text-xs font-semibold text-slate-500 uppercase">Time</p>
+                  <p className="font-medium text-slate-900">{event.startTime} – {event.endTime}</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
-                <MapPin className="h-4 w-4 text-[#C59B27] shrink-0 mt-1" />
+                <MapPin className="h-4 w-4 text-[#00A896] shrink-0 mt-1" />
                 <div>
-                  <p className="text-xs font-semibold text-stone-500 uppercase">Location</p>
-                  <p className="font-medium text-stone-900">{event.venue}</p>
-                  <p className="text-xs text-stone-500">{event.address}</p>
+                  <p className="text-xs font-semibold text-slate-500 uppercase">Location</p>
+                  <p className="font-medium text-slate-900">{event.venue}</p>
+                  <p className="text-xs text-slate-500">{event.address}</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
-                <Users className="h-4 w-4 text-[#C59B27] shrink-0 mt-1" />
+                <Users className="h-4 w-4 text-[#00A896] shrink-0 mt-1" />
                 <div>
-                  <p className="text-xs font-semibold text-stone-500 uppercase">Audience</p>
-                  <p className="text-xs text-stone-700">{event.audience}</p>
+                  <p className="text-xs font-semibold text-slate-500 uppercase">Audience</p>
+                  <p className="text-xs text-slate-700">{event.audience}</p>
                 </div>
               </div>
             </div>
@@ -239,8 +239,8 @@ export const EventDetailPage: React.FC<EventDetailPageProps> = ({
       />
 
       {/* Other Upcoming Events */}
-      <section className="border-t border-stone-200 pt-10 space-y-6">
-        <h3 className="text-lg font-bold text-stone-900">
+      <section className="border-t border-slate-200 pt-10 space-y-6">
+        <h3 className="text-lg font-serif-brand font-bold text-[#0B2545]">
           Other Upcoming Programmes
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -248,13 +248,13 @@ export const EventDetailPage: React.FC<EventDetailPageProps> = ({
             <div
               key={oe.id}
               onClick={() => onSelectEvent(oe.slug)}
-              className="p-5 rounded-lg border border-stone-200 bg-white hover:border-[#0E4D34]/40 transition-colors cursor-pointer space-y-2"
+              className="p-5 rounded-2xl border border-slate-200 bg-white hover:border-[#00A896] transition-colors cursor-pointer space-y-2"
             >
-              <span className="text-xs font-semibold text-[#0E4D34]">{oe.category}</span>
-              <h4 className="text-base font-bold text-stone-900 hover:text-[#0E4D34] transition-colors">
+              <span className="text-xs font-semibold text-[#00A896]">{oe.category}</span>
+              <h4 className="text-base font-bold text-slate-900 hover:text-[#0077C8] transition-colors">
                 {oe.title}
               </h4>
-              <p className="text-xs text-stone-500">{oe.dateFormatted} · {oe.startTime}</p>
+              <p className="text-xs text-slate-500">{oe.dateFormatted} · {oe.startTime}</p>
             </div>
           ))}
         </div>
