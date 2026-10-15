@@ -32,8 +32,8 @@ header("X-XSS-Protection: 1; mode=block");
 header("Referrer-Policy: strict-origin-when-cross-origin");
 header("Permissions-Policy: camera=(), microphone=(), geolocation=()");
 
-// Content-Security-Policy tailored for Apache/IONOS deployment
-header("Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; frame-src https://www.google.com https://maps.google.com;");
+// Content-Security-Policy tailored for Apache/IONOS deployment (includes connect-src for Tailwind browser CDN source maps)
+header("Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; frame-src https://www.google.com https://maps.google.com; connect-src 'self' https://cdn.jsdelivr.net;");
 
 if (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') {
     header("Strict-Transport-Security: max-age=31536000; includeSubDomains; preload");
@@ -119,66 +119,85 @@ function get_client_ip(): string {
 
 // 9. Login Rate Limiter (Protects against brute force)
 function check_rate_limit(PDO $pdo, string $action_key, int $max_attempts = 5, int $block_seconds = 60): bool {
-    $ip = get_client_ip();
-    $now = date('Y-m-d H:i:s');
+    try {
+        $ip = get_client_ip();
+        $now = date('Y-m-d H:i:s');
 
-    // Clean expired blocks
-    $pdo->prepare("DELETE FROM rate_limits WHERE blocked_until IS NOT NULL AND blocked_until < :now")->execute([':now' => $now]);
+        // Clean expired blocks
+        $pdo->prepare("DELETE FROM rate_limits WHERE blocked_until IS NOT NULL AND blocked_until < :now")->execute([':now' => $now]);
 
-    $stmt = $pdo->prepare("SELECT attempt_count, blocked_until FROM rate_limits WHERE ip_address = :ip AND action_key = :action LIMIT 1");
-    $stmt->execute([':ip' => $ip, ':action' => $action_key]);
-    $record = $stmt->fetch();
+        $stmt = $pdo->prepare("SELECT attempt_count, blocked_until FROM rate_limits WHERE ip_address = :ip AND action_key = :action LIMIT 1");
+        $stmt->execute([':ip' => $ip, ':action' => $action_key]);
+        $record = $stmt->fetch();
 
-    if ($record && !empty($record['blocked_until']) && $record['blocked_until'] > $now) {
-        return false; // Still blocked
+        if ($record && !empty($record['blocked_until']) && $record['blocked_until'] > $now) {
+            return false; // Still blocked
+        }
+
+        return true;
+    } catch (Throwable $e) {
+        // Log warning and allow auth to proceed rather than crashing with 500
+        error_log("Rate limit check warning: " . $e->getMessage());
+        return true;
     }
-
-    return true;
 }
 
 function record_failed_attempt(PDO $pdo, string $action_key, int $max_attempts = 5, int $block_seconds = 60): void {
-    $ip = get_client_ip();
-    $now = date('Y-m-d H:i:s');
+    try {
+        $ip = get_client_ip();
+        $now = date('Y-m-d H:i:s');
 
-    $stmt = $pdo->prepare("SELECT attempt_count FROM rate_limits WHERE ip_address = :ip AND action_key = :action LIMIT 1");
-    $stmt->execute([':ip' => $ip, ':action' => $action_key]);
-    $record = $stmt->fetch();
+        $stmt = $pdo->prepare("SELECT attempt_count FROM rate_limits WHERE ip_address = :ip AND action_key = :action LIMIT 1");
+        $stmt->execute([':ip' => $ip, ':action' => $action_key]);
+        $record = $stmt->fetch();
 
-    if ($record) {
-        $new_attempts = $record['attempt_count'] + 1;
-        $blocked_until = ($new_attempts >= $max_attempts) ? date('Y-m-d H:i:s', time() + $block_seconds) : null;
+        if ($record) {
+            $new_attempts = $record['attempt_count'] + 1;
+            $blocked_until = ($new_attempts >= $max_attempts) ? date('Y-m-d H:i:s', time() + $block_seconds) : null;
 
-        $pdo->prepare("UPDATE rate_limits SET attempt_count = :count, last_attempt_at = :now, blocked_until = :blocked WHERE ip_address = :ip AND action_key = :action")
-            ->execute([
-                ':count' => $new_attempts,
-                ':now' => $now,
-                ':blocked' => $blocked_until,
-                ':ip' => $ip,
-                ':action' => $action_key,
-            ]);
-    } else {
-        $pdo->prepare("INSERT INTO rate_limits (ip_address, action_key, attempt_count, last_attempt_at) VALUES (:ip, :action, 1, :now)")
-            ->execute([':ip' => $ip, ':action' => $action_key, ':now' => $now]);
+            $pdo->prepare("UPDATE rate_limits SET attempt_count = :count, last_attempt_at = :now, blocked_until = :blocked WHERE ip_address = :ip AND action_key = :action")
+                ->execute([
+                    ':count' => $new_attempts,
+                    ':now' => $now,
+                    ':blocked' => $blocked_until,
+                    ':ip' => $ip,
+                    ':action' => $action_key,
+                ]);
+        } else {
+            $pdo->prepare("INSERT INTO rate_limits (ip_address, action_key, attempt_count, last_attempt_at) VALUES (:ip, :action, 1, :now)")
+                ->execute([':ip' => $ip, ':action' => $action_key, ':now' => $now]);
+        }
+    } catch (Throwable $e) {
+        error_log("Record failed attempt warning: " . $e->getMessage());
     }
 }
 
 function reset_rate_limit(PDO $pdo, string $action_key): void {
-    $ip = get_client_ip();
-    $pdo->prepare("DELETE FROM rate_limits WHERE ip_address = :ip AND action_key = :action")->execute([':ip' => $ip, ':action' => $action_key]);
+    try {
+        $ip = get_client_ip();
+        $pdo->prepare("DELETE FROM rate_limits WHERE ip_address = :ip AND action_key = :action")->execute([':ip' => $ip, ':action' => $action_key]);
+    } catch (Throwable $e) {
+        error_log("Reset rate limit warning: " . $e->getMessage());
+    }
 }
 
 // 10. Audit Log Helper
 function log_audit_event(PDO $pdo, string $action, string $target_type, ?string $target_id, string $details): void {
-    $admin_user = $_SESSION['admin_email'] ?? $_SESSION['admin_username'] ?? 'System/Public';
-    $ip = get_client_ip();
+    try {
+        $admin_user = $_SESSION['admin_email'] ?? $_SESSION['admin_username'] ?? 'System/Public';
+        $ip = get_client_ip();
 
-    $stmt = $pdo->prepare("INSERT INTO audit_logs (admin_user, action, target_type, target_id, details, ip_address) VALUES (:user, :action, :type, :id, :details, :ip)");
-    $stmt->execute([
-        ':user' => $admin_user,
-        ':action' => $action,
-        ':type' => $target_type,
-        ':id' => $target_id,
-        ':details' => $details,
-        ':ip' => $ip,
-    ]);
+        $stmt = $pdo->prepare("INSERT INTO audit_logs (admin_user, action, target_type, target_id, details, ip_address) VALUES (:user, :action, :type, :id, :details, :ip)");
+        $stmt->execute([
+            ':user' => $admin_user,
+            ':action' => $action,
+            ':type' => $target_type,
+            ':id' => $target_id,
+            ':details' => $details,
+            ':ip' => $ip,
+        ]);
+    } catch (Throwable $e) {
+        // If audit table missing, fail gracefully so critical workflows don't crash
+        error_log("Audit log warning: " . $e->getMessage());
+    }
 }

@@ -18,8 +18,15 @@ $admin_role = $_SESSION['admin_role'] ?? 'coordinator';
 
 $current_page = basename($_SERVER['PHP_SELF'], '.php');
 
-// Count pending requests
-$pending_count = (int)$pdo->query("SELECT COUNT(*) FROM bookings WHERE status = 'pending'")->fetchColumn();
+// Count pending requests safely
+$pending_count = 0;
+try {
+    if (!empty($pdo)) {
+        $pending_count = (int)$pdo->query("SELECT COUNT(*) FROM bookings WHERE status = 'pending'")->fetchColumn();
+    }
+} catch (Throwable $e) {
+    $pending_count = 0;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

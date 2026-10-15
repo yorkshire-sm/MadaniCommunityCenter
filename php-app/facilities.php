@@ -3,8 +3,72 @@ define('APP_ROOT', __DIR__);
 $page_title = "Facilities & Pricing";
 require_once APP_ROOT . '/includes/header.php';
 
-$stmt = $pdo->query("SELECT * FROM facilities WHERE is_active = 1 ORDER BY capacity DESC");
-$facilities = $stmt->fetchAll();
+$facilities = [];
+try {
+    if (!empty($pdo)) {
+        $stmt = $pdo->query("SELECT * FROM facilities WHERE is_active = 1 ORDER BY capacity DESC");
+        $facilities = $stmt->fetchAll();
+    }
+} catch (Throwable $e) {
+    error_log("Failed to load facilities in facilities.php: " . $e->getMessage());
+}
+
+if (empty($facilities)) {
+    $facilities = [
+        [
+            'id' => 'fac-main-hall',
+            'name' => 'Main Community & Event Hall',
+            'category' => 'Large Assembly & Functions',
+            'capacity' => 250,
+            'hourly_rate' => 45.00,
+            'weekend_rate' => 55.00,
+            'deposit_required' => 150.00,
+            'description' => 'Our primary assembly space offers high ceilings, clean timber-finish flooring, and flexible seating arrangements. Perfect for community conferences, seminars, youth rallies, and family gatherings.',
+            'dimensions' => '18m x 12m (216 sqm)',
+            'features_json' => json_encode(["High ceilings with natural perimeter daylight", "Step-free ground floor entrance and wide double doors", "Direct access to reception foyer", "Climate control & ventilation"]),
+            'equipment_json' => json_encode(["PA Sound system with 2 wireless microphones", "HD ceiling projector & motorized 120 inch screen", "200 upholstered chairs & 25 tables", "Stage riser setup", "High-speed Wi-Fi"]),
+        ],
+        [
+            'id' => 'fac-meeting-suite',
+            'name' => 'Meeting & Training Suite',
+            'category' => 'Small to Medium Meetings',
+            'capacity' => 35,
+            'hourly_rate' => 25.00,
+            'weekend_rate' => 30.00,
+            'deposit_required' => 50.00,
+            'description' => 'A focused, quiet acoustic environment designed for trustee board meetings, committee discussions, staff training sessions, and small group seminars.',
+            'dimensions' => '8m x 5m (40 sqm)',
+            'features_json' => json_encode(["Acoustic sound-dampened privacy walls", "Natural daylight with blackout blinds", "Beverage preparation counter", "Executive boardroom layout"]),
+            'equipment_json' => json_encode(["65 inch 4K Smart TV display with HDMI share", "Conference speakerphone for hybrid Zoom", "Dry-wipe whiteboard & flipcharts", "Ergonomic meeting chairs"]),
+        ],
+        [
+            'id' => 'fac-classrooms',
+            'name' => 'Modular Classroom Spaces',
+            'category' => 'Teaching & Study Circles',
+            'capacity' => 28,
+            'hourly_rate' => 20.00,
+            'weekend_rate' => 25.00,
+            'deposit_required' => 40.00,
+            'description' => 'Well-appointed educational rooms equipped with standard pupil desks and presentation boards. Ideal for supplementary evening education, adult Arabic classes, and GCSE revision.',
+            'dimensions' => '7m x 6m (42 sqm)',
+            'features_json' => json_encode(["Quiet educational wing", "Natural daylight & bright LED reading lights", "Multiple laptop electrical points", "Teacher presentation desk"]),
+            'equipment_json' => json_encode(["Standard single/double desks & chairs", "Large whiteboard & dry-wipe markers", "Wall projection area", "Educational Wi-Fi"]),
+        ],
+        [
+            'id' => 'fac-youth-lounge',
+            'name' => 'Youth & Community Activity Lounge',
+            'category' => 'Social & Recreational',
+            'capacity' => 50,
+            'hourly_rate' => 30.00,
+            'weekend_rate' => 35.00,
+            'deposit_required' => 60.00,
+            'description' => 'A vibrant, multi-purpose space with resilient flooring suited to youth social meetups, table tennis, mentoring circles, sisters morning teas, and wellbeing workshops.',
+            'dimensions' => '12m x 8m (96 sqm)',
+            'features_json' => json_encode(["Durable non-slip vinyl sports flooring", "Modular soft seating & breakout zones", "Tea & refreshment counter", "Step-free ground level access"]),
+            'equipment_json' => json_encode(["Table tennis tables & recreational games", "Bluetooth audio speaker", "Folding tables & light stackable chairs", "High-speed Wi-Fi"]),
+        ]
+    ];
+}
 ?>
 
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">

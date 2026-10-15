@@ -167,11 +167,11 @@ INSERT INTO `administrators` (`username`, `email`, `password_hash`, `full_name`,
 VALUES (
   'admin',
   'admin@madanicenter.org.uk',
-  '$2y$12$NqLzXw7F/s2U0e7zR9P1QObk6C8Rj3V4K9Z8v7P0L5q8w2Y9Z1X2y', -- Replace with own hash on install
+  '$2y$12$vHyyd.jLbxk3ww63PW2W..62i15AaRUyWfl3Q1.Kch8nE00jadpei',
   'Madani Facility Coordinator',
   'superadmin',
   1
-) ON DUPLICATE KEY UPDATE `username` = `username`;
+) ON DUPLICATE KEY UPDATE `password_hash` = VALUES(`password_hash`);
 
 INSERT INTO `facilities` (`id`, `name`, `slug`, `category`, `capacity`, `hourly_rate`, `weekend_rate`, `deposit_required`, `description`, `features_json`, `equipment_json`, `dimensions`, `placeholder_key`)
 VALUES

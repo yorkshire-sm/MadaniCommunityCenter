@@ -48,7 +48,7 @@ try {
         'blocked_dates' => $blocked,
         'confirmed_slots' => $confirmed,
     ]);
-} catch (Exception $e) {
+} catch (Throwable $e) {
     http_response_code(500);
-    echo json_encode(['error' => 'Unable to query availability']);
+    echo json_encode(['error' => 'Unable to query availability', 'blocked_dates' => [], 'confirmed_slots' => []]);
 }

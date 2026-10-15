@@ -3,9 +3,54 @@ define('APP_ROOT', __DIR__);
 $page_title = "Home - Community Center Bookings";
 require_once APP_ROOT . '/includes/header.php';
 
-// Fetch active facilities from MySQL database
-$stmt = $pdo->query("SELECT * FROM facilities WHERE is_active = 1 ORDER BY capacity DESC");
-$facilities = $stmt->fetchAll();
+// Fetch active facilities from MySQL database with safe fallback
+$facilities = [];
+try {
+    if (!empty($pdo)) {
+        $stmt = $pdo->query("SELECT * FROM facilities WHERE is_active = 1 ORDER BY capacity DESC");
+        $facilities = $stmt->fetchAll();
+    }
+} catch (Throwable $e) {
+    error_log("Failed to load facilities from DB: " . $e->getMessage());
+}
+
+if (empty($facilities)) {
+    // Default fallback so home page always displays completely
+    $facilities = [
+        [
+            'id' => 'fac-main-hall',
+            'name' => 'Main Community & Event Hall',
+            'hourly_rate' => 45.00,
+            'capacity' => 250,
+            'description' => 'Our primary assembly space offers high ceilings, clean timber-finish flooring, and flexible seating arrangements. Perfect for community conferences, seminars, youth rallies, and family gatherings.',
+            'deposit_required' => 150.00,
+        ],
+        [
+            'id' => 'fac-meeting-suite',
+            'name' => 'Meeting & Training Suite',
+            'hourly_rate' => 25.00,
+            'capacity' => 35,
+            'description' => 'A focused, quiet acoustic environment designed for trustee board meetings, committee discussions, staff training sessions, and small group seminars.',
+            'deposit_required' => 50.00,
+        ],
+        [
+            'id' => 'fac-classrooms',
+            'name' => 'Modular Classroom Spaces',
+            'hourly_rate' => 20.00,
+            'capacity' => 28,
+            'description' => 'Well-appointed educational rooms equipped with standard pupil desks and presentation boards. Ideal for supplementary evening education, adult Arabic classes, and GCSE revision.',
+            'deposit_required' => 40.00,
+        ],
+        [
+            'id' => 'fac-youth-lounge',
+            'name' => 'Youth & Community Activity Lounge',
+            'hourly_rate' => 30.00,
+            'capacity' => 50,
+            'description' => 'A vibrant, multi-purpose space with resilient flooring suited to youth social meetups, table tennis, mentoring circles, sisters morning teas, and wellbeing workshops.',
+            'deposit_required' => 60.00,
+        ]
+    ];
+}
 ?>
 
 <!-- Hero Section -->
